@@ -508,7 +508,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>4</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>41CD4F85-8520-427E-8295-9C1B2E7E3574</a:CustomPictureID>
+<a:CustomPictureID>F1D6558C-7268-4BE2-A090-0F504A3D2880</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -530,7 +530,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Creator>Luka Doric</a:Creator>
 <a:ModificationDate>1585663086</a:ModificationDate>
 <a:Modifier>Luka Doric</a:Modifier>
-<a:Location>file:///C|/Users/Luka Doric/Desktop/health-clinic-use-case.oom</a:Location>
+<a:Location>file:///%[PRJ_ROOT_DIR]%/health-clinic-use-case.oom</a:Location>
 <a:Extension>oom</a:Extension>
 <a:ModelDocument.ModelID>CA78DC03-084E-44DA-868F-680762857ECE</a:ModelDocument.ModelID>
 <a:ModelClassID>18112060-1A4B-11D1-83D9-444553540000</a:ModelClassID>
