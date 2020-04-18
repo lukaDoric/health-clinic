@@ -508,7 +508,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>4</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>FC69BE3F-FDFB-42FD-90A4-E4D50A6136F5</a:CustomPictureID>
+<a:CustomPictureID>6FC3A31C-5598-409A-A55B-776158A79E01</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -530,7 +530,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>4</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>FC69BE3F-FDFB-42FD-90A4-E4D50A6136F5</a:CustomPictureID>
+<a:CustomPictureID>6FC3A31C-5598-409A-A55B-776158A79E01</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -551,7 +551,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:CreationDate>1585664942</a:CreationDate>
 <a:Creator>Luka Doric</a:Creator>
 <a:ModificationDate>1587153046</a:ModificationDate>
-<a:Modifier>Milica</a:Modifier>
+<a:Modifier>vidoj</a:Modifier>
 <a:Location>file:///%[PRJ_ROOT_DIR]%/health-clinic-use-case.oom</a:Location>
 <a:Extension>oom</a:Extension>
 <a:ModelDocument.ModelID>CA78DC03-084E-44DA-868F-680762857ECE</a:ModelDocument.ModelID>
