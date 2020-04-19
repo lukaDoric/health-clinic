@@ -3190,9 +3190,9 @@ Shadow=0</a:DisplayPreferences>
 <a:ManuallyResized>1</a:ManuallyResized>
 </o:NoteSymbol>
 <o:UseCaseAssociationSymbol Id="o73">
-<a:ModificationDate>1587237936</a:ModificationDate>
-<a:Rect>((-30010,26359), (-13612,28324))</a:Rect>
-<a:ListOfPoints>((-29610,27924),(-18310,27924),(-18310,26759),(-14012,26759))</a:ListOfPoints>
+<a:ModificationDate>1587317293</a:ModificationDate>
+<a:Rect>((-29935,26359), (-13612,27163))</a:Rect>
+<a:ListOfPoints>((-29535,26763),(-23336,26763),(-23336,26759),(-14012,26759))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -3233,7 +3233,7 @@ Shadow=0</a:DisplayPreferences>
 <o:DependencySymbol Id="o80">
 <a:ModificationDate>1587153061</a:ModificationDate>
 <a:CenterTextOffset>(843, -1246)</a:CenterTextOffset>
-<a:Rect>((-14292,24131), (16950,26079))</a:Rect>
+<a:Rect>((-14292,24035), (16950,26079))</a:Rect>
 <a:ListOfPoints>((16550,25379),(-13892,25379))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -3253,7 +3253,7 @@ Shadow=0</a:DisplayPreferences>
 <o:DependencySymbol Id="o83">
 <a:ModificationDate>1587153059</a:ModificationDate>
 <a:CenterTextOffset>(8002, -823)</a:CenterTextOffset>
-<a:Rect>((-12252,18361), (9726,25779))</a:Rect>
+<a:Rect>((-12252,18253), (9726,25779))</a:Rect>
 <a:ListOfPoints>((9326,20307),(-11552,20307),(-11552,25379))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -3274,7 +3274,7 @@ Shadow=0</a:DisplayPreferences>
 <o:DependencySymbol Id="o86">
 <a:ModificationDate>1587153058</a:ModificationDate>
 <a:CenterTextOffset>(6149, -452)</a:CenterTextOffset>
-<a:Rect>((-13154,11116), (9719,25779))</a:Rect>
+<a:Rect>((-13154,10991), (9719,25779))</a:Rect>
 <a:ListOfPoints>((9319,12705),(-12454,12705),(-12454,25379))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -3313,9 +3313,9 @@ Shadow=0</a:DisplayPreferences>
 </c:Object>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o92">
-<a:ModificationDate>1587237687</a:ModificationDate>
-<a:Rect>((-32258,-8024), (1488,25557))</a:Rect>
-<a:ListOfPoints>((-31858,25157),(-31858,-7624),(1088,-7624))</a:ListOfPoints>
+<a:ModificationDate>1587317312</a:ModificationDate>
+<a:Rect>((-32040,-8024), (1488,25557))</a:Rect>
+<a:ListOfPoints>((-31640,25157),(-31640,-7624),(1088,-7624))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -3333,14 +3333,15 @@ Shadow=0</a:DisplayPreferences>
 </c:Object>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o95">
-<a:ModificationDate>1587150995</a:ModificationDate>
-<a:Rect>((-32558,-16149), (-14144,25557))</a:Rect>
-<a:ListOfPoints>((-32158,25157),(-32158,-15749),(-14544,-15749))</a:ListOfPoints>
+<a:ModificationDate>1587317309</a:ModificationDate>
+<a:Rect>((-32848,-16149), (-14144,27356))</a:Rect>
+<a:ListOfPoints>((-32448,26956),(-32448,-15749),(-14544,-15749))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>CENTER 0 Arial,8,N</a:FontList>
+<a:AutomaticRoutingState>4</a:AutomaticRoutingState>
 <c:SourceSymbol>
 <o:ActorSymbol Ref="o74"/>
 </c:SourceSymbol>
@@ -3430,15 +3431,15 @@ Shadow=0</a:DisplayPreferences>
 </c:Object>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o108">
-<a:ModificationDate>1587152990</a:ModificationDate>
-<a:Rect>((-30010,6034), (-4102,27806))</a:Rect>
-<a:ListOfPoints>((-29610,27406),(-26014,27406),(-26014,6434),(-4502,6434))</a:ListOfPoints>
+<a:ModificationDate>1587317297</a:ModificationDate>
+<a:Rect>((-29935,6034), (-4102,25700))</a:Rect>
+<a:ListOfPoints>((-29535,25300),(-22012,25300),(-22012,6434),(-4502,6434))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>CENTER 0 Arial,8,N</a:FontList>
-<a:AutomaticRoutingState>1</a:AutomaticRoutingState>
+<a:AutomaticRoutingState>4</a:AutomaticRoutingState>
 <c:SourceSymbol>
 <o:ActorSymbol Ref="o74"/>
 </c:SourceSymbol>
@@ -3815,7 +3816,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Pregled_Pacijenta</a:Code>
 <a:CreationDate>1586513306</a:CreationDate>
 <a:Creator>Milica</a:Creator>
-<a:ModificationDate>1587153222</a:ModificationDate>
+<a:ModificationDate>1587316580</a:ModificationDate>
 <a:Modifier>Milica</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset238 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
@@ -3852,7 +3853,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:PreCondition>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20 Pacijent je zakazao pregled ili ga je sekretar zakazao.\par
-Ukoliko lekar gleda stare izvestaje ili generise delimicno popunjen izvestaj, potrebno je da pacijent ima redovan nalog u okviru sistema bolnice i da je ranije bio bar jednom pregledan.\par
+Ukoliko lekar gleda stare izvestaje potrebno je da pacijent ima redovan nalog u okviru sistema bolnice i da je ranije bio bar jednom pregledan.\par
 \par
 }
 </a:PreCondition>
@@ -3952,7 +3953,7 @@ Pacijent u svom rasporedu ima uvid u koje vreme i u kojoj prostoriji \&#39;e6e s
 <a:Code>Izdavanje_recepta</a:Code>
 <a:CreationDate>1586517255</a:CreationDate>
 <a:Creator>Milica</a:Creator>
-<a:ModificationDate>1586785730</a:ModificationDate>
+<a:ModificationDate>1587316883</a:ModificationDate>
 <a:Modifier>Milica</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset238 Times New Roman;}{\f1\fnil\fcharset0 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
@@ -3962,6 +3963,11 @@ Pacijent u svom rasporedu ima uvid u koje vreme i u kojoj prostoriji \&#39;e6e s
 4. Lekar potvr\&#39;f0uje dodavanje recepta u izve\&#39;9ataj.\f1\lang1033\par
 }
 </a:Step>
+<a:PostCondition>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset238 Times New Roman;}{\f1\fnil\fcharset0 Times New Roman;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\f0\fs20\lang9242 Pacijentu je dodat recept u karton, i on mo\&#39;9ee da ga vidi.\f1\lang1033\par
+}
+</a:PostCondition>
 </o:UseCase>
 <o:UseCase Id="o119">
 <a:ObjectID>1D23C1E6-2FCA-467A-BE47-CA8FF6028332</a:ObjectID>
@@ -4042,11 +4048,11 @@ Lekar nema uvid u lekove koji su odbijeni, dok upravnik ne napravi izmenu i pono
 </o:UseCase>
 <o:UseCase Id="o123">
 <a:ObjectID>4DE2487D-8E5A-41A6-94B7-58BA3E692ACE</a:ObjectID>
-<a:Name>Odrzavanje bloga</a:Name>
+<a:Name>Održavanje bloga</a:Name>
 <a:Code>Odrzavanje_bloga</a:Code>
 <a:CreationDate>1587149993</a:CreationDate>
 <a:Creator>Milica</a:Creator>
-<a:ModificationDate>1587316419</a:ModificationDate>
+<a:ModificationDate>1587317253</a:ModificationDate>
 <a:Modifier>Milica</a:Modifier>
 <a:Comment>Korisnik radi sa člancima na blogu.
 Članak od informacija sadrži informacije: 
@@ -4065,14 +4071,19 @@ Lekar nema uvid u lekove koji su odbijeni, dok upravnik ne napravi izmenu i pono
 <a:Code>Upucivanje_pacijenta_na_bolnicko_lecenje</a:Code>
 <a:CreationDate>1587151002</a:CreationDate>
 <a:Creator>Milica</a:Creator>
-<a:ModificationDate>1587153146</a:ModificationDate>
+<a:ModificationDate>1587317063</a:ModificationDate>
 <a:Modifier>Milica</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset238 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
-\pard\f0\fs20 1. Sistem generi\f1\lang9242\&#39;9ae sobu i krevet u kojoj bi pacijent bio sme\&#39;9aten, korisniku je omogu\&#39;e6eno menjanje ovih parametara.\par
+\pard\f0\fs20 1. Sistem generi\f1\lang9242\&#39;9ae sobu i krevet u kojoj bi pacijent bio sme\&#39;9aten.\par
 2. Korisnik popunjava ostale potrebne informacije: pacijent koji se sme\&#39;9ata u bolnicu (ukoliko se ova akcija inicira van pregleda), razlog za hospitalizaciju (text area)\f0\lang1033\par
 }
 </a:Step>
+<a:UseCase.Extension>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset238 Times New Roman;}{\f1\fnil\fcharset0 Times New Roman;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\f0\fs20\lang9242 1.a. \fs20 Korisniku menja parametre (sobu i krevet) koje je sistem izgenerisao. Pri \&#39;e8emu sistem dozvoljava odabir isklju\&#39;e8ivo validnih parametara, soba koja nije u fazi renoviranja, krevet koji je slobodan...\f1\fs20\lang1033\par
+}
+</a:UseCase.Extension>
 <a:PostCondition>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset238 Times New Roman;}{\f1\fnil\fcharset0 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20\lang9242 Upravnik ima uvid u sobu i krevet gde je sme\&#39;9aten pacijent i onemogu\&#39;e6eno mu je zakazivanje renovacije te sobe i pomeranje kreveta.\f1\lang1033\par
@@ -6933,8 +6944,8 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>health_clinic_use_case</a:Code>
 <a:CreationDate>1585663045</a:CreationDate>
 <a:Creator>Luka Doric</a:Creator>
-<a:ModificationDate>1587239924</a:ModificationDate>
-<a:Modifier>vidoj</a:Modifier>
+<a:ModificationDate>1587316436</a:ModificationDate>
+<a:Modifier>Milica</a:Modifier>
 <a:TargetModelURL>file:///.</a:TargetModelURL>
 <a:TargetModelID>CA78DC03-084E-44DA-868F-680762857ECE</a:TargetModelID>
 <a:TargetModelClassID>18112060-1A4B-11D1-83D9-444553540000</a:TargetModelClassID>
