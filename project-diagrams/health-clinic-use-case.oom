@@ -5736,8 +5736,8 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o176">
 <a:ModificationDate>1587239879</a:ModificationDate>
-<a:Rect>((-36812,5734), (10778,21384))</a:Rect>
-<a:ListOfPoints>((-36412,6134),(-36412,20984),(10378,20984))</a:ListOfPoints>
+<a:Rect>((-36812,5734), (10564,21384))</a:Rect>
+<a:ListOfPoints>((-36412,6134),(-36412,20984),(10164,20984))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -5755,8 +5755,8 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o179">
 <a:ModificationDate>1587239883</a:ModificationDate>
-<a:Rect>((-35912,5809), (12067,14784))</a:Rect>
-<a:ListOfPoints>((-35512,6209),(-35512,14384),(11667,14384))</a:ListOfPoints>
+<a:Rect>((-35912,5809), (11839,14784))</a:Rect>
+<a:ListOfPoints>((-35512,6209),(-35512,14384),(11439,14384))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -5774,8 +5774,8 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o182">
 <a:ModificationDate>1587239888</a:ModificationDate>
-<a:Rect>((-35312,5284), (13591,7284))</a:Rect>
-<a:ListOfPoints>((-34912,5684),(-34912,6884),(13191,6884))</a:ListOfPoints>
+<a:Rect>((-35312,5284), (13488,7284))</a:Rect>
+<a:ListOfPoints>((-34912,5684),(-34912,6884),(13088,6884))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -5794,8 +5794,8 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o185">
 <a:ModificationDate>1587239907</a:ModificationDate>
-<a:Rect>((-37937,709), (13149,1509))</a:Rect>
-<a:ListOfPoints>((-37537,1109),(12749,1109))</a:ListOfPoints>
+<a:Rect>((-37937,709), (13188,1509))</a:Rect>
+<a:ListOfPoints>((-37537,1109),(12788,1109))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -5814,8 +5814,8 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o188">
 <a:ModificationDate>1587239898</a:ModificationDate>
-<a:Rect>((-35237,-6490), (12538,984))</a:Rect>
-<a:ListOfPoints>((-34837,584),(-34837,-6090),(12138,-6090))</a:ListOfPoints>
+<a:Rect>((-35237,-6489), (12363,984))</a:Rect>
+<a:ListOfPoints>((-34837,584),(-34837,-6089),(11963,-6089))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -5834,8 +5834,8 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o191">
 <a:ModificationDate>1587239913</a:ModificationDate>
-<a:Rect>((-36737,-13693), (11532,531))</a:Rect>
-<a:ListOfPoints>((-36337,131),(-36337,-13293),(11132,-13293))</a:ListOfPoints>
+<a:Rect>((-36737,-13692), (11388,531))</a:Rect>
+<a:ListOfPoints>((-36337,131),(-36337,-13292),(10988,-13292))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -5853,8 +5853,8 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseAssociationSymbol Id="o194">
 <a:ModificationDate>1587239921</a:ModificationDate>
-<a:Rect>((-37862,-20293), (13866,1656))</a:Rect>
-<a:ListOfPoints>((-37462,1256),(-37462,-19893),(13466,-19893))</a:ListOfPoints>
+<a:Rect>((-37862,-20292), (13788,1656))</a:Rect>
+<a:ListOfPoints>((-37462,1256),(-37462,-19892),(13388,-19892))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -5891,7 +5891,7 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:UseCaseSymbol Id="o177">
 <a:ModificationDate>1587239829</a:ModificationDate>
-<a:Rect>((10156,18183), (18264,23582))</a:Rect>
+<a:Rect>((9930,18183), (18490,23582))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
 <a:FillColor>16777088</a:FillColor>
@@ -5908,7 +5908,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o180">
 <a:ModificationDate>1587239829</a:ModificationDate>
-<a:Rect>((11294,11751), (21529,17150))</a:Rect>
+<a:Rect>((11048,11751), (21775,17150))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
 <a:FillColor>16777088</a:FillColor>
@@ -5942,7 +5942,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o195">
 <a:ModificationDate>1587239829</a:ModificationDate>
-<a:Rect>((12632,-22395), (20898,-16996))</a:Rect>
+<a:Rect>((12534,-22394), (20996,-16995))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
 <a:FillColor>16777088</a:FillColor>
@@ -5976,7 +5976,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o186">
 <a:ModificationDate>1587239829</a:ModificationDate>
-<a:Rect>((9880,-2324), (23106,3075))</a:Rect>
+<a:Rect>((9948,-2324), (23038,3075))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
 <a:FillColor>16777088</a:FillColor>
@@ -5993,7 +5993,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o183">
 <a:ModificationDate>1587239829</a:ModificationDate>
-<a:Rect>((10011,4815), (23395,10214))</a:Rect>
+<a:Rect>((9814,4815), (23592,10214))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
 <a:FillColor>16777152</a:FillColor>
@@ -6010,7 +6010,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o189">
 <a:ModificationDate>1587239829</a:ModificationDate>
-<a:Rect>((10433,-8970), (22241,-3571))</a:Rect>
+<a:Rect>((10187,-8969), (22487,-3570))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
 <a:FillColor>16777152</a:FillColor>
@@ -6027,7 +6027,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:UseCaseSymbol>
 <o:UseCaseSymbol Id="o192">
 <a:ModificationDate>1587239829</a:ModificationDate>
-<a:Rect>((10308,-15766), (22274,-10367))</a:Rect>
+<a:Rect>((10141,-15765), (22441,-10366))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:LineWidth>1</a:LineWidth>
 <a:FillColor>16777152</a:FillColor>
@@ -6100,7 +6100,7 @@ DISPNAME 0 Arial,8,N</a:FontList>
 <a:Code>Kreiranje_naloga</a:Code>
 <a:CreationDate>1587239828</a:CreationDate>
 <a:Creator>vidoj</a:Creator>
-<a:ModificationDate>1587239829</a:ModificationDate>
+<a:ModificationDate>1587382332</a:ModificationDate>
 <a:Modifier>vidoj</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset238 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
@@ -6124,14 +6124,6 @@ DISPNAME 0 Arial,8,N</a:FontList>
 \par
 }
 </a:UseCase.Extension>
-<a:Throws>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
-{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
-\pard\f0\fs20 Neuspesno:\par
-Pacijent nije imao uslove za kreiranje naloga, npr bio je maloletan pa mu nalog nije bio kreiran\par
-Uspesno:\par
-Pacijent je uneo sve potrebne podatke i nalog je kreiran\par
-}
-</a:Throws>
 <a:PreCondition>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset238 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20 Pacijent kome treba da se napravi nalog trenutno nema aktivan nalog u sistemu ili ima guest &quot;nalog&quot; pa \f1\lang9242\&#39;9e\f0\lang1033 eli da se doregistruje.\par
@@ -6149,33 +6141,17 @@ Pacijent je uneo sve potrebne podatke i nalog je kreiran\par
 <a:Code>Zakazivanje_pregleda</a:Code>
 <a:CreationDate>1587239828</a:CreationDate>
 <a:Creator>vidoj</a:Creator>
-<a:ModificationDate>1587239829</a:ModificationDate>
+<a:ModificationDate>1587382439</a:ModificationDate>
 <a:Modifier>vidoj</a:Modifier>
-<a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
+<a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset238 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20 1.Pacijent inicira dijalog koji j potrebno pouniti za zakazivanje termina.\par
-2. Pacijent popunjava sve potrebne informacije (informacije su smestene u note).\par
+2. Pacijent popunjava sve potrebne informacije (ime, prezime, ime jednog od roditelja , jmbg, pol,  bra\f1\&#39;e8no stanje, grad, adresa stanovanja, godina rodjenja, broj telefona).\f0\par
 3. Pacijent potvrdjuje unete informacije.\par
 4. Podaci o zakazanom terminu se unose u sistem (smesteni su u raspored).\par
 \par
 }
 </a:Step>
-<a:UseCase.Extension>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
-{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
-\pard\f0\fs20 3.a Kombinacija odabranog termina i lekara je &quot;zauzeta&quot;.\par
-.1 Korisnik opet unosi lekara i termin.\par
-.2 Vraca se na korak 3.\par
-\par
-}
-</a:UseCase.Extension>
-<a:Throws>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
-{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
-\pard\f0\fs20 Neuspesno:\par
-Pacijent nije imao kreiran nalog\par
-Uspesno:\par
-Pacijent je uneo sve potrebne informacije i pregled je zakazan\par
-}
-</a:Throws>
 <a:PostCondition>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20 Pacijent je zakazao termin i stigla je notifikacija pacijentu u kojoj sali kada i kod kog doktora ce se obaviti pregled/intervencija.\par
@@ -6247,11 +6223,12 @@ Za odredjenu pretragu pacijent nije dobio nikakav sadrzaj\par
 <a:Code>Pristup_zdravstvenom_kartonu</a:Code>
 <a:CreationDate>1587239828</a:CreationDate>
 <a:Creator>vidoj</a:Creator>
-<a:ModificationDate>1587239829</a:ModificationDate>
+<a:ModificationDate>1587382307</a:ModificationDate>
 <a:Modifier>vidoj</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20 1.Pacijent pritiskom na dugme &quot;Zdravstveni karton&quot; pristupa stranici na kojoj se nalaze podaci iz njegovog zdravstvenog kartona poredjani po godinama\par
+2.Pacijent filtrira/pretrazuje zdravstveni karton\par
 }
 </a:Step>
 <a:PostCondition>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
