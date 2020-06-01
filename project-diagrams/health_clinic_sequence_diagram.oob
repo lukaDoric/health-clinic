@@ -2588,7 +2588,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o145">
 <a:ModificationDate>1590182883</a:ModificationDate>
 <a:CenterTextOffset>(85, -998)</a:CenterTextOffset>
-<a:Rect>((-12501,4408), (2984,6349))</a:Rect>
+<a:Rect>((-12501,4328), (2984,6349))</a:Rect>
 <a:ListOfPoints>((2584,5649),(-12101,5649))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2611,7 +2611,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o148">
 <a:ModificationDate>1590182546</a:ModificationDate>
 <a:CenterTextOffset>(-113, 86)</a:CenterTextOffset>
-<a:Rect>((-12508,6430), (2538,7859))</a:Rect>
+<a:Rect>((-12508,6430), (2538,7779))</a:Rect>
 <a:ListOfPoints>((-12108,7055),(2138,7055))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -2654,7 +2654,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </o:MessageSymbol>
 <o:MessageSymbol Id="o152">
 <a:ModificationDate>1589905545</a:ModificationDate>
-<a:Rect>((-27471,14299), (-12214,15660))</a:Rect>
+<a:Rect>((-27471,14299), (-12214,15580))</a:Rect>
 <a:ListOfPoints>((-27071,14924),(-12614,14924))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -2676,7 +2676,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o154">
 <a:ModificationDate>1590002993</a:ModificationDate>
 <a:CenterTextOffset>(-556, 25)</a:CenterTextOffset>
-<a:Rect>((-42112,15501), (-26975,16895))</a:Rect>
+<a:Rect>((-42112,15501), (-26975,16815))</a:Rect>
 <a:ListOfPoints>((-41712,16126),(-27375,16126))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -2697,7 +2697,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 </o:MessageSymbol>
 <o:MessageSymbol Id="o156">
 <a:ModificationDate>1590189833</a:ModificationDate>
-<a:Rect>((-59881,18752), (-41311,20127))</a:Rect>
+<a:Rect>((-59881,18752), (-41311,20049))</a:Rect>
 <a:ListOfPoints>((-59481,19377),(-41711,19377))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>128</a:LineColor>
@@ -18377,7 +18377,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>health_clinic_class_diagram</a:Code>
 <a:CreationDate>1589895791</a:CreationDate>
 <a:Creator>Luka Doric</a:Creator>
-<a:ModificationDate>1590960420</a:ModificationDate>
+<a:ModificationDate>1590965525</a:ModificationDate>
 <a:Modifier>Milica</a:Modifier>
 <a:TargetModelURL>file:///%[PRJ_ROOT_DIR]%/health_clinic_class_diagram.oom</a:TargetModelURL>
 <a:TargetModelID>1CA796FE-DA85-4ACB-9689-FD02E0D0A728</a:TargetModelID>
