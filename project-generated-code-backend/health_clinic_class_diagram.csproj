@@ -1,0 +1,155 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68BF1C57-C1A8-4EB8-9FA1-E91BF72F6A72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>health_clinic_class_diagram</RootNamespace>
+    <AssemblyName>health_clinic_class_diagram</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backend\Controller\MedicineAddingController.cs" />
+    <Compile Include="Backend\Controller\MedicineApprovalController.cs" />
+    <Compile Include="Backend\Model\Hospital\Hospital.cs" />
+    <Compile Include="Backend\Model\Hospital\Room.cs" />
+    <Compile Include="Backend\Model\Hospital\RoomType.cs" />
+    <Compile Include="Backend\Model\Hospital\Equipment.cs" />
+    <Compile Include="Backend\Model\Hospital\Bed.cs" />
+    <Compile Include="Backend\Model\Hospital\BedReservation.cs" />
+    <Compile Include="Backend\Model\Hospital\Medicine.cs" />
+    <Compile Include="Backend\Model\Hospital\MedicineType.cs" />
+    <Compile Include="Backend\Model\Hospital\MedicineManufacturer.cs" />
+    <Compile Include="Backend\Model\Hospital\Rejection.cs" />
+    <Compile Include="Backend\Model\Accounts\Account.cs" />
+    <Compile Include="Backend\Model\Accounts\Secretary.cs" />
+    <Compile Include="Backend\Model\Accounts\Physitian.cs" />
+    <Compile Include="Backend\Model\Accounts\Superintendent.cs" />
+    <Compile Include="Backend\Model\Accounts\Patient.cs" />
+    <Compile Include="Backend\Model\Accounts\Specialization.cs" />
+    <Compile Include="Backend\Model\Util\Country.cs" />
+    <Compile Include="Backend\Model\Util\City.cs" />
+    <Compile Include="Backend\Model\Util\Adress.cs" />
+    <Compile Include="Backend\Model\Util\TimeInterval.cs" />
+    <Compile Include="Backend\Model\Schedule\Appointment.cs" />
+    <Compile Include="Backend\Model\Schedule\Schedule.cs" />
+    <Compile Include="Backend\Model\Schedule\ProcedureType.cs" />
+    <Compile Include="Backend\Model\MedicalExam\Report.cs" />
+    <Compile Include="Backend\Model\MedicalExam\AdditionalDocument.cs" />
+    <Compile Include="Backend\Model\MedicalExam\Prescription.cs" />
+    <Compile Include="Backend\Model\MedicalExam\SpecialistReferral.cs" />
+    <Compile Include="Backend\Model\MedicalExam\DiagnosticReferral.cs" />
+    <Compile Include="Backend\Model\MedicalExam\FollowUp.cs" />
+    <Compile Include="Backend\Model\MedicalExam\MedicineDosage.cs" />
+    <Compile Include="Backend\Model\MedicalExam\InpatientCare.cs" />
+    <Compile Include="Backend\Model\MedicalExam\DiagnosticType.cs" />
+    <Compile Include="Backend\Model\Blog\BlogPost.cs" />
+    <Compile Include="Backend\Model\Blog\Comment.cs" />
+    <Compile Include="Backend\Service\MedicineAddingService.cs" />
+    <Compile Include="Backend\Service\MedicineApprovalService.cs" />
+    <Compile Include="Backend\Service\SchedulingStrategy.cs" />
+    <Compile Include="Backend\Service\PriorityStrategy.cs" />
+    <Compile Include="Backend\Service\AppointmentService.cs" />
+    <Compile Include="Backend\Service\PatientRegistrationService.cs" />
+    <Compile Include="Backend\Service\HospitalService.cs" />
+    <Compile Include="Backend\Service\ExamService.cs" />
+    <Compile Include="Backend\Service\InpatientCareService.cs" />
+    <Compile Include="Backend\Service\PhysitianScheduleService.cs" />
+    <Compile Include="Backend\Service\AppointmentSchedulingService.cs" />
+    <Compile Include="Backend\Service\PhysitianSpecialistSchedulingStrategy.cs" />
+    <Compile Include="Backend\Service\PhysitianFollowUpSchedulingStrategy.cs" />
+    <Compile Include="Backend\Service\SecretarySchedulingStrategy.cs" />
+    <Compile Include="Backend\Service\PatientExaminationService.cs" />
+    <Compile Include="Backend\Service\SuggestedappointmentDTO.cs" />
+    <Compile Include="Backend\Service\SuggestedAppointmentSchedulingStrategy.cs" />
+    <Compile Include="Backend\Service\PatientSchedulingStrategy.cs" />
+    <Compile Include="Backend\Service\RoomService.cs" />
+    <Compile Include="Backend\Service\EquipmentService.cs" />
+    <Compile Include="Backend\Service\RenovationService.cs" />
+    <Compile Include="Backend\Service\DatePriorityStrategy.cs" />
+    <Compile Include="Backend\Service\PhysitianPriorityStrategy.cs" />
+    <Compile Include="Backend\Repository\PatientRepository.cs" />
+    <Compile Include="Backend\Repository\AppointmentRepository.cs" />
+    <Compile Include="Backend\Repository\InpatientCareRepository.cs" />
+    <Compile Include="Backend\Repository\ReportRepository.cs" />
+    <Compile Include="Backend\Repository\PhysitianRepository.cs" />
+    <Compile Include="Backend\Repository\RoomRepository.cs" />
+    <Compile Include="Backend\Repository\GenericRepository.cs" />
+    <Compile Include="Backend\Repository\RejectionRepository.cs" />
+    <Compile Include="Backend\Repository\ApprovedMedicineRepository.cs" />
+    <Compile Include="Backend\Repository\WaitingMedicineRepository.cs" />
+    <Compile Include="Backend\Repository\EquipmentRepository.cs" />
+    <Compile Include="Backend\Repository\SecretaryRepository.cs" />
+    <Compile Include="Backend\Repository\PatientFileSystem.cs" />
+    <Compile Include="Backend\Repository\AppointmentFileSystem.cs" />
+    <Compile Include="Backend\Repository\InpatientCareFileSystem.cs" />
+    <Compile Include="Backend\Repository\ReportFileSystem.cs" />
+    <Compile Include="Backend\Repository\PhysitianFileSystem.cs" />
+    <Compile Include="Backend\Repository\RoomFileSystem.cs" />
+    <Compile Include="Backend\Repository\GenericFileRepository.cs" />
+    <Compile Include="Backend\Repository\RejectionFileSystem.cs" />
+    <Compile Include="Backend\Repository\ApprovedMedicineFileSystem.cs" />
+    <Compile Include="Backend\Repository\WaitingMedicineFileSystem.cs" />
+    <Compile Include="Backend\Repository\EquipmentFileSystem.cs" />
+    <Compile Include="Backend\Repository\SecretaryFileSystem.cs" />
+    <Compile Include="Backend\Controller\SecretaryScheduleController.cs" />
+    <Compile Include="Backend\Controller\PatientRegistrationController.cs" />
+    <Compile Include="Backend\Controller\SecretaryHospitalController.cs" />
+    <Compile Include="Backend\Controller\InpatientCareController.cs" />
+    <Compile Include="Backend\Controller\ExamController.cs" />
+    <Compile Include="Backend\Controller\PhysitianScheduleController.cs" />
+    <Compile Include="Backend\Controller\SpecialistAppointmentSchedulingController.cs" />
+    <Compile Include="Backend\Controller\FollowUpAppointmentSchedulingController.cs" />
+    <Compile Include="Backend\Controller\PatientExaminatonController.cs" />
+    <Compile Include="Backend\Controller\PatientScheduleController.cs" />
+    <Compile Include="Backend\Controller\RoomController.cs" />
+    <Compile Include="Backend\Controller\EquipmentController.cs" />
+    <Compile Include="Backend\Controller\RenovationController.cs" />
+    <Compile Include="Backend\Controller\PhysitianHospitalController.cs" />
+    <Compile Include="Backend\Controller\SuperIntendentHospitalController.cs" />
+    <Compile Include="Backend\Dto\AppointmentDTO.cs" />
+    <Compile Include="Backend\Dto\AppointmentGeneralitiesDTO.cs" />
+    <Compile Include="Backend\Dto\PatientDTO.cs" />
+    <Compile Include="Backend\Dto\BedReservationDTO.cs" />
+    <Compile Include="Backend\Dto\RejectedMedicineDTO.cs" />
+    <Compile Include="Backend\Dto\RenovationDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
