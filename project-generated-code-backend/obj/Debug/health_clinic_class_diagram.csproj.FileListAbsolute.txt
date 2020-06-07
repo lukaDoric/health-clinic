@@ -1,0 +1,9 @@
+C:\Users\Luka Doric\Desktop\generisanjeSIMS\bin\Debug\health_clinic_class_diagram.dll
+C:\Users\Luka Doric\Desktop\generisanjeSIMS\bin\Debug\health_clinic_class_diagram.pdb
+C:\Users\Luka Doric\Desktop\generisanjeSIMS\obj\Debug\health_clinic_class_diagram.dll
+C:\Users\Luka Doric\Desktop\generisanjeSIMS\obj\Debug\health_clinic_class_diagram.pdb
+C:\Users\Luka Doric\Desktop\clone za generisanje\health-clinic\project-generated-code-backend\bin\Debug\health_clinic_class_diagram.dll
+C:\Users\Luka Doric\Desktop\clone za generisanje\health-clinic\project-generated-code-backend\bin\Debug\health_clinic_class_diagram.pdb
+C:\Users\Luka Doric\Desktop\clone za generisanje\health-clinic\project-generated-code-backend\obj\Debug\health_clinic_class_diagram.csprojAssemblyReference.cache
+C:\Users\Luka Doric\Desktop\clone za generisanje\health-clinic\project-generated-code-backend\obj\Debug\health_clinic_class_diagram.dll
+C:\Users\Luka Doric\Desktop\clone za generisanje\health-clinic\project-generated-code-backend\obj\Debug\health_clinic_class_diagram.pdb
