@@ -9,10 +9,12 @@ using System;
 
 namespace Backend.Dto
 {
-   public class RenovationDTO
-   {
-      private Room room;
-      private TimeInterval timeInterval;
-   
-   }
+    public class RenovationDTO
+    {
+        private Room room;
+        private TimeInterval timeInterval;
+
+        public Room Room { get => room; set => room = value; }
+        public TimeInterval TimeInterval { get => timeInterval; set => timeInterval = value; }
+    }
 }

@@ -10,11 +10,14 @@ using System;
 
 namespace Backend.Dto
 {
-   public class BedReservationDTO
-   {
-      private Bed bed;
-      private Patient patient;
-      private TimeInterval timeInterval;
-   
-   }
+    public class BedReservationDTO
+    {
+        private Bed bed;
+        private Patient patient;
+        private TimeInterval timeInterval;
+
+        public Bed Bed { get => bed; set => bed = value; }
+        public Patient Patient { get => patient; set => patient = value; }
+        public TimeInterval TimeInterval { get => timeInterval; set => timeInterval = value; }
+    }
 }

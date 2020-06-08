@@ -23,7 +23,7 @@ namespace Backend.Controller
          throw new NotImplementedException();
       }
       
-      public Backend.Service.PatientExaminationService patientExaminationService;
+      public PatientExaminationService patientExaminationService;
    
    }
 }

@@ -11,30 +11,37 @@ using System;
 
 namespace Backend.Dto
 {
-   public class AppointmentDTO
-   {
-      private bool IsPreferedPhysitianSelected()
-      {
-         throw new NotImplementedException();
-      }
-      
-      private bool IsPreferedTimeIntervalSelected()
-      {
-         throw new NotImplementedException();
-      }
-      
-      private bool IsPreferedRoomSelected()
-      {
-         throw new NotImplementedException();
-      }
-      
-      private ProcedureType procedureType;
-      private TimeInterval dateTime;
-      private Physitian physitian;
-      private Patient patient;
-      private Room room;
-      private bool urgency;
-      private bool timeRestriction;
-   
-   }
+    public class AppointmentDTO
+    {
+        private bool IsPreferedPhysitianSelected()
+        {
+            return (Physitian != null);
+        }
+
+        private bool IsPreferedDateTimeSelected()
+        {
+            return (DateTime != null);
+        }
+
+        private bool IsPreferedRoomSelected()
+        {
+            return (Room != null);
+        }
+
+        private ProcedureType procedureType;
+        private TimeInterval dateTime;
+        private Physitian physitian;
+        private Patient patient;
+        private Room room;
+        private bool urgency;
+        private bool timeRestriction;
+
+        public ProcedureType ProcedureType { get => procedureType; set => procedureType = value; }
+        public TimeInterval DateTime { get => dateTime; set => dateTime = value; }
+        public Physitian Physitian { get => physitian; set => physitian = value; }
+        public Patient Patient { get => patient; set => patient = value; }
+        public Room Room { get => room; set => room = value; }
+        public bool Urgency { get => urgency; set => urgency = value; }
+        public bool TimeRestriction { get => timeRestriction; set => timeRestriction = value; }
+    }
 }

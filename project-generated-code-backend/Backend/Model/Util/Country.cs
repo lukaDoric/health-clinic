@@ -35,12 +35,14 @@ namespace Backend.Model.Util
             }
          }
       }
-      
-      /// <summary>
-      /// Add a new City in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
-      public void AddCity(City newCity)
+
+        public string Name { get => name;}
+
+        /// <summary>
+        /// Add a new City in the collection
+        /// </summary>
+        /// <pdGenerated>Default Add</pdGenerated>
+        public void AddCity(City newCity)
       {
          if (newCity == null)
             return;

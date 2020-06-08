@@ -4,6 +4,7 @@
 // Purpose: Definition of Class PatientRegistrationController
 
 using Backend.Dto;
+using Backend.Service.HospitalAccountsService;
 using System;
 
 namespace Backend.Controller
@@ -20,7 +21,7 @@ namespace Backend.Controller
          throw new NotImplementedException();
       }
       
-      public Backend.Service.PatientRegistrationService patientRegistrationService;
+      public PatientRegistrationService patientRegistrationService;
    
    }
 }

@@ -7,9 +7,20 @@ using System;
 
 namespace Backend.Model.MedicalExam
 {
-   public class DiagnosticType
-   {
-      private String name;
-   
-   }
+    public class DiagnosticType
+    {
+        private String name;
+
+        public string Name { get => name; }
+
+        public DiagnosticType(string name)
+        {
+            this.name = name;
+        }
+
+        public override string ToString()
+        {
+            return name;
+        }
+    }
 }

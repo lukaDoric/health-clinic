@@ -11,11 +11,14 @@ using System.Collections.Generic;
 
 namespace Backend.Dto
 {
-   public class AppointmentGeneralitiesDTO
-   {
-      private List<Physitian> availablePhysitians;
-      private List<Room> availableRooms;
-      private List<TimeInterval> availableTimeIntervals;
-   
-   }
+    public class AppointmentGeneralitiesDTO
+    {
+        private List<Physitian> availablePhysitians;
+        private List<Room> availableRooms;
+        private List<TimeInterval> availableTimeIntervals;
+
+        public List<Physitian> AvailablePhysitians { get => availablePhysitians; set => availablePhysitians = value; }
+        public List<Room> AvailableRooms { get => availableRooms; set => availableRooms = value; }
+        public List<TimeInterval> AvailableTimeIntervals { get => availableTimeIntervals; set => availableTimeIntervals = value; }
+    }
 }
