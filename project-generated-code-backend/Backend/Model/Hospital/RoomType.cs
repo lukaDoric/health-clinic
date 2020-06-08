@@ -7,9 +7,9 @@ using System;
 
 namespace Backend.Model.Hospital
 {
-   public class RoomType
-   {
-      private string name;
-   
-   }
+    public class RoomType
+    {
+        private string name;
+
+    }
 }

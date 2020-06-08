@@ -14,6 +14,8 @@ namespace Backend.Model.Util
       private DateTime end;
       
       private Appointment[] appointment;
-   
-   }
+
+        public DateTime Start { get => start; set => start = value; }
+        public DateTime End { get => end; set => end = value; }
+    }
 }

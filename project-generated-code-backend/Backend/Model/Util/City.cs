@@ -12,18 +12,18 @@ namespace Backend.Model.Util
       private String name;
       private String postalCode;
       
-      private System.Collections.Generic.List<Adress> adress;
+      private System.Collections.Generic.List<Address> adress;
       
       /// <summary>
       /// Property for collection of Adress
       /// </summary>
       /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Adress> Adress
+      public System.Collections.Generic.List<Address> Adress
       {
          get
          {
             if (adress == null)
-               adress = new System.Collections.Generic.List<Adress>();
+               adress = new System.Collections.Generic.List<Address>();
             return adress;
          }
          set
@@ -31,7 +31,7 @@ namespace Backend.Model.Util
             RemoveAllAdress();
             if (value != null)
             {
-               foreach (Adress oAdress in value)
+               foreach (Address oAdress in value)
                   AddAdress(oAdress);
             }
          }
@@ -41,12 +41,12 @@ namespace Backend.Model.Util
       /// Add a new Adress in the collection
       /// </summary>
       /// <pdGenerated>Default Add</pdGenerated>
-      public void AddAdress(Adress newAdress)
+      public void AddAdress(Address newAdress)
       {
          if (newAdress == null)
             return;
          if (this.adress == null)
-            this.adress = new System.Collections.Generic.List<Adress>();
+            this.adress = new System.Collections.Generic.List<Address>();
          if (!this.adress.Contains(newAdress))
          {
             this.adress.Add(newAdress);
@@ -58,7 +58,7 @@ namespace Backend.Model.Util
       /// Remove an existing Adress from the collection
       /// </summary>
       /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemoveAdress(Adress oldAdress)
+      public void RemoveAdress(Address oldAdress)
       {
          if (oldAdress == null)
             return;
@@ -79,10 +79,10 @@ namespace Backend.Model.Util
          if (adress != null)
          {
             System.Collections.ArrayList tmpAdress = new System.Collections.ArrayList();
-            foreach (Adress oldAdress in adress)
+            foreach (Address oldAdress in adress)
                tmpAdress.Add(oldAdress);
             adress.Clear();
-            foreach (Adress oldAdress in tmpAdress)
+            foreach (Address oldAdress in tmpAdress)
                oldAdress.City = null;
             tmpAdress.Clear();
          }
@@ -117,6 +117,8 @@ namespace Backend.Model.Util
             }
          }
       }
-   
-   }
+
+        public string Name { get => name; }
+        public string PostalCode { get => postalCode; }
+    }
 }

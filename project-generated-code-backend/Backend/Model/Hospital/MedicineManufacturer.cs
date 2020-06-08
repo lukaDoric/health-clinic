@@ -10,6 +10,12 @@ namespace Backend.Model.Hospital
    public class MedicineManufacturer
    {
       private String name;
-   
-   }
+
+        public string Name { get => name; }
+
+        public override string ToString()
+        {
+            return name;
+        }
+    }
 }

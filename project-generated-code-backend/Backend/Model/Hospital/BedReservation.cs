@@ -3,6 +3,8 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class BedReservation
 
+using Backend.Model.Accounts;
+using Backend.Model.Util;
 using System;
 
 namespace Backend.Model.Hospital
@@ -41,6 +43,18 @@ namespace Backend.Model.Hospital
             }
          }
       }
-   
-   }
+
+        public TimeInterval TimeInterval
+        {
+            get
+            {
+                return timeInterval;
+            }
+            set
+            {
+                timeInterval = value;
+            }
+        }
+        public Patient Patient { get => patient; }
+    }
 }

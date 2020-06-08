@@ -8,10 +8,12 @@ using System;
 
 namespace Backend.Dto
 {
-   public class RejectedMedicineDTO
-   {
-      private string reason;
-      private Medicine medicine;
-   
-   }
+    public class RejectedMedicineDTO
+    {
+        private string reason;
+        private Medicine medicine;
+
+        public string Reason { get => reason; set => reason = value; }
+        public Medicine Medicine { get => medicine; set => medicine = value; }
+    }
 }

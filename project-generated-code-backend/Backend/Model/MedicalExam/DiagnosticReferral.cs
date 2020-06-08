@@ -7,25 +7,34 @@ using System;
 
 namespace Backend.Model.MedicalExam
 {
-   public class DiagnosticReferral : AdditionalDocument
-   {
-      private DiagnosticType diagnosticType;
-      
-      /// <summary>
-      /// Property for DiagnosticType
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public DiagnosticType DiagnosticType
-      {
-         get
-         {
-            return diagnosticType;
-         }
-         set
-         {
-            this.diagnosticType = value;
-         }
-      }
-   
-   }
+    public class DiagnosticReferral : AdditionalDocument
+    {
+        private DiagnosticType diagnosticType;
+
+        /// <summary>
+        /// Property for DiagnosticType
+        /// </summary>
+        /// <pdGenerated>Default opposite class property</pdGenerated>
+        public DiagnosticType DiagnosticType
+        {
+            get
+            {
+                return diagnosticType;
+            }
+            set
+            {
+                this.diagnosticType = value;
+            }
+        }
+
+        public DiagnosticReferral(DateTime date, string notes, Report report, DiagnosticType diagnosticType) : base(date, notes, report)
+        {
+            this.diagnosticType = diagnosticType;
+        }
+
+        public override string ToString()
+        {
+            return DiagnosticType.ToString();
+        }
+    }
 }

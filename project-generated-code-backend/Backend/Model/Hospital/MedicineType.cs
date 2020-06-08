@@ -9,7 +9,12 @@ namespace Backend.Model.Hospital
 {
    public class MedicineType
    {
-      private String type;
-   
-   }
+        private String type;
+        public string Type { get => type; }
+
+        public override string ToString()
+        {
+            return type;
+        }
+    }
 }

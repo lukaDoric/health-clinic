@@ -138,18 +138,18 @@ namespace Backend.Model.Hospital
             patient.Clear();
       }
       private Room[] room;
-      private System.Collections.Generic.List<Adress> adress;
+      private System.Collections.Generic.List<Address> adress;
       
       /// <summary>
       /// Property for collection of Backend.Model.Util.Adress
       /// </summary>
       /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Adress> Adress
+      public System.Collections.Generic.List<Address> Adress
       {
          get
          {
             if (adress == null)
-               adress = new System.Collections.Generic.List<Adress>();
+               adress = new System.Collections.Generic.List<Address>();
             return adress;
          }
          set
@@ -157,7 +157,7 @@ namespace Backend.Model.Hospital
             RemoveAllAdress();
             if (value != null)
             {
-               foreach (Backend.Model.Util.Adress oAdress in value)
+               foreach (Backend.Model.Util.Address oAdress in value)
                   AddAdress(oAdress);
             }
          }
@@ -167,12 +167,12 @@ namespace Backend.Model.Hospital
       /// Add a new Backend.Model.Util.Adress in the collection
       /// </summary>
       /// <pdGenerated>Default Add</pdGenerated>
-      public void AddAdress(Backend.Model.Util.Adress newAdress)
+      public void AddAdress(Backend.Model.Util.Address newAdress)
       {
          if (newAdress == null)
             return;
          if (this.adress == null)
-            this.adress = new System.Collections.Generic.List<Adress>();
+            this.adress = new System.Collections.Generic.List<Address>();
          if (!this.adress.Contains(newAdress))
             this.adress.Add(newAdress);
       }
@@ -181,7 +181,7 @@ namespace Backend.Model.Hospital
       /// Remove an existing Backend.Model.Util.Adress from the collection
       /// </summary>
       /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemoveAdress(Backend.Model.Util.Adress oldAdress)
+      public void RemoveAdress(Backend.Model.Util.Address oldAdress)
       {
          if (oldAdress == null)
             return;
