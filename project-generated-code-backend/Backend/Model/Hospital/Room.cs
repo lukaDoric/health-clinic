@@ -1,31 +1,35 @@
 // File:    Room.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Room
 
-using Backend.Model.Schedule;
+using Model.Util;
 using System;
+using System.Collections.Generic;
 
-namespace Backend.Model.Hospital
+namespace Model.Hospital
 {
     public class Room
     {
         private int id;
 
         private RoomType roomType;
-        private Backend.Model.Util.TimeInterval[] renovationTime;
-        private System.Collections.Generic.List<Equipment> equipment;
+        private List<TimeInterval> renovationTime;
+        private List<Equipment> equipment;
+
+        public RoomType RoomType { get => roomType; }
+        public int Id { get => id; }
 
         /// <summary>
         /// Property for collection of Equipment
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.Generic.List<Equipment> Equipment
+        public List<Equipment> Equipment
         {
             get
             {
                 if (equipment == null)
-                    equipment = new System.Collections.Generic.List<Equipment>();
+                    equipment = new List<Equipment>();
                 return equipment;
             }
             set
@@ -48,12 +52,9 @@ namespace Backend.Model.Hospital
             if (newEquipment == null)
                 return;
             if (this.equipment == null)
-                this.equipment = new System.Collections.Generic.List<Equipment>();
+                this.equipment = new List<Equipment>();
             if (!this.equipment.Contains(newEquipment))
-            {
                 this.equipment.Add(newEquipment);
-                newEquipment.Room = this;
-            }
         }
 
         /// <summary>
@@ -66,10 +67,7 @@ namespace Backend.Model.Hospital
                 return;
             if (this.equipment != null)
                 if (this.equipment.Contains(oldEquipment))
-                {
                     this.equipment.Remove(oldEquipment);
-                    oldEquipment.Room = null;
-                }
         }
 
         /// <summary>
@@ -79,22 +77,109 @@ namespace Backend.Model.Hospital
         public void RemoveAllEquipment()
         {
             if (equipment != null)
-            {
-                System.Collections.ArrayList tmpEquipment = new System.Collections.ArrayList();
-                foreach (Equipment oldEquipment in equipment)
-                    tmpEquipment.Add(oldEquipment);
                 equipment.Clear();
-                foreach (Equipment oldEquipment in tmpEquipment)
-                    oldEquipment.Room = null;
-                tmpEquipment.Clear();
+        }
+
+        //------------------------------------------------------------
+        /// <summary>
+        /// Property for collection of TimeInterval
+        /// </summary>
+        /// <pdGenerated>Default opposite class collection property</pdGenerated>
+        public List<TimeInterval> RenovationTime
+        {
+            get
+            {
+                if (renovationTime == null)
+                    renovationTime = new List<TimeInterval>();
+                return renovationTime;
+            }
+            set
+            {
+                RemoveAllRenovationTime();
+                if (value != null)
+                {
+                    foreach (TimeInterval oRenovationTime in value)
+                        AddRenovationTime(oRenovationTime);
+                }
             }
         }
-        private Appointment[] appointment;
+
+
+        /// <summary>
+        /// Add a new TimeInterval in the collection
+        /// </summary>
+        /// <pdGenerated>Default Add</pdGenerated>
+        public void AddRenovationTime(TimeInterval newRenovationTime)
+        {
+            if (newRenovationTime == null)
+                return;
+            if (this.renovationTime == null)
+                this.renovationTime = new List<TimeInterval>();
+            if (!this.renovationTime.Contains(newRenovationTime))
+                this.renovationTime.Add(newRenovationTime);
+        }
+
+        /// <summary>
+        /// Remove an existing TimeInterval from the collection
+        /// </summary>
+        /// <pdGenerated>Default Remove</pdGenerated>
+        public void RemoveRenovationTime(TimeInterval oldRenovationTime)
+        {
+            if (oldRenovationTime == null)
+                return;
+            if (this.renovationTime != null)
+                if (this.renovationTime.Contains(oldRenovationTime))
+                    this.renovationTime.Remove(oldRenovationTime);
+        }
+
+        /// <summary>
+        /// Remove all instances of Equipment from the collection
+        /// </summary>
+        /// <pdGenerated>Default removeAll</pdGenerated>
+        public void RemoveAllRenovationTime()
+        {
+            if (renovationTime != null)
+                renovationTime.Clear();
+        }
+
+        public Room(int id, RoomType roomType)
+        {
+            this.id = id;
+            this.roomType = roomType;
+            this.equipment = new List<Equipment>();
+            this.renovationTime = new List<TimeInterval>();
+        }
+
+        public override bool Equals(object obj)
+        {
+            Room other = obj as Room;
+            if(other == null)
+            {
+                return false;
+            }
+            return this.Id.Equals(other.Id) && this.RoomType.Equals(other.RoomType);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
         public override string ToString()
         {
-            return id.ToString();
-        }
+            string ret = "id: " + this.id + "\nroom type: " + this.roomType.ToString();
 
+            ret += "\nequipment:\n";
+            foreach(Equipment e in equipment)
+            {
+                ret += "\t" + e.ToString();
+            }
+            ret += "\nrenovation time: ";
+            foreach(TimeInterval r in renovationTime)
+            {
+                ret += "\t" + r.ToString();
+            }
+            return ret;
+        }
     }
 }

@@ -1,60 +1,62 @@
 // File:    BedReservation.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class BedReservation
 
-using Backend.Model.Accounts;
-using Backend.Model.Util;
+using Model.Accounts;
+using Model.Util;
 using System;
 
-namespace Backend.Model.Hospital
+namespace Model.Hospital
 {
-   public class BedReservation
-   {
-      private Backend.Model.Util.TimeInterval timeInterval;
-      private Backend.Model.Accounts.Patient patient;
-      private Bed bed;
-      
-      /// <summary>
-      /// Property for Bed
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Bed Bed
-      {
-         get
-         {
-            return bed;
-         }
-         set
-         {
-            if (this.bed == null || !this.bed.Equals(value))
-            {
-               if (this.bed != null)
-               {
-                  Bed oldBed = this.bed;
-                  this.bed = null;
-                  oldBed.RemoveBedReservation(this);
-               }
-               if (value != null)
-               {
-                  this.bed = value;
-                  this.bed.AddBedReservation(this);
-               }
-            }
-         }
-      }
+    public class BedReservation
+    {
+        private TimeInterval timeInterval;
+        private Patient patient;
+        private Bed bed;
 
-        public TimeInterval TimeInterval
+        /// <summary>
+        /// Property for Bed
+        /// </summary>
+        /// <pdGenerated>Default opposite class property</pdGenerated>
+        public Bed Bed
         {
             get
             {
-                return timeInterval;
-            }
-            set
-            {
-                timeInterval = value;
+                return bed;
             }
         }
+
         public Patient Patient { get => patient; }
+        public TimeInterval TimeInterval { get => timeInterval; }
+
+        public BedReservation(TimeInterval timeInterval, Patient patient, Bed bed)
+        {
+            this.timeInterval = timeInterval;
+            this.patient = patient;
+            this.bed = bed;
+        }
+
+        public override bool Equals(object obj)
+        {
+            BedReservation other = obj as BedReservation;
+
+            if(other == null)
+            {
+                return false;
+            }
+
+            return this.Patient.Equals(other.Patient) && this.TimeInterval.Equals(other.TimeInterval)
+                && this.Bed.Equals(other.Bed);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        public override string ToString()
+        {
+            return "patient: " + this.Patient.FullName + "\nbed: " + this.Bed.ToString() + "\ntime interval: "
+                + this.TimeInterval.ToString();
+        }
     }
 }

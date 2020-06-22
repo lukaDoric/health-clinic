@@ -4,7 +4,9 @@
 // Purpose: Definition of Class InpatientCareService
 
 using Backend.Dto;
-using Backend.Model.Hospital;
+using Model.Accounts;
+using Model.Hospital;
+using Model.Util;
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +14,7 @@ namespace Backend.Service.PatientCareService
 {
     public class InpatientCareService
     {
-        private List<Room> GetAvailableRooms(Backend.Model.Util.TimeInterval durationOfInpatientCare)
+        private List<Room> GetAvailableRooms(TimeInterval durationOfInpatientCare)
         {
             throw new NotImplementedException();
         }
@@ -22,7 +24,7 @@ namespace Backend.Service.PatientCareService
             throw new NotImplementedException();
         }
 
-        private Backend.Model.Accounts.Physitian loggedPhysitian;
+        private Physitian loggedPhysitian;
 
         private Backend.Repository.RoomRepository roomRepository;
 
@@ -31,7 +33,7 @@ namespace Backend.Service.PatientCareService
             throw new NotImplementedException();
         }
 
-        public void DischargeParient(Backend.Model.Accounts.Patient patient)
+        public void DischargeParient(Patient patient)
         {
             throw new NotImplementedException();
         }

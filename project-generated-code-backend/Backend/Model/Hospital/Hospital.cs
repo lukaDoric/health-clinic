@@ -1,32 +1,32 @@
 // File:    Hospital.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Hospital
 
-using Backend.Model.Accounts;
-using Backend.Model.Util;
+using Model.Accounts;
 using System;
+using System.Collections.Generic;
 
-namespace Backend.Model.Hospital
+namespace Model.Hospital
 {
    public class Hospital
    {
       private String name;
       
-      private Backend.Model.Accounts.Superintendent superintendent;
-      private Backend.Model.Accounts.Secretary[] secretary;
-      private System.Collections.Generic.List<Physitian> physitian;
+      private Superintendent superintendent;
+      private Secretary[] secretary;
+      private List<Physitian> physitian;
       
       /// <summary>
-      /// Property for collection of Backend.Model.Accounts.Physitian
+      /// Property for collection of Model.Accounts.Physitian
       /// </summary>
       /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Physitian> Physitian
+      public List<Physitian> Physitian
       {
          get
          {
             if (physitian == null)
-               physitian = new System.Collections.Generic.List<Physitian>();
+               physitian = new List<Physitian>();
             return physitian;
          }
          set
@@ -34,31 +34,31 @@ namespace Backend.Model.Hospital
             RemoveAllPhysitian();
             if (value != null)
             {
-               foreach (Backend.Model.Accounts.Physitian oPhysitian in value)
+               foreach (Physitian oPhysitian in value)
                   AddPhysitian(oPhysitian);
             }
          }
       }
       
       /// <summary>
-      /// Add a new Backend.Model.Accounts.Physitian in the collection
+      /// Add a new Model.Accounts.Physitian in the collection
       /// </summary>
       /// <pdGenerated>Default Add</pdGenerated>
-      public void AddPhysitian(Backend.Model.Accounts.Physitian newPhysitian)
+      public void AddPhysitian(Physitian newPhysitian)
       {
          if (newPhysitian == null)
             return;
          if (this.physitian == null)
-            this.physitian = new System.Collections.Generic.List<Physitian>();
+            this.physitian = new List<Physitian>();
          if (!this.physitian.Contains(newPhysitian))
             this.physitian.Add(newPhysitian);
       }
       
       /// <summary>
-      /// Remove an existing Backend.Model.Accounts.Physitian from the collection
+      /// Remove an existing Model.Accounts.Physitian from the collection
       /// </summary>
       /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemovePhysitian(Backend.Model.Accounts.Physitian oldPhysitian)
+      public void RemovePhysitian(Physitian oldPhysitian)
       {
          if (oldPhysitian == null)
             return;
@@ -68,7 +68,7 @@ namespace Backend.Model.Hospital
       }
       
       /// <summary>
-      /// Remove all instances of Backend.Model.Accounts.Physitian from the collection
+      /// Remove all instances of Model.Accounts.Physitian from the collection
       /// </summary>
       /// <pdGenerated>Default removeAll</pdGenerated>
       public void RemoveAllPhysitian()
@@ -76,18 +76,18 @@ namespace Backend.Model.Hospital
          if (physitian != null)
             physitian.Clear();
       }
-      private System.Collections.Generic.List<Patient> patient;
+      private List<Patient> patient;
       
       /// <summary>
-      /// Property for collection of Backend.Model.Accounts.Patient
+      /// Property for collection of Model.Accounts.Patient
       /// </summary>
       /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Patient> Patient
+      public List<Patient> Patient
       {
          get
          {
             if (patient == null)
-               patient = new System.Collections.Generic.List<Patient>();
+               patient = new List<Patient>();
             return patient;
          }
          set
@@ -95,31 +95,31 @@ namespace Backend.Model.Hospital
             RemoveAllPatient();
             if (value != null)
             {
-               foreach (Backend.Model.Accounts.Patient oPatient in value)
+               foreach (Patient oPatient in value)
                   AddPatient(oPatient);
             }
          }
       }
       
       /// <summary>
-      /// Add a new Backend.Model.Accounts.Patient in the collection
+      /// Add a new Model.Accounts.Patient in the collection
       /// </summary>
       /// <pdGenerated>Default Add</pdGenerated>
-      public void AddPatient(Backend.Model.Accounts.Patient newPatient)
+      public void AddPatient(Patient newPatient)
       {
          if (newPatient == null)
             return;
          if (this.patient == null)
-            this.patient = new System.Collections.Generic.List<Patient>();
+            this.patient = new List<Patient>();
          if (!this.patient.Contains(newPatient))
             this.patient.Add(newPatient);
       }
       
       /// <summary>
-      /// Remove an existing Backend.Model.Accounts.Patient from the collection
+      /// Remove an existing Model.Accounts.Patient from the collection
       /// </summary>
       /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemovePatient(Backend.Model.Accounts.Patient oldPatient)
+      public void RemovePatient(Patient oldPatient)
       {
          if (oldPatient == null)
             return;
@@ -129,7 +129,7 @@ namespace Backend.Model.Hospital
       }
       
       /// <summary>
-      /// Remove all instances of Backend.Model.Accounts.Patient from the collection
+      /// Remove all instances of Model.Accounts.Patient from the collection
       /// </summary>
       /// <pdGenerated>Default removeAll</pdGenerated>
       public void RemoveAllPatient()
@@ -138,80 +138,20 @@ namespace Backend.Model.Hospital
             patient.Clear();
       }
       private Room[] room;
-      private System.Collections.Generic.List<Address> adress;
-      
-      /// <summary>
-      /// Property for collection of Backend.Model.Util.Adress
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Address> Adress
-      {
-         get
-         {
-            if (adress == null)
-               adress = new System.Collections.Generic.List<Address>();
-            return adress;
-         }
-         set
-         {
-            RemoveAllAdress();
-            if (value != null)
-            {
-               foreach (Backend.Model.Util.Address oAdress in value)
-                  AddAdress(oAdress);
-            }
-         }
-      }
-      
-      /// <summary>
-      /// Add a new Backend.Model.Util.Adress in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
-      public void AddAdress(Backend.Model.Util.Address newAdress)
-      {
-         if (newAdress == null)
-            return;
-         if (this.adress == null)
-            this.adress = new System.Collections.Generic.List<Address>();
-         if (!this.adress.Contains(newAdress))
-            this.adress.Add(newAdress);
-      }
-      
-      /// <summary>
-      /// Remove an existing Backend.Model.Util.Adress from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemoveAdress(Backend.Model.Util.Address oldAdress)
-      {
-         if (oldAdress == null)
-            return;
-         if (this.adress != null)
-            if (this.adress.Contains(oldAdress))
-               this.adress.Remove(oldAdress);
-      }
-      
-      /// <summary>
-      /// Remove all instances of Backend.Model.Util.Adress from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
-      public void RemoveAllAdress()
-      {
-         if (adress != null)
-            adress.Clear();
-      }
-      private Backend.Model.Schedule.Schedule schedule;
+      private Model.Util.Address address;
+      private Model.Schedule.Schedule schedule;
       private System.Collections.Generic.List<Medicine> medicine;
       
       /// <summary>
       /// Property for collection of Medicine
       /// </summary>
       /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Medicine> Medicine
+      public List<Medicine> Medicine
       {
          get
          {
             if (medicine == null)
-               medicine = new System.Collections.Generic.List<Medicine>();
+               medicine = new List<Medicine>();
             return medicine;
          }
          set

@@ -4,15 +4,18 @@
 // Purpose: Definition of Class ExamService
 
 using Backend.Repository;
+using Model.Accounts;
+using Model.MedicalExam;
 using System;
+using System.Collections.Generic;
 
 namespace Backend.Service.PatientCareService
 {
     public class ExamService
     {
-        private Backend.Model.Accounts.Physitian loggedPhysitian;
-        private Backend.Model.Accounts.Patient selectedPatient;
-        private Backend.Model.MedicalExam.Report report;
+        private Physitian loggedPhysitian;
+        private Patient selectedPatient;
+        private Report report;
 
         public void SaveReport()
         {
@@ -24,7 +27,7 @@ namespace Backend.Service.PatientCareService
             throw new NotImplementedException();
         }
 
-        public void NewFollowUp(Backend.Model.Accounts.Specialization specialization)
+        public void NewFollowUp(Specialization specialization)
         {
             throw new NotImplementedException();
         }
@@ -39,8 +42,8 @@ namespace Backend.Service.PatientCareService
             throw new NotImplementedException();
         }
 
-        public Backend.Repository.ReportRepository reportRepository;
-        public System.Collections.Generic.List<AppointmentRepository> appointmentRepository;
+        public ReportRepository reportRepository;
+        public List<AppointmentRepository> appointmentRepository;
 
         /// <summary>
         /// Property for collection of Backend.Repository.AppointmentRepository

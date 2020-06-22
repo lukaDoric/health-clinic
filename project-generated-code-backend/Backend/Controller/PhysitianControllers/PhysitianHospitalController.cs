@@ -3,7 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class PhysitianHospitalController
 
-using Backend.Model.Accounts;
+using Model.Accounts;
 using Backend.Service.HospitalAccountsService;
 using System;
 using System.Collections.Generic;
@@ -12,11 +12,11 @@ namespace Backend.Controller.PhysitianControllers
 {
     public class PhysitianHospitalController
     {
-        private Backend.Model.Accounts.Physitian loggedPhysitian;
+        private Physitian loggedPhysitian;
 
         public HospitalService hospitalService;
 
-        public List<Patient> GetPatientsByPhysitian(Backend.Model.Accounts.Patient physitian)
+        public List<Patient> GetPatientsByPhysitian(Patient physitian)
         {
             throw new NotImplementedException();
         }

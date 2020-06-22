@@ -3,8 +3,8 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class RenovationDTO
 
-using Backend.Model.Hospital;
-using Backend.Model.Util;
+using Model.Hospital;
+using Model.Util;
 using System;
 
 namespace Backend.Dto

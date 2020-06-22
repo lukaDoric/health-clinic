@@ -1,27 +1,42 @@
 // File:    FollowUp.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class FollowUp
 
-using Backend.Model.Accounts;
+using Model.Accounts;
 using System;
+using System.Collections.Generic;
 
-namespace Backend.Model.MedicalExam
+namespace Model.MedicalExam
 {
     public class FollowUp : AdditionalDocument
     {
-        private Backend.Model.Accounts.Physitian physitian;
+        private Physitian physitian;
+        public Physitian Physitian { get => physitian; }
 
-        public FollowUp(DateTime date, string notes, Report report, Physitian physitian) : base(date, notes, report)
+        public FollowUp(DateTime date, string notes, Physitian physitian) : base(date, notes)
         {
             this.physitian = physitian;
         }
 
-        public Physitian Physitian { get => physitian; }
+        public override bool Equals(object obj)
+        {
+            FollowUp other = obj as FollowUp;
+            if(other == null)
+            {
+                return false;
+            }
+            return base.Equals(obj) && this.Physitian.Equals(other.Physitian);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
         public override string ToString()
         {
-            return Physitian.ToString() + " " + Date.ToString("dd.MM.yyyy");
+            return base.ToString() + "\nphysitian: " + this.Physitian.FullName; 
         }
     }
 }

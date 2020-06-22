@@ -4,7 +4,7 @@
 // Purpose: Definition of Class AppointmentService
 
 using Backend.Dto;
-using Backend.Model.Schedule;
+using Model.Schedule;
 using System;
 using System.Collections.Generic;
 
@@ -12,12 +12,12 @@ namespace Backend.Service.SchedulingService
 {
     public class AppointmentService
     {
-        public void EditAppointment(Backend.Model.Schedule.Appointment appointment)
+        public void EditAppointment(Appointment appointment)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteAppointment(Backend.Model.Schedule.Appointment appointment)
+        public void DeleteAppointment(Appointment appointment)
         {
             throw new NotImplementedException();
         }

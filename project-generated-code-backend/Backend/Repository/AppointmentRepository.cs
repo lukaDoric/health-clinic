@@ -3,7 +3,9 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Interface AppointmentRepository
 
-using Backend.Model.Schedule;
+using Model.Accounts;
+using Model.Hospital;
+using Model.Schedule;
 using System;
 using System.Collections.Generic;
 
@@ -13,9 +15,9 @@ namespace Backend.Repository
    {
       List<Appointment> GetAppointmentsByDate(DateTime date);
       
-      List<Appointment> GetAppointmentsByPhysitian(Backend.Model.Accounts.Physitian physitian);
+      List<Appointment> GetAppointmentsByPhysitian(Physitian physitian);
       
-      List<Appointment> GetAppointmentsByRoom(Backend.Model.Hospital.Room room);
+      List<Appointment> GetAppointmentsByRoom(Room room);
    
    }
 }

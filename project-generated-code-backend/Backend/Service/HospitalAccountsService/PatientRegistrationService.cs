@@ -4,6 +4,7 @@
 // Purpose: Definition of Class PatientRegistrationService
 
 using Backend.Dto;
+using Model.Accounts;
 using System;
 
 namespace Backend.Service.HospitalAccountsService
@@ -15,7 +16,7 @@ namespace Backend.Service.HospitalAccountsService
             throw new NotImplementedException();
         }
 
-        private bool IsGuestAccount(Backend.Model.Accounts.Patient patient)
+        private bool IsGuestAccount(Patient patient)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +26,7 @@ namespace Backend.Service.HospitalAccountsService
             throw new NotImplementedException();
         }
 
-        public void DeletePatientAccount(Backend.Model.Accounts.Patient patient)
+        public void DeletePatientAccount(Patient patient)
         {
             throw new NotImplementedException();
         }

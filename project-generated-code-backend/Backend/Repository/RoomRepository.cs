@@ -3,7 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Interface RoomRepository
 
-using Backend.Model.Hospital;
+using Model.Hospital;
 using System;
 using System.Collections.Generic;
 

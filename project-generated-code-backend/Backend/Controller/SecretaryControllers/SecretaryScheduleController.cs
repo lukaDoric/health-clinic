@@ -1,27 +1,28 @@
-// File:    SecretaryScheduleController.cs
+// File:    SecretaryScheduleContoller.cs
 // Author:  Luka Doric
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class SecretaryScheduleController
 
 using Backend.Dto;
 using Backend.Service.SchedulingService;
+using Model.Schedule;
 using System;
 
 namespace Backend.Controller.SecretaryControllers
 {
    public abstract class SecretaryScheduleController
    {
-      public void EditAppointment(Backend.Model.Schedule.Appointment appointment)
+      public void EditAppointment(Appointment appointment)
       {
          throw new NotImplementedException();
       }
       
-      public void DeleteAppointment(Backend.Model.Schedule.Appointment appointment)
+      public void DeleteAppointment(Appointment appointment)
       {
          throw new NotImplementedException();
       }
       
-      public Backend.Model.Schedule.Appointment GetAppointmentsByDate(DateTime date)
+      public Appointment GetAppointmentsByDate(DateTime date)
       {
          throw new NotImplementedException();
       }
@@ -31,9 +32,9 @@ namespace Backend.Controller.SecretaryControllers
          throw new NotImplementedException();
       }
       
-      public abstract AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(Backend.Dto.AppointmentDTO appointmentDTO);
+      public abstract AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO);
       
-      public abstract AppointmentDTO GetRecommendedAppointment(Backend.Dto.AppointmentDTO appointmentDTO);
+      public abstract AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO);
       
       public AppointmentService appointmentService;
       public AppointmentSchedulingService appointmentSchedulingService;

@@ -1,12 +1,12 @@
 // File:    InpatientCare.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class InpatientCare
 
-using Backend.Model.Accounts;
+using Model.Accounts;
 using System;
 
-namespace Backend.Model.MedicalExam
+namespace Model.MedicalExam
 {
     public class InpatientCare
     {
@@ -17,6 +17,12 @@ namespace Backend.Model.MedicalExam
         private Physitian physitian;
         private Patient patient;
 
+        public DateTime DateOfAdmition { get => dateOfAdmition; }
+        public DateTime DateOfDischarge { get => dateOfDischarge; }
+        public string Reason { get => reason; }
+        public Physitian Physitian { get => physitian; }
+        public Patient Patient { get => patient; }
+
         public InpatientCare(DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient)
         {
             this.dateOfAdmition = dateOfAdmition;
@@ -26,10 +32,26 @@ namespace Backend.Model.MedicalExam
             this.patient = patient;
         }
 
-        public DateTime DateOfAdmition { get => dateOfAdmition; }
-        public DateTime DateOfDischarge { get => dateOfDischarge; }
-        public string Reason { get => reason; }
-        public Physitian Physitian { get => physitian; }
-        public Patient Patient { get => patient; }
+        public override bool Equals(object obj)
+        {
+            InpatientCare other = obj as InpatientCare;
+            if(other == null)
+            {
+                return false;
+            }
+            return this.DateOfAdmition.Equals(other.DateOfAdmition) && this.DateOfDischarge.Equals(other.DateOfDischarge)
+                && this.Reason.Equals(other.Reason) && this.Patient.Equals(other.Patient) && this.Physitian.Equals(other.Physitian);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        public override string ToString()
+        {
+            return "patient: " + patient.FullName + "\nphysitian: " + physitian.FullName + "\ndate of admition:"
+                + dateOfAdmition.ToString("dd.MM.yyyy.") + "\ndate of discharge:" + dateOfDischarge.ToString("dd.MM.yyyy.")
+                + "\nreason: " + reason;
+        }
     }
 }

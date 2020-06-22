@@ -3,7 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Interface ReportRepository
 
-using Backend.Model.MedicalExam;
+using Model.MedicalExam;
 using System;
 
 namespace Backend.Repository

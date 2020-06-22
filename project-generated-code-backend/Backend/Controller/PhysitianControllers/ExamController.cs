@@ -4,21 +4,23 @@
 // Purpose: Definition of Class ExamController
 
 using Backend.Service.PatientCareService;
+using Model.Accounts;
+using Model.MedicalExam;
 using System;
 
 namespace Backend.Controller.PhysitianControllers
 {
    public class ExamController
    {
-      private Backend.Model.Accounts.Physitian loggedPhysitian;
-      private Backend.Model.Accounts.Patient selectedPatient;
+      private Physitian loggedPhysitian;
+      private Patient selectedPatient;
       
-      public void NewReport(Backend.Model.Accounts.Patient patient)
+      public void NewReport(Patient patient)
       {
          throw new NotImplementedException();
       }
       
-      public void NewSpecialistReferral(Backend.Model.MedicalExam.Report report)
+      public void NewSpecialistReferral(Report report)
       {
          throw new NotImplementedException();
       }

@@ -1,6 +1,6 @@
 ﻿using Backend.Dto;
-using Backend.Model.Hospital;
 using health_clinic_class_diagram.Backend.Service.MedicineService;
+using Model.Hospital;
 using System;
 using System.Collections.Generic;
 using System.Linq;

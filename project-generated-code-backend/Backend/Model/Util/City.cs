@@ -1,124 +1,108 @@
 // File:    City.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class City
 
 using System;
 
-namespace Backend.Model.Util
+namespace Model.Util
 {
-   public class City
-   {
-      private String name;
-      private String postalCode;
-      
-      private System.Collections.Generic.List<Address> adress;
-      
-      /// <summary>
-      /// Property for collection of Adress
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Address> Adress
-      {
-         get
-         {
-            if (adress == null)
-               adress = new System.Collections.Generic.List<Address>();
-            return adress;
-         }
-         set
-         {
-            RemoveAllAdress();
-            if (value != null)
+    public class City
+    {
+        private String name;
+        private String postalCode;
+
+        private System.Collections.Generic.List<Address> address;
+
+        /// <summary>
+        /// Property for collection of Address
+        /// </summary>
+        /// <pdGenerated>Default opposite class collection property</pdGenerated>
+        public System.Collections.Generic.List<Address> Address
+        {
+            get
             {
-               foreach (Address oAdress in value)
-                  AddAdress(oAdress);
+                if (address == null)
+                    address = new System.Collections.Generic.List<Address>();
+                return address;
             }
-         }
-      }
-      
-      /// <summary>
-      /// Add a new Adress in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
-      public void AddAdress(Address newAdress)
-      {
-         if (newAdress == null)
-            return;
-         if (this.adress == null)
-            this.adress = new System.Collections.Generic.List<Address>();
-         if (!this.adress.Contains(newAdress))
-         {
-            this.adress.Add(newAdress);
-            newAdress.City = this;
-         }
-      }
-      
-      /// <summary>
-      /// Remove an existing Adress from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemoveAdress(Address oldAdress)
-      {
-         if (oldAdress == null)
-            return;
-         if (this.adress != null)
-            if (this.adress.Contains(oldAdress))
+            set
             {
-               this.adress.Remove(oldAdress);
-               oldAdress.City = null;
+                RemoveAllAddress();
+                if (value != null)
+                {
+                    foreach (Address oAddress in value)
+                        AddAddress(oAddress);
+                }
             }
-      }
-      
-      /// <summary>
-      /// Remove all instances of Adress from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
-      public void RemoveAllAdress()
-      {
-         if (adress != null)
-         {
-            System.Collections.ArrayList tmpAdress = new System.Collections.ArrayList();
-            foreach (Address oldAdress in adress)
-               tmpAdress.Add(oldAdress);
-            adress.Clear();
-            foreach (Address oldAdress in tmpAdress)
-               oldAdress.City = null;
-            tmpAdress.Clear();
-         }
-      }
-      private Country country;
-      
-      /// <summary>
-      /// Property for Country
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Country Country
-      {
-         get
-         {
-            return country;
-         }
-         set
-         {
-            if (this.country == null || !this.country.Equals(value))
-            {
-               if (this.country != null)
-               {
-                  Country oldCountry = this.country;
-                  this.country = null;
-                  oldCountry.RemoveCity(this);
-               }
-               if (value != null)
-               {
-                  this.country = value;
-                  this.country.AddCity(this);
-               }
-            }
-         }
-      }
+        }
 
         public string Name { get => name; }
         public string PostalCode { get => postalCode; }
+
+        public City(string name, string postalCode)
+        {
+            this.name = name;
+            this.postalCode = postalCode;
+        }
+
+
+
+        /// <summary>
+        /// Add a new Address in the collection
+        /// </summary>
+        /// <pdGenerated>Default Add</pdGenerated>
+        public void AddAddress(Address newAddress)
+        {
+            if (newAddress == null)
+                return;
+            if (this.address == null)
+                this.address = new System.Collections.Generic.List<Address>();
+            if (!this.address.Contains(newAddress))
+                this.address.Add(newAddress);
+        }
+
+        /// <summary>
+        /// Remove an existing Address from the collection
+        /// </summary>
+        /// <pdGenerated>Default Remove</pdGenerated>
+        public void RemoveAddress(Address oldAddress)
+        {
+            if (oldAddress == null)
+                return;
+            if (this.address != null)
+                if (this.address.Contains(oldAddress))
+                    this.address.Remove(oldAddress);
+        }
+
+        /// <summary>
+        /// Remove all instances of Address from the collection
+        /// </summary>
+        /// <pdGenerated>Default removeAll</pdGenerated>
+        public void RemoveAllAddress()
+        {
+            if (address != null)
+                address.Clear();
+        }
+
+        public override string ToString()
+        {
+            return name + " " + postalCode;
+        }
+
+        public override bool Equals(object obj)
+        {
+            City other = obj as City;
+            if (other == null)
+            {
+                return false;
+            }
+            return this.Name.Equals(other.Name) && this.postalCode.Equals(other.postalCode);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

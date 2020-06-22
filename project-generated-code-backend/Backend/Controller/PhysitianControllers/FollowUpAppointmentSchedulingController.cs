@@ -5,14 +5,16 @@
 
 using Backend.Dto;
 using Backend.Service.SchedulingService;
+using Model.Accounts;
+using Model.MedicalExam;
 using System;
 
 namespace Backend.Controller.PhysitianControllers
 {
    public abstract class FollowUpAppointmentSchedulingController
    {
-      private Backend.Model.Accounts.Physitian loggedPhysitian;
-      private Backend.Model.MedicalExam.Report currentReport;
+      private Physitian loggedPhysitian;
+      private Report currentReport;
       
       public abstract AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(Backend.Dto.AppointmentDTO appointmentDTO);
       
