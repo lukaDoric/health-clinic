@@ -1,5 +1,5 @@
-﻿using Backend.Repository;
-using Model.Util;
+﻿using Model.Util;
+using Backend.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +10,6 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
     class CityFileSystem : GenericFileRepository<City>, CityRepository
     {
+
     }
 }
