@@ -1,47 +1,37 @@
 // File:    Comment.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Comment
 
+using Model.Accounts;
 using System;
 
-namespace Backend.Model.Blog
+namespace Model.Blog
 {
-   public class Comment
-   {
-      private String text;
-      private DateTime date;
-      
-      private Backend.Model.Accounts.Account account;
-      
-      /// <summary>
-      /// Property for Backend.Model.Accounts.Account
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Backend.Model.Accounts.Account Account
-      {
-         get
-         {
-            return account;
-         }
-         set
-         {
-            if (this.account == null || !this.account.Equals(value))
+    public class Comment
+    {
+        private String text;
+        private DateTime date;
+
+        private Account account;
+
+        /// <summary>
+        /// Property for Model.Accounts.Account
+        /// </summary>
+        /// <pdGenerated>Default opposite class property</pdGenerated>
+        public Account Account
+        {
+            get
             {
-               if (this.account != null)
-               {
-                  Backend.Model.Accounts.Account oldAccount = this.account;
-                  this.account = null;
-                  oldAccount.RemoveComment(this);
-               }
-               if (value != null)
-               {
-                  this.account = value;
-                  this.account.AddComment(this);
-               }
+                return account;
             }
-         }
-      }
-   
-   }
+            set
+            {
+                this.account = value;
+            }
+        }
+
+        public string Text { get => text; set => text = value; }
+        public DateTime Date { get => date; set => date = value; }
+    }
 }

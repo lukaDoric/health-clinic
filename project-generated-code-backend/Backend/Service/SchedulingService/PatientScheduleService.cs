@@ -1,6 +1,6 @@
 ﻿using Backend.Dto;
-using Backend.Model.Accounts;
-using Backend.Model.Schedule;
+using Model.Accounts;
+using Model.Schedule;
 using Backend.Repository;
 using System;
 using System.Collections.Generic;

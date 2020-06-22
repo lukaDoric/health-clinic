@@ -3,7 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class WaitingMedicineFileSystem
 
-using Backend.Model.Hospital;
+using Model.Hospital;
 using System;
 
 namespace Backend.Repository

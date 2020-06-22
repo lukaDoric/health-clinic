@@ -1,31 +1,31 @@
 // File:    ProcedureType.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class ProcedureType
 
-using Backend.Model.Accounts;
-using Backend.Model.Hospital;
+using Model.Accounts;
+using Model.Hospital;
 using System;
+using System.Collections.Generic;
 
-namespace Backend.Model.Schedule
+namespace Model.Schedule
 {
     public class ProcedureType
     {
         private String name;
-
-        private Backend.Model.Accounts.Specialization specialization;
-        private System.Collections.Generic.List<Equipment> requiredEquipment;
+        private Specialization specialization;
+        private List<Equipment> requiredEquipment;
 
         /// <summary>
-        /// Property for collection of Backend.Model.Hospital.Equipment
+        /// Property for collection of Model.Hospital.Equipment
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.Generic.List<Equipment> RequiredEquipment
+        public List<Equipment> RequiredEquipment
         {
             get
             {
                 if (requiredEquipment == null)
-                    requiredEquipment = new System.Collections.Generic.List<Equipment>();
+                    requiredEquipment = new List<Equipment>();
                 return requiredEquipment;
             }
             set
@@ -33,34 +33,34 @@ namespace Backend.Model.Schedule
                 RemoveAllRequiredEquipment();
                 if (value != null)
                 {
-                    foreach (Backend.Model.Hospital.Equipment oEquipment in value)
+                    foreach (Equipment oEquipment in value)
                         AddRequiredEquipment(oEquipment);
                 }
             }
         }
 
-        public string Name { get => name; }
         public Specialization Specialization { get => specialization; }
+        public string Name { get => name; }
 
         /// <summary>
-        /// Add a new Backend.Model.Hospital.Equipment in the collection
+        /// Add a new Model.Hospital.Equipment in the collection
         /// </summary>
         /// <pdGenerated>Default Add</pdGenerated>
-        public void AddRequiredEquipment(Backend.Model.Hospital.Equipment newEquipment)
+        public void AddRequiredEquipment(Equipment newEquipment)
         {
             if (newEquipment == null)
                 return;
             if (this.requiredEquipment == null)
-                this.requiredEquipment = new System.Collections.Generic.List<Equipment>();
+                this.requiredEquipment = new List<Equipment>();
             if (!this.requiredEquipment.Contains(newEquipment))
                 this.requiredEquipment.Add(newEquipment);
         }
 
         /// <summary>
-        /// Remove an existing Backend.Model.Hospital.Equipment from the collection
+        /// Remove an existing Model.Hospital.Equipment from the collection
         /// </summary>
         /// <pdGenerated>Default Remove</pdGenerated>
-        public void RemoveRequiredEquipment(Backend.Model.Hospital.Equipment oldEquipment)
+        public void RemoveRequiredEquipment(Equipment oldEquipment)
         {
             if (oldEquipment == null)
                 return;
@@ -70,7 +70,7 @@ namespace Backend.Model.Schedule
         }
 
         /// <summary>
-        /// Remove all instances of Backend.Model.Hospital.Equipment from the collection
+        /// Remove all instances of Model.Hospital.Equipment from the collection
         /// </summary>
         /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllRequiredEquipment()
@@ -79,10 +79,47 @@ namespace Backend.Model.Schedule
                 requiredEquipment.Clear();
         }
 
-        public override string ToString()
+        public override bool Equals(object obj)
         {
-            return name;
+            ProcedureType other = obj as ProcedureType;
+            if (other == null)
+            {
+                return false;
+            }
+            if(this.RequiredEquipment.Count != other.RequiredEquipment.Count)
+            {
+                return false;
+            }
+            foreach(Equipment e in requiredEquipment)
+            {
+                if(!other.RequiredEquipment.Contains(e))
+                {
+                    return false;
+                }
+            }
+            return this.Specialization.Equals(other.Specialization) && this.Name.Equals(other.Name);
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public ProcedureType(string name, Specialization specialization)
+        {
+            this.name = name;
+            this.specialization = specialization;
+            this.requiredEquipment = new List<Equipment>();
+        }
+
+        public override string ToString()
+        {
+            string ret = "name: " + name + "/nspecialization: " + specialization.ToString();
+            foreach(Equipment e in requiredEquipment)
+            {
+                ret += "\nequipment: " + e.ToString();
+            }
+            return ret;
+        }
     }
 }

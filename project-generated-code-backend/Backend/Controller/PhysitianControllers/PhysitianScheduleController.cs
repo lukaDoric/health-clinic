@@ -4,23 +4,24 @@
 // Purpose: Definition of Class PhysitianScheduleController
 
 using Backend.Dto;
-using Backend.Model.Schedule;
+using Model.Schedule;
 using Backend.Service.SchedulingService;
 using System;
 using System.Collections.Generic;
+using Model.Accounts;
 
 namespace Backend.Controller.PhysitianControllers
 {
    public class PhysitianScheduleController
    {
-      private Backend.Model.Accounts.Physitian loggedPhysitian;
+      private Physitian loggedPhysitian;
       
       public List<Appointment> GetAppointmentsByDate(DateTime date)
       {
          throw new NotImplementedException();
       }
       
-      public Backend.Model.Schedule.Appointment NextAppointment()
+      public Appointment NextAppointment()
       {
          throw new NotImplementedException();
       }

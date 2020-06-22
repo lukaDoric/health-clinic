@@ -3,10 +3,10 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class AppointmentDTO
 
-using Backend.Model.Accounts;
-using Backend.Model.Hospital;
-using Backend.Model.Schedule;
-using Backend.Model.Util;
+using Model.Accounts;
+using Model.Hospital;
+using Model.Schedule;
+using Model.Util;
 using System;
 
 namespace Backend.Dto

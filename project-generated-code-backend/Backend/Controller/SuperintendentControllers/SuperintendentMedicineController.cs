@@ -1,4 +1,4 @@
-﻿using Backend.Model.Hospital;
+﻿using Model.Hospital;
 using health_clinic_class_diagram.Backend.Service.MedicineService;
 using System;
 using System.Collections.Generic;

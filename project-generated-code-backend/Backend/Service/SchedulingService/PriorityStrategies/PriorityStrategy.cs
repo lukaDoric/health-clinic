@@ -3,7 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Interface PriorityStrategy
 
-using Backend.Model.Schedule;
+using Model.Schedule;
 using System;
 using System.Collections.Generic;
 

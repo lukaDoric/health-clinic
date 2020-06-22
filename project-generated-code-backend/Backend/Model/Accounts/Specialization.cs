@@ -1,22 +1,21 @@
 // File:    Specialization.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Specialization
 
 using System;
 
-namespace Backend.Model.Accounts
+namespace Model.Accounts
 {
-   public class Specialization
-   {
+    public class Specialization
+    {
         private String name;
 
-        private Physitian[] physitian;
-        public string Name { get => name; set => name = value; }
-
-        public override string ToString()
+        public Specialization(string name)
         {
-            return name;
+            this.name = name;
         }
+
+        public string Name { get => name; }
     }
 }

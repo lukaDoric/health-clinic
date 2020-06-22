@@ -1,30 +1,32 @@
 // File:    Prescription.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Prescription
 
 using System;
+using System.Collections.Generic;
 
-namespace Backend.Model.MedicalExam
+namespace Model.MedicalExam
 {
     public class Prescription : AdditionalDocument
     {
-        private System.Collections.Generic.List<MedicineDosage> medicineDosage;
+        private List<MedicineDosage> medicineDosage;
 
-        public Prescription(DateTime date, string notes, Report report) : base(date, notes, report)
+        public Prescription(DateTime date, string notes) : base(date, notes)
         {
+            medicineDosage = new List<MedicineDosage>();
         }
 
         /// <summary>
         /// Property for collection of MedicineDosage
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.Generic.List<MedicineDosage> MedicineDosage
+        public List<MedicineDosage> MedicineDosage
         {
             get
             {
                 if (medicineDosage == null)
-                    medicineDosage = new System.Collections.Generic.List<MedicineDosage>();
+                    medicineDosage = new List<MedicineDosage>();
                 return medicineDosage;
             }
             set
@@ -47,7 +49,7 @@ namespace Backend.Model.MedicalExam
             if (newMedicineDosage == null)
                 return;
             if (this.medicineDosage == null)
-                this.medicineDosage = new System.Collections.Generic.List<MedicineDosage>();
+                this.medicineDosage = new List<MedicineDosage>();
             if (!this.medicineDosage.Contains(newMedicineDosage))
                 this.medicineDosage.Add(newMedicineDosage);
         }
@@ -75,15 +77,40 @@ namespace Backend.Model.MedicalExam
                 medicineDosage.Clear();
         }
 
-        public override string ToString()
+        public override bool Equals(object obj)
         {
-            String retVal = "";
-            foreach(MedicineDosage dosage in MedicineDosage)
+            Prescription other = obj as Prescription;
+            if(other == null)
             {
-                retVal += dosage.Medicine.ToString();
+                return false;
             }
-            return retVal;
+            if(this.medicineDosage.Count != other.medicineDosage.Count)
+            {
+                return false;
+            }
+            foreach(MedicineDosage m in this.medicineDosage)
+            {
+                if(!other.medicineDosage.Contains(m))
+                {
+                    return false;
+                }
+            }
+            return base.Equals(obj);
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            string ret = base.ToString();
+            foreach(MedicineDosage m in medicineDosage)
+            {
+                ret += "\nmedicine dosage: " +  m.ToString();
+            }
+            return ret;
+        }
     }
 }

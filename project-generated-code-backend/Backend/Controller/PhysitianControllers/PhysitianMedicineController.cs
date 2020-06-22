@@ -1,5 +1,5 @@
-﻿using Backend.Model.Accounts;
-using Backend.Model.Hospital;
+﻿using Model.Accounts;
+using Model.Hospital;
 using health_clinic_class_diagram.Backend.Service.MedicineService;
 using System;
 using System.Collections.Generic;

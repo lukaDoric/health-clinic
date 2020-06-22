@@ -5,6 +5,7 @@
 
 using Backend.Dto;
 using Backend.Service.HospitalAccountsService;
+using Model.Accounts;
 using System;
 
 namespace Backend.Controller
@@ -16,7 +17,7 @@ namespace Backend.Controller
          throw new NotImplementedException();
       }
       
-      public void DeletePatientAccount(Backend.Model.Accounts.Patient patient)
+      public void DeletePatientAccount(Patient patient)
       {
          throw new NotImplementedException();
       }

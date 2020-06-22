@@ -1,32 +1,30 @@
 // File:    Report.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Report
 
-using Backend.Model.Accounts;
 using System;
+using System.Collections.Generic;
 
-namespace Backend.Model.MedicalExam
+namespace Model.MedicalExam
 {
     public class Report
     {
         private DateTime date;
         private String findings;
 
-        private Backend.Model.Accounts.Patient patient;
-        private Backend.Model.Accounts.Physitian physitian;
-        private System.Collections.Generic.List<AdditionalDocument> additionalDocument;
+        private List<AdditionalDocument> additionalDocument;
 
         /// <summary>
         /// Property for collection of AdditionalDocument
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.Generic.List<AdditionalDocument> AdditionalDocument
+        public List<AdditionalDocument> AdditionalDocument
         {
             get
             {
                 if (additionalDocument == null)
-                    additionalDocument = new System.Collections.Generic.List<AdditionalDocument>();
+                    additionalDocument = new List<AdditionalDocument>();
                 return additionalDocument;
             }
             set
@@ -42,18 +40,6 @@ namespace Backend.Model.MedicalExam
 
         public DateTime Date { get => date; }
         public string Findings { get => findings; }
-        public Patient Patient { get => patient; }
-        public Physitian Physitian { get => physitian; }
-
-        public Report(DateTime date, string findings, Patient patient, Physitian physitian)
-        {
-            this.date = date;
-            this.findings = findings;
-            this.patient = patient;
-            this.physitian = physitian;
-        }
-
-
 
         /// <summary>
         /// Add a new AdditionalDocument in the collection
@@ -64,12 +50,9 @@ namespace Backend.Model.MedicalExam
             if (newAdditionalDocument == null)
                 return;
             if (this.additionalDocument == null)
-                this.additionalDocument = new System.Collections.Generic.List<AdditionalDocument>();
+                this.additionalDocument = new List<AdditionalDocument>();
             if (!this.additionalDocument.Contains(newAdditionalDocument))
-            {
                 this.additionalDocument.Add(newAdditionalDocument);
-                newAdditionalDocument.Report = this;
-            }
         }
 
         /// <summary>
@@ -82,10 +65,7 @@ namespace Backend.Model.MedicalExam
                 return;
             if (this.additionalDocument != null)
                 if (this.additionalDocument.Contains(oldAdditionalDocument))
-                {
                     this.additionalDocument.Remove(oldAdditionalDocument);
-                    oldAdditionalDocument.Report = null;
-                }
         }
 
         /// <summary>
@@ -95,16 +75,50 @@ namespace Backend.Model.MedicalExam
         public void RemoveAllAdditionalDocument()
         {
             if (additionalDocument != null)
-            {
-                System.Collections.ArrayList tmpAdditionalDocument = new System.Collections.ArrayList();
-                foreach (AdditionalDocument oldAdditionalDocument in additionalDocument)
-                    tmpAdditionalDocument.Add(oldAdditionalDocument);
                 additionalDocument.Clear();
-                foreach (AdditionalDocument oldAdditionalDocument in tmpAdditionalDocument)
-                    oldAdditionalDocument.Report = null;
-                tmpAdditionalDocument.Clear();
-            }
         }
 
+        public Report(DateTime date, string findings, List<AdditionalDocument> additionalDocument)
+        {
+            this.date = date;
+            this.findings = findings;
+            this.additionalDocument = additionalDocument;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Report other = obj as Report;
+            if(other == null)
+            {
+                return false;
+            }
+            if(this.additionalDocument.Count != other.additionalDocument.Count)
+            {
+                return false;
+            }
+            foreach(AdditionalDocument doc in additionalDocument)
+            {
+                if(!other.additionalDocument.Contains(doc))
+                {
+                    return false;
+                }
+            }
+            return this.Date.Equals(other.Date) && this.Findings.Equals(other.Findings);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            string ret = "date: " + this.date.ToString("dd.MM.yyyy.") + "\nfindings: " + this.findings;
+            foreach(AdditionalDocument doc in this.additionalDocument)
+            {
+                ret += "\ndocument: " + doc.ToString();
+            }
+            return ret;
+        }
     }
 }

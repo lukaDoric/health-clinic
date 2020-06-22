@@ -1,30 +1,46 @@
 // File:    SpecialistReferral.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class SpecialistReferral
 
-using Backend.Model.Accounts;
+using Model.Accounts;
 using System;
 
-namespace Backend.Model.MedicalExam
+namespace Model.MedicalExam
 {
     public class SpecialistReferral : AdditionalDocument
     {
         private Specialization specialization;
         private Physitian physitian;
 
-        public SpecialistReferral(DateTime date, string notes, Report report, Specialization specialization, Physitian physitian) : base(date, notes, report)
+        public Specialization Specialization { get => specialization; }
+        public Physitian Physitian { get => physitian; }
+
+        public SpecialistReferral(DateTime date, string notes, Specialization specialization, Physitian physitian) : base(date, notes)
         {
             this.specialization = specialization;
             this.physitian = physitian;
         }
 
-        public Specialization Specialization { get => specialization; }
-        public Physitian Physitian { get => physitian; }
+        public override bool Equals(object obj)
+        {
+            SpecialistReferral other = obj as SpecialistReferral;
+            if (other == null)
+            {
+                return false;
+            }
+            return base.Equals(obj) && this.Physitian.Equals(other.Physitian) && this.Specialization.Equals(other.Specialization);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
         public override string ToString()
         {
-            return Specialization.ToString() + " " + Physitian.ToString() + " " + Date.ToString("dd.MM.yyyy");
+            return base.ToString() + "\nphysitian: " + this.Physitian.FullName
+                + "\nspecialization: " + this.specialization;
         }
     }
 }

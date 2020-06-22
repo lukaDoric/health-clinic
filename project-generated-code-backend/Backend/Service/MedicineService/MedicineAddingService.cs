@@ -1,4 +1,4 @@
-﻿using Backend.Model.Hospital;
+﻿using Model.Hospital;
 using Backend.Repository;
 using System;
 using System.Collections.Generic;

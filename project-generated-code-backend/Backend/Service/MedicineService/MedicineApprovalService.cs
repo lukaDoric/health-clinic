@@ -1,6 +1,6 @@
 ﻿using Backend.Dto;
-using Backend.Model.Accounts;
-using Backend.Model.Hospital;
+using Model.Accounts;
+using Model.Hospital;
 using System;
 using System.Collections.Generic;
 using System.Linq;

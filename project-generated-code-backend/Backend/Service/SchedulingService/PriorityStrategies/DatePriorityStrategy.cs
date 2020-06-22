@@ -3,7 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class DatePriorityStrategy
 
-using Backend.Model.Schedule;
+using Model.Schedule;
 using System;
 using System.Collections.Generic;
 
@@ -11,7 +11,7 @@ namespace Backend.Service.SchedulingService.PriorityStrategies
 {
     public class DatePriorityStrategy : PriorityStrategy
     {
-        private Backend.Model.Util.TimeInterval timeInterval;
+        private Model.Util.TimeInterval timeInterval;
 
         public List<Appointment> FindSuggestedAppointments()
         {

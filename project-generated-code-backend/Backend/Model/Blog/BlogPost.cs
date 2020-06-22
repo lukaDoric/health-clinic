@@ -1,28 +1,30 @@
 // File:    BlogPost.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class BlogPost
 
+using Model.Accounts;
 using System;
+using System.Collections.Generic;
 
-namespace Backend.Model.Blog
+namespace Model.Blog
 {
    public class BlogPost
    {
       private String name;
       
-      private System.Collections.Generic.List<Comment> comment;
+      private List<Comment> comment;
       
       /// <summary>
       /// Property for collection of Comment
       /// </summary>
       /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Comment> Comment
+      public List<Comment> Comment
       {
          get
          {
             if (comment == null)
-               comment = new System.Collections.Generic.List<Comment>();
+               comment = new List<Comment>();
             return comment;
          }
          set
@@ -72,13 +74,13 @@ namespace Backend.Model.Blog
          if (comment != null)
             comment.Clear();
       }
-      private Backend.Model.Accounts.Physitian physitian;
+      private Model.Accounts.Physitian physitian;
       
       /// <summary>
-      /// Property for Backend.Model.Accounts.Physitian
+      /// Property for Model.Accounts.Physitian
       /// </summary>
       /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Backend.Model.Accounts.Physitian Physitian
+      public Physitian Physitian
       {
          get
          {
@@ -86,20 +88,7 @@ namespace Backend.Model.Blog
          }
          set
          {
-            if (this.physitian == null || !this.physitian.Equals(value))
-            {
-               if (this.physitian != null)
-               {
-                  Backend.Model.Accounts.Physitian oldPhysitian = this.physitian;
-                  this.physitian = null;
-                  oldPhysitian.RemoveBlogPost(this);
-               }
-               if (value != null)
-               {
-                  this.physitian = value;
-                  this.physitian.AddBlogPost(this);
-               }
-            }
+            this.physitian = value;
          }
       }
    

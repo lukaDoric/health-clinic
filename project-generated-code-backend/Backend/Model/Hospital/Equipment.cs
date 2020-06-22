@@ -1,47 +1,45 @@
 // File:    Equipment.cs
 // Author:  Luka Doric
-// Created: Sunday, June 7, 2020 4:19:02 PM
+// Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Equipment
 
 using System;
 
-namespace Backend.Model.Hospital
+namespace Model.Hospital
 {
-   public class Equipment
-   {
-      private String name;
-      private String id;
-      
-      protected Room room;
-      
-      /// <summary>
-      /// Property for Room
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Room Room
-      {
-         get
-         {
-            return room;
-         }
-         set
-         {
-            if (this.room == null || !this.room.Equals(value))
+    public class Equipment
+    {
+        private String name;
+        private String id;
+
+        public Equipment(string name, string id)
+        {
+            this.name = name;
+            this.id = id;
+        }
+
+        public string Name { get => name; }
+        public string Id { get => id; }
+
+        public override bool Equals(object obj)
+        {
+            Equipment other = obj as Equipment;
+
+            if(other == null)
             {
-               if (this.room != null)
-               {
-                  Room oldRoom = this.room;
-                  this.room = null;
-                  oldRoom.RemoveEquipment(this);
-               }
-               if (value != null)
-               {
-                  this.room = value;
-                  this.room.AddEquipment(this);
-               }
+                return false;
             }
-         }
-      }
-   
-   }
+
+            return this.Name.Equals(other.Name) && this.Id.Equals(other.Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        public override string ToString()
+        {
+            return "name: " + this.Name + "\nid: " + this.Id;
+        }
+    }
 }

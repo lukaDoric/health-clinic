@@ -5,6 +5,7 @@
 
 using Backend.Dto;
 using Backend.Service.SchedulingService;
+using Model.Schedule;
 using System;
 using System.Collections.Generic;
 
@@ -12,17 +13,17 @@ namespace Backend.Controller.PatientControllers
 {
    public abstract class PatientScheduleController
    {
-      public void EditAppointment(Backend.Model.Schedule.Appointment appointment)
+      public void EditAppointment(Appointment appointment)
       {
          throw new NotImplementedException();
       }
       
-      public void DeleteAppointment(Backend.Model.Schedule.Appointment appointment)
+      public void DeleteAppointment(Appointment appointment)
       {
          throw new NotImplementedException();
       }
       
-      public Backend.Model.Schedule.Appointment GetAppointmentsByDate(DateTime date)
+      public Appointment GetAppointmentsByDate(DateTime date)
       {
          throw new NotImplementedException();
       }

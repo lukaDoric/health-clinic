@@ -5,20 +5,21 @@
 
 using Backend.Dto;
 using Backend.Service.PatientCareService;
+using Model.Accounts;
 using System;
 
 namespace Backend.Controller.PhysitianControllers
 {
    public class InpatientCareController
    {
-      private Backend.Model.Accounts.Physitian loggedPhysitian;
+      private Physitian loggedPhysitian;
       
       public void StartInpatientCare(BedReservationDTO bedReservationDTO)
       {
          throw new NotImplementedException();
       }
       
-      public void DischargeParient(Backend.Model.Accounts.Patient patient)
+      public void DischargeParient(Patient patient)
       {
          throw new NotImplementedException();
       }

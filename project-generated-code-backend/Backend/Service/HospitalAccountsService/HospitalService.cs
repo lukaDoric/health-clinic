@@ -3,7 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class HospitalService
 
-using Backend.Model.Accounts;
+using Model.Accounts;
 using System;
 using System.Collections.Generic;
 
@@ -21,7 +21,7 @@ namespace Backend.Service.HospitalAccountsService
             throw new NotImplementedException();
         }
 
-        public List<Patient> GetPatientsByPhysitian(Backend.Model.Accounts.Patient physitian)
+        public List<Patient> GetPatientsByPhysitian(Patient physitian)
         {
             throw new NotImplementedException();
         }
