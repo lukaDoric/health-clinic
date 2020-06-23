@@ -10,5 +10,9 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
     class RoomTypeFileSystem : GenericFileRepository<RoomType>, RoomTypeRepository
     {
+        public override RoomType Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

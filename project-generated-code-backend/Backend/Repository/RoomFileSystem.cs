@@ -17,24 +17,10 @@ namespace Backend.Repository
             throw new NotImplementedException();
         }
 
-        public void Save(Room newEntity)
+        public override Room Instantiate(string objectStringFormat)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Room updateEntity)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Room> GenericRepository<Room>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        Room GenericRepository<Room>.GetById(string id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

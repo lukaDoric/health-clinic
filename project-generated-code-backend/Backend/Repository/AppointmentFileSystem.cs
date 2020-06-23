@@ -27,5 +27,10 @@ namespace Backend.Repository
         {
             throw new NotImplementedException();
         }
+
+        public override Appointment Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -8,7 +8,11 @@ using System;
 
 namespace Backend.Repository
 {
-   public class ReportFileSystem : GenericFileRepository<Report>, ReportRepository
-   {
-   }
+    public class ReportFileSystem : GenericFileRepository<Report>, ReportRepository
+    {
+        public override Report Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

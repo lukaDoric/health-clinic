@@ -14,5 +14,10 @@ namespace Backend.Repository
         {
             throw new NotImplementedException();
         }
+
+        public override Physitian Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

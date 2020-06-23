@@ -8,7 +8,11 @@ using System;
 
 namespace Backend.Repository
 {
-   public class EquipmentFileSystem : GenericFileRepository<Equipment>, EquipmentRepository
-   {
-   }
+    public class EquipmentFileSystem : GenericFileRepository<Equipment>, EquipmentRepository
+    {
+        public override Equipment Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

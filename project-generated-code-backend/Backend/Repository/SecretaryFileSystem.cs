@@ -8,7 +8,11 @@ using System;
 
 namespace Backend.Repository
 {
-   public class SecretaryFileSystem : GenericFileRepository<Secretary>, SecretaryRepository
-   {
-   }
+    public class SecretaryFileSystem : GenericFileRepository<Secretary>, SecretaryRepository
+    {
+        public override Secretary Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

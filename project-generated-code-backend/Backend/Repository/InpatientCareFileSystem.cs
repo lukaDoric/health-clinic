@@ -16,6 +16,11 @@ namespace Backend.Repository
             throw new NotImplementedException();
         }
 
+        public override InpatientCare Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
+
         public void StartInpatientCare(BedReservation bedReservation)
         {
             throw new NotImplementedException();

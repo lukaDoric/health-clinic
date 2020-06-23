@@ -8,7 +8,11 @@ using System;
 
 namespace Backend.Repository
 {
-   public class WaitingMedicineFileSystem : GenericFileRepository<Medicine>, WaitingMedicineRepository
-   {
-   }
+    public class WaitingMedicineFileSystem : GenericFileRepository<Medicine>, WaitingMedicineRepository
+    {
+        public override Medicine Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -10,5 +10,9 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
     public class AddressFileSystem : GenericFileRepository<Address>, AddressRepository
     {
+        public override Address Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,5 +10,9 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
     class ProcedureTypeFileSystem : GenericFileRepository<ProcedureType>, ProcedureTypeRepository
     {
+        public override ProcedureType Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
