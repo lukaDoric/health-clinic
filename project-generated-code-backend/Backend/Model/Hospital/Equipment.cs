@@ -17,6 +17,11 @@ namespace Model.Hospital
             this.name = name;
             this.id = id;
         }
+        public Equipment(Equipment equipment)
+        {
+            this.name = equipment.name;
+            this.id = equipment.id;
+        }
 
         public string Name { get => name; }
         public string Id { get => id; }

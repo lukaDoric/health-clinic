@@ -43,6 +43,7 @@
     <Compile Include="Backend\Controller\PhysitianControllers\PhysitianMedicineController.cs" />
     <Compile Include="Backend\Controller\SuperintendentControllers\SuperintendentMedicineController.cs" />
     <Compile Include="Backend\Model\Hospital\Hospital.cs" />
+    <Compile Include="Backend\Model\Hospital\Renovation.cs" />
     <Compile Include="Backend\Model\Hospital\Room.cs" />
     <Compile Include="Backend\Model\Hospital\RoomType.cs" />
     <Compile Include="Backend\Model\Hospital\Equipment.cs" />
