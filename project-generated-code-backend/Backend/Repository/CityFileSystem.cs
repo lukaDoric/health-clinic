@@ -10,6 +10,9 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
     class CityFileSystem : GenericFileRepository<City>, CityRepository
     {
-
+        public override City Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,5 +10,9 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
     class CountryFileSystem : GenericFileRepository<Country>, CountryRepository
     {
+        public override Country Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

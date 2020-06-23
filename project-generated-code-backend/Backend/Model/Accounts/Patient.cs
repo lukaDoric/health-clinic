@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Patient
 
 using Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Accounts
@@ -20,6 +21,8 @@ namespace Model.Accounts
             this.parentName = parentName;
             this.gender = gender;
         }
+
+        [JsonConstructor]
         public Patient(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, string parentName, string gender)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {

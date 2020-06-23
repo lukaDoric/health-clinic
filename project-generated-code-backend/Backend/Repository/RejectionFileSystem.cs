@@ -8,7 +8,11 @@ using System;
 
 namespace Backend.Repository
 {
-   public class RejectionFileSystem : GenericFileRepository<Rejection>, RejectionRepository
-   {
-   }
+    public class RejectionFileSystem : GenericFileRepository<Rejection>, RejectionRepository
+    {
+        public override Rejection Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

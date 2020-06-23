@@ -10,5 +10,9 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
     public class SpecializationFileSystem : GenericFileRepository<Specialization>, SpecializationRepository
     {
+        public override Specialization Instantiate(string objectStringFormat)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
