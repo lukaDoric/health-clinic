@@ -3,13 +3,15 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Country
 
+using Backend.Model.Util;
 using System;
 using System.Collections.Generic;
 
 namespace Model.Util
 {
-    public class Country
+    public class Country : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String name;
 
         private List<City> city;
@@ -39,12 +41,15 @@ namespace Model.Util
 
         public string Name { get => name; }
 
-        public Country(string name)
+        public Country(string name) : base(serialNumberGenerator++)
         {
             this.name = name;
         }
 
-
+        public Country(int serialNumber, string name) : base(serialNumber)
+        {
+            this.name = name;
+        }
 
         /// <summary>
         /// Add a new City in the collection

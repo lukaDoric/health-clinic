@@ -3,19 +3,27 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Address
 
+using Backend.Model.Util;
 using System;
 
 namespace Model.Util
 {
-    public class Address
+    public class Address : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String street;
         private int number;
 
         public string Street { get => street; }
         public int Number { get => number; }
 
-        public Address(string street, int number)
+        public Address(string street, int number) : base(serialNumberGenerator++)
+        {
+            this.street = street;
+            this.number = number;
+        }
+
+        public Address(int serialNumber, string street, int number) : base(serialNumber)
         {
             this.street = street;
             this.number = number;

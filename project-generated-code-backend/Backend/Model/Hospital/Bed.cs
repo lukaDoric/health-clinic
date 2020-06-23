@@ -9,7 +9,8 @@ namespace Model.Hospital
 {
    public class Bed : Equipment
    {
-        public Bed(string name, string id) : base(name, id)
+        private static int serialNumberGenerator = 0;
+        public Bed(string name, string id) : base(serialNumberGenerator++, name, id)
         {
 
         }

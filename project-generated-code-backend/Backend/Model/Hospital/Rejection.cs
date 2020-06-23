@@ -3,20 +3,27 @@
 // Created: Monday, May 25, 2020 17:06:42
 // Purpose: Definition of Class Rejection
 
+using Backend.Model.Util;
 using System;
 using System.Collections.Generic;
 
 namespace Model.Hospital
 {
-    public class Rejection
+    public class Rejection : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String reason;
         private Medicine medicine;
 
         public string Reason { get => reason; }
         public Medicine Medicine { get => medicine; }
 
-        public Rejection(string reason, Medicine medicine)
+        public Rejection(string reason, Medicine medicine) : base(serialNumberGenerator++)
+        {
+            this.reason = reason;
+            this.medicine = medicine;
+        }
+        public Rejection(int serialNumber, string reason, Medicine medicine) : base(serialNumber)
         {
             this.reason = reason;
             this.medicine = medicine;

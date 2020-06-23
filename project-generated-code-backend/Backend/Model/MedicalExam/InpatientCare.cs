@@ -3,13 +3,15 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class InpatientCare
 
+using Backend.Model.Util;
 using Model.Accounts;
 using System;
 
 namespace Model.MedicalExam
 {
-    public class InpatientCare
+    public class InpatientCare : Entity
     {
+        private static int serialNumberGenerator = 0;
         private DateTime dateOfAdmition;
         private DateTime dateOfDischarge;
         private String reason;
@@ -23,7 +25,16 @@ namespace Model.MedicalExam
         public Physitian Physitian { get => physitian; }
         public Patient Patient { get => patient; }
 
-        public InpatientCare(DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient)
+        public InpatientCare(DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(serialNumberGenerator++)
+        {
+            this.dateOfAdmition = dateOfAdmition;
+            this.dateOfDischarge = dateOfDischarge;
+            this.reason = reason;
+            this.physitian = physitian;
+            this.patient = patient;
+        }
+
+        public InpatientCare(int serialNumber, DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(serialNumber)
         {
             this.dateOfAdmition = dateOfAdmition;
             this.dateOfDischarge = dateOfDischarge;

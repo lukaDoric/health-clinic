@@ -3,12 +3,14 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Medicine
 
+using Backend.Model.Util;
 using System;
 
 namespace Model.Hospital
 {
-    public class Medicine
+    public class Medicine : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String copyrightName;
         private String genericName;
         private MedicineManufacturer medicineManufacturer;
@@ -19,7 +21,15 @@ namespace Model.Hospital
         public MedicineManufacturer MedicineManufacturer { get => medicineManufacturer; }
         public MedicineType MedicineType { get => medicineType; }
 
-        public Medicine(string copyrightName, string genericName, MedicineManufacturer medicineManufacturer, MedicineType medicineType)
+        public Medicine(string copyrightName, string genericName, MedicineManufacturer medicineManufacturer, MedicineType medicineType) : base(serialNumberGenerator++)
+        {
+            this.copyrightName = copyrightName;
+            this.genericName = genericName;
+            this.medicineManufacturer = medicineManufacturer;
+            this.medicineType = medicineType;
+        }
+
+        public Medicine(int serialNumber, string copyrightName, string genericName, MedicineManufacturer medicineManufacturer, MedicineType medicineType) : base(serialNumber)
         {
             this.copyrightName = copyrightName;
             this.genericName = genericName;

@@ -11,9 +11,16 @@ namespace Model.Accounts
 {
     public class Physitian : Account
     {
+        private static int serialNumberGenerator = 0;
         private List<Specialization> specialization;
         public Physitian(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
-            : base(name, surname, id, dateOfBirth, contact, email, address)
+            : base(serialNumberGenerator++, name, surname, id, dateOfBirth, contact, email, address)
+        {
+            specialization = new List<Specialization>();
+        }
+
+        public Physitian(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
+            : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
             specialization = new List<Specialization>();
         }

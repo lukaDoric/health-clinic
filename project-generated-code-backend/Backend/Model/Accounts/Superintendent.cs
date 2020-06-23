@@ -10,8 +10,15 @@ namespace Model.Accounts
 {
     public class Superintendent : Account
     {
+        private static int serialNumberGenerator = 0;
         public Superintendent(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
-            : base(name, surname, id, dateOfBirth, contact, email, address)
+            : base(serialNumberGenerator++, name, surname, id, dateOfBirth, contact, email, address)
+        {
+
+        }
+
+        public Superintendent(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
+            : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
 
         }

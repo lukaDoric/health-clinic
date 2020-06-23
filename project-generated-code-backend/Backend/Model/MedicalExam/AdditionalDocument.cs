@@ -3,11 +3,12 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class AdditionalDocument
 
+using Backend.Model.Util;
 using System;
 
 namespace Model.MedicalExam
 {
-    public abstract class AdditionalDocument
+    public abstract class AdditionalDocument : Entity
     {
         protected DateTime date;
         protected String notes;
@@ -15,7 +16,7 @@ namespace Model.MedicalExam
         public DateTime Date { get => date; }
         public string Notes { get => notes; }
 
-        protected AdditionalDocument(DateTime date, string notes)
+        protected AdditionalDocument(int serialNumber, DateTime date, string notes) : base(serialNumber)
         {
             this.date = date;
             this.notes = notes;

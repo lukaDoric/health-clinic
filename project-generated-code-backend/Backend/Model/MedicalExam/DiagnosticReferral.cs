@@ -9,6 +9,7 @@ namespace Model.MedicalExam
 {
     public class DiagnosticReferral : AdditionalDocument
     {
+        private static int serialNumberGenerator = 0;
         private DiagnosticType diagnosticType;
 
         /// <summary>
@@ -26,7 +27,11 @@ namespace Model.MedicalExam
                 this.diagnosticType = value;
             }
         }
-        public DiagnosticReferral(DateTime date, string notes, DiagnosticType diagnosticType) : base(date, notes)
+        public DiagnosticReferral(DateTime date, string notes, DiagnosticType diagnosticType) : base(serialNumberGenerator++, date, notes)
+        {
+            this.diagnosticType = diagnosticType;
+        }
+        public DiagnosticReferral(int serialNumber, DateTime date, string notes, DiagnosticType diagnosticType) : base(serialNumber, date, notes)
         {
             this.diagnosticType = diagnosticType;
         }

@@ -10,9 +10,15 @@ namespace Model.MedicalExam
 {
     public class Prescription : AdditionalDocument
     {
+        private static int serialNumberGenerator = 0;
         private List<MedicineDosage> medicineDosage;
 
-        public Prescription(DateTime date, string notes) : base(date, notes)
+        public Prescription(DateTime date, string notes) : base(serialNumberGenerator++, date, notes)
+        {
+            medicineDosage = new List<MedicineDosage>();
+        }
+
+        public Prescription(int serialNumber, DateTime date, string notes) : base(serialNumber, date, notes)
         {
             medicineDosage = new List<MedicineDosage>();
         }

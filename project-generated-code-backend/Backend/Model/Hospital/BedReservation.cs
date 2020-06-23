@@ -3,14 +3,16 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class BedReservation
 
+using Backend.Model.Util;
 using Model.Accounts;
 using Model.Util;
 using System;
 
 namespace Model.Hospital
 {
-    public class BedReservation
+    public class BedReservation : Entity
     {
+        private static int serialNumberGenerator;
         private TimeInterval timeInterval;
         private Patient patient;
         private Bed bed;
@@ -30,7 +32,14 @@ namespace Model.Hospital
         public Patient Patient { get => patient; }
         public TimeInterval TimeInterval { get => timeInterval; }
 
-        public BedReservation(TimeInterval timeInterval, Patient patient, Bed bed)
+        public BedReservation(TimeInterval timeInterval, Patient patient, Bed bed) : base(serialNumberGenerator++)
+        {
+            this.timeInterval = timeInterval;
+            this.patient = patient;
+            this.bed = bed;
+        }
+
+        public BedReservation(int serialNumber, TimeInterval timeInterval, Patient patient, Bed bed) : base(serialNumber)
         {
             this.timeInterval = timeInterval;
             this.patient = patient;

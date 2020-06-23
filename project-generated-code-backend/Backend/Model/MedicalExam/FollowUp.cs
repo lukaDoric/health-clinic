@@ -11,10 +11,15 @@ namespace Model.MedicalExam
 {
     public class FollowUp : AdditionalDocument
     {
+        private static int serialNumberGenerator = 0;
         private Physitian physitian;
         public Physitian Physitian { get => physitian; }
 
-        public FollowUp(DateTime date, string notes, Physitian physitian) : base(date, notes)
+        public FollowUp(DateTime date, string notes, Physitian physitian) : base(serialNumberGenerator++, date, notes)
+        {
+            this.physitian = physitian;
+        }
+        public FollowUp(int serialNumber, DateTime date, string notes, Physitian physitian) : base(serialNumber, date, notes)
         {
             this.physitian = physitian;
         }

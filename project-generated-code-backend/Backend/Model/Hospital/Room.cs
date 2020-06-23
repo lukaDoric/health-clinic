@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Room
 
 using Backend.Dto;
+using Backend.Model.Util;
 using HealthClinic.Backend.Model.Hospital;
 using Model.Hospital;
 using Model.Util;
@@ -12,8 +13,9 @@ using System.Collections.Generic;
 
 namespace Model.Hospital
 {
-    public class Room
+    public class Room : Entity
     {
+        private static int serialNumberGenerator = 0;
         private int id;
         private static int  idMaker = 0;
         private RoomType roomType;
@@ -148,7 +150,7 @@ namespace Model.Hospital
                 renovationTime.Clear();
         }
 
-        public Room(int id, RoomType roomType)
+        public Room(int id, RoomType roomType) : base(serialNumberGenerator++)
         {
             this.id = id;
             this.roomType = roomType;
@@ -156,7 +158,15 @@ namespace Model.Hospital
             this.renovationTime = new List<Renovation>();
         }
 
-        public Room(RoomType roomType)
+        public Room(int serialNumber, int id, RoomType roomType) : base(serialNumber)
+        {
+            this.id = id;
+            this.roomType = roomType;
+            this.equipment = new List<Equipment>();
+            this.renovationTime = new List<Renovation>();
+        }
+
+        public Room(RoomType roomType) : base(serialNumberGenerator++)
         {
             
             this.id = idMaker++;

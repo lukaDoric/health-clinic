@@ -3,21 +3,29 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Equipment
 
+using Backend.Model.Util;
 using System;
 
 namespace Model.Hospital
 {
-    public class Equipment
+    public class Equipment : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String name;
         private String id;
 
-        public Equipment(string name, string id)
+        public Equipment(string name, string id) : base(serialNumberGenerator++)
         {
             this.name = name;
             this.id = id;
         }
-        public Equipment(Equipment equipment)
+        public Equipment(int serialNumber, string name, string id) : base(serialNumber)
+        {
+            this.name = name;
+            this.id = id;
+        }
+
+        public Equipment(Equipment equipment) : base(equipment.SerialNumber)
         {
             this.name = equipment.name;
             this.id = equipment.id;

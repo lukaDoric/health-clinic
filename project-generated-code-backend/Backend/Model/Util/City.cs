@@ -3,12 +3,14 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class City
 
+using Backend.Model.Util;
 using System;
 
 namespace Model.Util
 {
-    public class City
+    public class City : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String name;
         private String postalCode;
 
@@ -40,13 +42,17 @@ namespace Model.Util
         public string Name { get => name; }
         public string PostalCode { get => postalCode; }
 
-        public City(string name, string postalCode)
+        public City(string name, string postalCode) : base(serialNumberGenerator++)
         {
             this.name = name;
             this.postalCode = postalCode;
         }
 
-
+        public City(int serialNumber, string name, string postalCode) : base(serialNumber)
+        {
+            this.name = name;
+            this.postalCode = postalCode;
+        }
 
         /// <summary>
         /// Add a new Address in the collection

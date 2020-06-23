@@ -3,6 +3,7 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Appointment
 
+using Backend.Model.Util;
 using Model.Accounts;
 using Model.Hospital;
 using Model.Util;
@@ -10,8 +11,9 @@ using System;
 
 namespace Model.Schedule
 {
-    public class Appointment
+    public class Appointment : Entity
     {
+        private static int serialNumberGenerator;
         private Room room;
         private Physitian physitian;
         private Patient patient;
@@ -24,7 +26,16 @@ namespace Model.Schedule
         public TimeInterval TimeInterval { get => timeInterval; }
         public ProcedureType ProcedureType { get => procedureType; }
 
-        public Appointment(Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType)
+        public Appointment(Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(serialNumberGenerator++)
+        {
+            this.room = room;
+            this.physitian = physitian;
+            this.patient = patient;
+            this.timeInterval = timeInterval;
+            this.procedureType = procedureType;
+        }
+
+        public Appointment(int serialNumber, Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(serialNumber)
         {
             this.room = room;
             this.physitian = physitian;

@@ -3,13 +3,15 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class MedicineDosage
 
+using Backend.Model.Util;
 using Model.Hospital;
 using System;
 
 namespace Model.MedicalExam
 {
-    public class MedicineDosage
+    public class MedicineDosage : Entity
     {
+        private static int serialNumberGenerator = 0;
         private double amount;
         private String note;
         private Medicine medicine;
@@ -29,7 +31,13 @@ namespace Model.MedicalExam
         public double Amount { get => amount; }
         public string Note { get => note; }
 
-        public MedicineDosage(double ammount, string note, Medicine medicine)
+        public MedicineDosage(double ammount, string note, Medicine medicine) : base(serialNumberGenerator++)
+        {
+            this.amount = ammount;
+            this.note = note;
+            this.medicine = medicine;
+        }
+        public MedicineDosage(int serialNumber, double ammount, string note, Medicine medicine) : base(serialNumber)
         {
             this.amount = ammount;
             this.note = note;
