@@ -80,5 +80,72 @@ namespace Model.Accounts
             return ret;
         }
 
+
+        private TimeInterval workSchedule;
+        private System.Collections.Generic.List<TimeInterval> vacationTime;
+
+        /// <summary>
+        /// Property for collection of Backend.Model.Util.TimeInterval
+        /// </summary>
+        /// <pdGenerated>Default opposite class collection property</pdGenerated>
+        public System.Collections.Generic.List<TimeInterval> VacationTime
+        {
+            get
+            {
+                if (vacationTime == null)
+                    vacationTime = new System.Collections.Generic.List<TimeInterval>();
+                return vacationTime;
+            }
+            set
+            {
+                RemoveAllVacationTime();
+                if (value != null)
+                {
+                    foreach (TimeInterval oTimeInterval in value)
+                        AddVacationTime(oTimeInterval);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Add a new Backend.Model.Util.TimeInterval in the collection
+        /// </summary>
+        /// <pdGenerated>Default Add</pdGenerated>
+        public void AddVacationTime(TimeInterval newTimeInterval)
+        {
+            if (newTimeInterval == null)
+                return;
+            if (this.vacationTime == null)
+                this.vacationTime = new System.Collections.Generic.List<TimeInterval>();
+            if (!this.vacationTime.Contains(newTimeInterval))
+                this.vacationTime.Add(newTimeInterval);
+        }
+
+        /// <summary>
+        /// Remove an existing Backend.Model.Util.TimeInterval from the collection
+        /// </summary>
+        /// <pdGenerated>Default Remove</pdGenerated>
+        public void RemoveVacationTime(TimeInterval oldTimeInterval)
+        {
+            if (oldTimeInterval == null)
+                return;
+            if (this.vacationTime != null)
+                if (this.vacationTime.Contains(oldTimeInterval))
+                    this.vacationTime.Remove(oldTimeInterval);
+        }
+
+        /// <summary>
+        /// Remove all instances of Backend.Model.Util.TimeInterval from the collection
+        /// </summary>
+        /// <pdGenerated>Default removeAll</pdGenerated>
+        public void RemoveAllVacationTime()
+        {
+            if (vacationTime != null)
+                vacationTime.Clear();
+        }
+        public TimeInterval WorkSchedule { get => workSchedule; set => workSchedule = value; }
+
+
+
     }
 }

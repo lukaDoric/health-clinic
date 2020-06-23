@@ -20,6 +20,19 @@ namespace Model.Util
             this.start = start;
             this.end = end;
         }
+        public TimeInterval(string start, string end)
+        {
+            try
+            {
+                this.start = Convert.ToDateTime(start);
+                this.end = Convert.ToDateTime(end);
+            }
+            catch
+            {
+
+            }
+
+        }
 
         public override string ToString()
         {
@@ -39,6 +52,11 @@ namespace Model.Util
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+
+        internal string ToStringHours()
+        {
+            return "start: " + start.ToString("HH:mm") + "\nend: " + end.ToString("HH:mm");
         }
     }
 }

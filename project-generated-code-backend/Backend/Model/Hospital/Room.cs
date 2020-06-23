@@ -3,6 +3,9 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Room
 
+using Backend.Dto;
+using HealthClinic.Backend.Model.Hospital;
+using Model.Hospital;
 using Model.Util;
 using System;
 using System.Collections.Generic;
@@ -12,10 +15,11 @@ namespace Model.Hospital
     public class Room
     {
         private int id;
-
+        private static int  idMaker = 0;
         private RoomType roomType;
-        private List<TimeInterval> renovationTime;
+        private List<Renovation> renovationTime;
         private List<Equipment> equipment;
+
 
         public RoomType RoomType { get => roomType; }
         public int Id { get => id; }
@@ -85,12 +89,12 @@ namespace Model.Hospital
         /// Property for collection of TimeInterval
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public List<TimeInterval> RenovationTime
+        public List<Renovation> RenovationTime
         {
             get
             {
                 if (renovationTime == null)
-                    renovationTime = new List<TimeInterval>();
+                    renovationTime = new List<Renovation>();
                 return renovationTime;
             }
             set
@@ -98,23 +102,25 @@ namespace Model.Hospital
                 RemoveAllRenovationTime();
                 if (value != null)
                 {
-                    foreach (TimeInterval oRenovationTime in value)
+                    foreach (Renovation oRenovationTime in value)
                         AddRenovationTime(oRenovationTime);
                 }
             }
         }
+
+        public static int IdMaker { get => idMaker;}
 
 
         /// <summary>
         /// Add a new TimeInterval in the collection
         /// </summary>
         /// <pdGenerated>Default Add</pdGenerated>
-        public void AddRenovationTime(TimeInterval newRenovationTime)
+        public void AddRenovationTime(Renovation newRenovationTime)
         {
             if (newRenovationTime == null)
                 return;
             if (this.renovationTime == null)
-                this.renovationTime = new List<TimeInterval>();
+                this.renovationTime = new List<Renovation>();
             if (!this.renovationTime.Contains(newRenovationTime))
                 this.renovationTime.Add(newRenovationTime);
         }
@@ -123,7 +129,7 @@ namespace Model.Hospital
         /// Remove an existing TimeInterval from the collection
         /// </summary>
         /// <pdGenerated>Default Remove</pdGenerated>
-        public void RemoveRenovationTime(TimeInterval oldRenovationTime)
+        public void RemoveRenovationTime(Renovation oldRenovationTime)
         {
             if (oldRenovationTime == null)
                 return;
@@ -147,7 +153,16 @@ namespace Model.Hospital
             this.id = id;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
-            this.renovationTime = new List<TimeInterval>();
+            this.renovationTime = new List<Renovation>();
+        }
+
+        public Room(RoomType roomType)
+        {
+            
+            this.id = idMaker++;
+            this.roomType = roomType;
+            this.equipment = new List<Equipment>();
+            this.renovationTime = new List<Renovation>();
         }
 
         public override bool Equals(object obj)
@@ -175,7 +190,7 @@ namespace Model.Hospital
                 ret += "\t" + e.ToString();
             }
             ret += "\nrenovation time: ";
-            foreach(TimeInterval r in renovationTime)
+            foreach(Renovation r in renovationTime)
             {
                 ret += "\t" + r.ToString();
             }

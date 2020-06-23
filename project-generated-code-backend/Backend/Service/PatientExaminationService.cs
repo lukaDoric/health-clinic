@@ -1,17 +1,16 @@
-// File:    PatientExaminatonController.cs
+// File:    PatientExaminationService.cs
 // Author:  Luka Doric
 // Created: Sunday, June 7, 2020 4:19:02 PM
-// Purpose: Definition of Class PatientExaminatonController
+// Purpose: Definition of Class PatientExaminationService
 
 
-using Backend.Service;
 using Model.Accounts;
 using System;
 using System.Collections.Generic;
 
-namespace Backend.Controller
+namespace Backend.Service
 {
-   public class PatientExaminatonController
+   public class PatientExaminationService
    {
       private Physitian loggedPhysitian;
       
@@ -25,7 +24,7 @@ namespace Backend.Controller
          throw new NotImplementedException();
       }
       
-      public PatientExaminationService patientExaminationService;
+      public Backend.Repository.PatientRepository patientRepository;
    
    }
 }
