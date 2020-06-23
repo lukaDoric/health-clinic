@@ -6,13 +6,18 @@
 using Model.Accounts;
 using Model.Hospital;
 using Model.Schedule;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
 namespace Backend.Repository
 {
-    public class AppointmentFileSystem : GenericFileRepository<Appointment>, AppointmentRepository
+    public class AppointmentFileSystem : GenericFileSystem<Appointment>, AppointmentRepository
     {
+        public AppointmentFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/appointments.txt";
+        }
         public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
             throw new NotImplementedException();
@@ -30,7 +35,7 @@ namespace Backend.Repository
 
         public override Appointment Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Appointment>(objectStringFormat);
         }
     }
 }

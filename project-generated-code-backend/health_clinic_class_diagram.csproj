@@ -87,6 +87,7 @@
     <Compile Include="Backend\Repository\CityRepository.cs" />
     <Compile Include="Backend\Repository\CountryFileSystem.cs" />
     <Compile Include="Backend\Repository\CountryRepository.cs" />
+    <Compile Include="Backend\Repository\GenericFileSystem.cs" />
     <Compile Include="Backend\Repository\ProcedureTypeFileSystem.cs" />
     <Compile Include="Backend\Repository\ProcedureTypeRepository.cs" />
     <Compile Include="Backend\Repository\RoomTypeFileSystem.cs" />
@@ -135,7 +136,6 @@
     <Compile Include="Backend\Repository\ReportFileSystem.cs" />
     <Compile Include="Backend\Repository\PhysitianFileSystem.cs" />
     <Compile Include="Backend\Repository\RoomFileSystem.cs" />
-    <Compile Include="Backend\Repository\GenericFileRepository.cs" />
     <Compile Include="Backend\Repository\RejectionFileSystem.cs" />
     <Compile Include="Backend\Repository\ApprovedMedicineFileSystem.cs" />
     <Compile Include="Backend\Repository\WaitingMedicineFileSystem.cs" />
@@ -164,7 +164,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\appointments.txt" />
+    <Content Include="data\approved_medicine.txt" />
+    <Content Include="data\countries.txt" />
+    <Content Include="data\equipment.txt" />
+    <Content Include="data\inpatient_care.txt" />
     <Content Include="data\patients.txt" />
+    <Content Include="data\physitians.txt" />
+    <Content Include="data\procedure_types.txt" />
+    <Content Include="data\rejections.txt" />
+    <Content Include="data\reports.txt" />
+    <Content Include="data\rooms.txt" />
+    <Content Include="data\room_types.txt" />
+    <Content Include="data\secretaries.txt" />
+    <Content Include="data\specializations.txt" />
+    <Content Include="data\waiting_medicine.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

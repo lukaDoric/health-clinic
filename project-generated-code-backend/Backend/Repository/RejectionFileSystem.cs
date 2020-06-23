@@ -4,15 +4,20 @@
 // Purpose: Definition of Class RejectionFileSystem
 
 using Model.Hospital;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class RejectionFileSystem : GenericFileRepository<Rejection>, RejectionRepository
+    public class RejectionFileSystem : GenericFileSystem<Rejection>, RejectionRepository
     {
+        public RejectionFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/rejections.txt";
+        }
         public override Rejection Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Rejection>(objectStringFormat);
         }
     }
 }

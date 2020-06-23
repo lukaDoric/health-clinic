@@ -4,12 +4,17 @@
 // Purpose: Definition of Class PhysitianFileSystem
 
 using Model.Accounts;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class PhysitianFileSystem : GenericFileRepository<Physitian>, PhysitianRepository
+    public class PhysitianFileSystem : GenericFileSystem<Physitian>, PhysitianRepository
     {
+        public PhysitianFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/physitians.txt";
+        }
         public Specialization GetPhysitiansByProcedureType(Specialization procedureType)
         {
             throw new NotImplementedException();
@@ -17,7 +22,7 @@ namespace Backend.Repository
 
         public override Physitian Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Physitian>(objectStringFormat);
         }
     }
 }

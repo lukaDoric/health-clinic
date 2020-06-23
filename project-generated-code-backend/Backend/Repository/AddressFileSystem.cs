@@ -5,14 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
-    public class AddressFileSystem : GenericFileRepository<Address>, AddressRepository
+    public class AddressFileSystem : GenericFileSystem<Address>, AddressRepository
     {
+        public AddressFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/addresses.txt";
+        }
         public override Address Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Address>(objectStringFormat);
         }
     }
 }

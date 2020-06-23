@@ -4,15 +4,20 @@
 // Purpose: Definition of Class SecretaryFileSystem
 
 using Model.Accounts;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class SecretaryFileSystem : GenericFileRepository<Secretary>, SecretaryRepository
+    public class SecretaryFileSystem : GenericFileSystem<Secretary>, SecretaryRepository
     {
+        public SecretaryFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/secretaries.txt";
+        }
         public override Secretary Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Secretary>(objectStringFormat);
         }
     }
 }

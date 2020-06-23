@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Backend.Repository
 {
-   public abstract class GenericFileRepository<T> : GenericRepository<T> where T : Entity
+   public abstract class GenericFileSystem<T> : GenericRepository<T> where T : Entity
    {
       protected String path;
 
