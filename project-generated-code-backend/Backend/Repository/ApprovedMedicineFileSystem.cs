@@ -4,15 +4,20 @@
 // Purpose: Definition of Class ApprovedMedicineFileSystem
 
 using Model.Hospital;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class ApprovedMedicineFileSystem : GenericFileRepository<Medicine>, ApprovedMedicineRepository
+    public class ApprovedMedicineFileSystem : GenericFileSystem<Medicine>, ApprovedMedicineRepository
     {
+        public ApprovedMedicineFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/approved_medicine.txt";
+        }
         public override Medicine Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Medicine>(objectStringFormat);
         }
     }
 }

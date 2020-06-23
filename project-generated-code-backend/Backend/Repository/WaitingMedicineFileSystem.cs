@@ -4,15 +4,20 @@
 // Purpose: Definition of Class WaitingMedicineFileSystem
 
 using Model.Hospital;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class WaitingMedicineFileSystem : GenericFileRepository<Medicine>, WaitingMedicineRepository
+    public class WaitingMedicineFileSystem : GenericFileSystem<Medicine>, WaitingMedicineRepository
     {
+        public WaitingMedicineFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/waiting_medicine.txt";
+        }
         public override Medicine Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Medicine>(objectStringFormat);
         }
     }
 }

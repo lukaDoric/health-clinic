@@ -4,15 +4,20 @@
 // Purpose: Definition of Class ReportFileSystem
 
 using Model.MedicalExam;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class ReportFileSystem : GenericFileRepository<Report>, ReportRepository
+    public class ReportFileSystem : GenericFileSystem<Report>, ReportRepository
     {
+        public ReportFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/reports.txt";
+        }
         public override Report Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Report>(objectStringFormat);
         }
     }
 }

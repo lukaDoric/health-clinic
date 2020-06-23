@@ -5,14 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
-    class CountryFileSystem : GenericFileRepository<Country>, CountryRepository
+    class CountryFileSystem : GenericFileSystem<Country>, CountryRepository
     {
+        public CountryFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/countries.txt";
+        }
         public override Country Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Country>(objectStringFormat);
         }
     }
 }

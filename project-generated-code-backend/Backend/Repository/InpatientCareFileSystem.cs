@@ -5,12 +5,17 @@
 
 using Model.Hospital;
 using Model.MedicalExam;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class InpatientCareFileSystem : GenericFileRepository<InpatientCare>, InpatientCareRepository
+    public class InpatientCareFileSystem : GenericFileSystem<InpatientCare>, InpatientCareRepository
     {
+        public InpatientCareFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/inpatient_care.txt";
+        }
         public void EndInpatientCare(DateTime dateOfDischarge)
         {
             throw new NotImplementedException();
@@ -18,7 +23,7 @@ namespace Backend.Repository
 
         public override InpatientCare Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+           return JsonConvert.DeserializeObject<InpatientCare>(objectStringFormat);
         }
 
         public void StartInpatientCare(BedReservation bedReservation)

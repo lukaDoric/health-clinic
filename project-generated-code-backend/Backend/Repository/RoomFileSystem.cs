@@ -5,13 +5,18 @@
 
 using Model.Hospital;
 using Model.MedicalExam;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
 namespace Backend.Repository
 {
-    public class RoomFileSystem : GenericFileRepository<Room>, RoomRepository
+    public class RoomFileSystem : GenericFileSystem<Room>, RoomRepository
     {
+        RoomFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/rooms.txt";
+        }
         public List<Room> GetRoomsByEquipment(List<Equipment> equipment)
         {
             throw new NotImplementedException();
@@ -19,7 +24,7 @@ namespace Backend.Repository
 
         public override Room Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Room>(objectStringFormat);
         }
 
     }

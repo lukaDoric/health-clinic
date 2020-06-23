@@ -4,15 +4,20 @@
 // Purpose: Definition of Class EquipmentFileSystem
 
 using Model.Hospital;
+using Newtonsoft.Json;
 using System;
 
 namespace Backend.Repository
 {
-    public class EquipmentFileSystem : GenericFileRepository<Equipment>, EquipmentRepository
+    public class EquipmentFileSystem : GenericFileSystem<Equipment>, EquipmentRepository
     {
+        EquipmentFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/equipment.txt";
+        }
         public override Equipment Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<Equipment>(objectStringFormat);
         }
     }
 }

@@ -5,14 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
-    class RoomTypeFileSystem : GenericFileRepository<RoomType>, RoomTypeRepository
+    class RoomTypeFileSystem : GenericFileSystem<RoomType>, RoomTypeRepository
     {
+        public RoomTypeFileSystem()
+        {
+            path = @"./../../../../project-generated-code-backend/data/room_types.txt";
+        }
         public override RoomType Instantiate(string objectStringFormat)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<RoomType>(objectStringFormat);
         }
     }
 }

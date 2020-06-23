@@ -10,12 +10,11 @@ using System.Collections.Generic;
 
 namespace Backend.Repository
 {
-    public class PatientFileSystem : GenericFileRepository<Patient>, PatientRepository
+    public class PatientFileSystem : GenericFileSystem<Patient>, PatientRepository
     {
         public PatientFileSystem()
         {
             path = @"./../../../../project-generated-code-backend/data/patients.txt";
-
         }
         public List<Patient> GetPatientsByPhysitian(Physitian physitian)
         {
@@ -24,7 +23,6 @@ namespace Backend.Repository
 
         public override Patient Instantiate(string objectStringFormat)
         {
-            Console.WriteLine(objectStringFormat);
             return JsonConvert.DeserializeObject<Patient>(objectStringFormat);
         }
     }
