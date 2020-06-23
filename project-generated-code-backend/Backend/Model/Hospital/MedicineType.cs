@@ -3,17 +3,23 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class MedicineType
 
+using Backend.Model.Util;
 using System;
 
 namespace Model.Hospital
 {
-    public class MedicineType
+    public class MedicineType : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String type;
 
         public string Type { get => type; }
 
-        public MedicineType(string type)
+        public MedicineType(string type) : base(serialNumberGenerator++)
+        {
+            this.type = type;
+        }
+        public MedicineType(int serialNumber, string type) : base(serialNumber)
         {
             this.type = type;
         }

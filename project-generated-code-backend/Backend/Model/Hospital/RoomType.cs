@@ -3,16 +3,22 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class RoomType
 
+using Backend.Model.Util;
 using System;
 
 namespace Model.Hospital
 {
-    public class RoomType
+    public class RoomType : Entity
     {
+        private static int serialNumberGenerator = 0;
         private string name;
         public string Name { get => name; }
 
-        public RoomType(string name)
+        public RoomType(string name) : base(serialNumberGenerator++)
+        {
+            this.name = name;
+        }
+        public RoomType(int serialNumber, string name) : base(serialNumber)
         {
             this.name = name;
         }

@@ -3,12 +3,13 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Account
 
+using Backend.Model.Util;
 using Model.Util;
 using System;
 
 namespace Model.Accounts
 {
-    public abstract class Account
+    public abstract class Account : Entity
     {
         protected String name;
         protected String surname;
@@ -27,7 +28,7 @@ namespace Model.Accounts
         public string Email { get => email; }
         public Address Address { get => address; }
 
-        public Account(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
+        public Account(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address) : base(serialNumber)
         {
             this.name = name;
             this.surname = surname;

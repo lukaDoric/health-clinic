@@ -62,6 +62,7 @@
     <Compile Include="Backend\Model\Util\Country.cs" />
     <Compile Include="Backend\Model\Util\City.cs" />
     <Compile Include="Backend\Model\Util\Address.cs" />
+    <Compile Include="Backend\Model\Util\Entity.cs" />
     <Compile Include="Backend\Model\Util\TimeInterval.cs" />
     <Compile Include="Backend\Model\Schedule\Appointment.cs" />
     <Compile Include="Backend\Model\Schedule\Schedule.cs" />

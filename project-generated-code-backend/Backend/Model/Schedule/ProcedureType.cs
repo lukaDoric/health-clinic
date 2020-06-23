@@ -3,6 +3,7 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class ProcedureType
 
+using Backend.Model.Util;
 using Model.Accounts;
 using Model.Hospital;
 using System;
@@ -10,8 +11,9 @@ using System.Collections.Generic;
 
 namespace Model.Schedule
 {
-    public class ProcedureType
+    public class ProcedureType : Entity
     {
+        private static int serialNumberGenerator = 0;
         private String name;
         private Specialization specialization;
         private List<Equipment> requiredEquipment;
@@ -105,7 +107,14 @@ namespace Model.Schedule
             return base.GetHashCode();
         }
 
-        public ProcedureType(string name, Specialization specialization)
+        public ProcedureType(string name, Specialization specialization) : base(serialNumberGenerator++)
+        {
+            this.name = name;
+            this.specialization = specialization;
+            this.requiredEquipment = new List<Equipment>();
+        }
+
+        public ProcedureType(int serialNumber, string name, Specialization specialization) : base(serialNumber)
         {
             this.name = name;
             this.specialization = specialization;

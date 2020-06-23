@@ -3,13 +3,15 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Report
 
+using Backend.Model.Util;
 using System;
 using System.Collections.Generic;
 
 namespace Model.MedicalExam
 {
-    public class Report
+    public class Report : Entity
     {
+        private static int serialNumberGenerator = 0;
         private DateTime date;
         private String findings;
 
@@ -78,7 +80,13 @@ namespace Model.MedicalExam
                 additionalDocument.Clear();
         }
 
-        public Report(DateTime date, string findings, List<AdditionalDocument> additionalDocument)
+        public Report(DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(serialNumberGenerator++)
+        {
+            this.date = date;
+            this.findings = findings;
+            this.additionalDocument = additionalDocument;
+        }
+        public Report(int serialNumber, DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(serialNumber)
         {
             this.date = date;
             this.findings = findings;
