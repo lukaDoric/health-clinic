@@ -38,6 +38,10 @@ namespace Backend.Controller.SuperintendentControllers
       }
       
       public EquipmentService equipmentService;
-   
-   }
+
+        public EquipmentController()
+        {
+            equipmentService = new EquipmentService();
+        }
+    }
 }

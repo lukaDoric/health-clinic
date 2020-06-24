@@ -19,7 +19,7 @@ namespace Backend.Controller.SuperintendentControllers
       
       public List<RenovationDTO> GetAll()
       {
-         throw new NotImplementedException();
+            return renovationService.GetAll();
       }
       
       public void EditRenovation(Backend.Dto.RenovationDTO renovation)
@@ -38,6 +38,10 @@ namespace Backend.Controller.SuperintendentControllers
       }
       
       public RenovationService renovationService;
-   
-   }
+
+        public RenovationController()
+        {
+            this.renovationService =new RenovationService();
+        }
+    }
 }

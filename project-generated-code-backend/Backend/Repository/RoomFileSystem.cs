@@ -13,9 +13,9 @@ namespace Backend.Repository
 {
     public class RoomFileSystem : GenericFileSystem<Room>, RoomRepository
     {
-        RoomFileSystem()
+        public RoomFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/rooms.txt";
+            path = @"./../../../HealthClinic/data/rooms.txt";
         }
         public List<Room> GetRoomsByEquipment(List<Equipment> equipment)
         {

@@ -19,22 +19,22 @@ namespace Backend.Controller.SuperintendentControllers
       
       public List<Room> GetAll()
       {
-         throw new NotImplementedException();
+            return roomService.GetAll();
       }
       
       public void EditRoom(Room room)
       {
-         throw new NotImplementedException();
+            roomService.EditRoom(room);
       }
       
       public void NewRoom(Room room)
       {
-         throw new NotImplementedException();
+            roomService.NewRoom(room);
       }
       
       public void DeleteRoom(Room room)
       {
-         throw new NotImplementedException();
+            roomService.DeleteRoom(room);
       }
       
       public void AddEquipment(Equipment equipment, Room room)
@@ -48,6 +48,10 @@ namespace Backend.Controller.SuperintendentControllers
       }
       
       public RoomService roomService;
-   
-   }
+
+        public RoomController()
+        {
+            roomService = new RoomService();
+        }
+    }
 }
