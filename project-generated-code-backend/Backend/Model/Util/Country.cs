@@ -95,6 +95,14 @@ namespace Model.Util
             return name;
         }
 
+        public List<City> Cities
+        {
+            get
+            {
+                return City;
+            }
+        }
+
         public override bool Equals(object obj)
         {
             Country other = obj as Country;
