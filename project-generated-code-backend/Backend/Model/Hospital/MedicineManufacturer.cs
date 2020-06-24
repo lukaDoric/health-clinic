@@ -4,6 +4,7 @@
 // Purpose: Definition of Class MedicineManufacturer
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Hospital
@@ -20,6 +21,7 @@ namespace Model.Hospital
             this.name = name;
         }
 
+        [JsonConstructor]
         public MedicineManufacturer(int serialNumber, string name) : base(serialNumber)
         {
             this.name = name;

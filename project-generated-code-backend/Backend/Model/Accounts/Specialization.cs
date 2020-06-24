@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Specialization
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Accounts
@@ -17,6 +18,8 @@ namespace Model.Accounts
         {
             this.name = name;
         }
+
+        [JsonConstructor]
         public Specialization(int serialNumber, string name) : base(serialNumber)
         {
             this.name = name;

@@ -6,6 +6,7 @@
 using Backend.Model.Util;
 using Model.Accounts;
 using Model.Hospital;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -114,6 +115,7 @@ namespace Model.Schedule
             this.requiredEquipment = new List<Equipment>();
         }
 
+        [JsonConstructor]
         public ProcedureType(int serialNumber, string name, Specialization specialization) : base(serialNumber)
         {
             this.name = name;

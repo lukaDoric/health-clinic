@@ -4,6 +4,7 @@
 // Purpose: Definition of Class City
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Util
@@ -48,6 +49,7 @@ namespace Model.Util
             this.postalCode = postalCode;
         }
 
+        [JsonConstructor]
         public City(int serialNumber, string name, string postalCode) : base(serialNumber)
         {
             this.name = name;

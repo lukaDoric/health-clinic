@@ -4,6 +4,7 @@
 // Purpose: Definition of Class SpecialistReferral
 
 using Model.Accounts;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.MedicalExam
@@ -23,6 +24,7 @@ namespace Model.MedicalExam
             this.physitian = physitian;
         }
 
+        [JsonConstructor]
         public SpecialistReferral(int serialNumber, DateTime date, string notes, Specialization specialization, Physitian physitian) : base(serialNumber, date, notes)
         {
             this.specialization = specialization;

@@ -4,6 +4,7 @@
 // Purpose: Definition of Class DiagnosticType
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.MedicalExam
@@ -19,6 +20,8 @@ namespace Model.MedicalExam
         {
             this.name = name;
         }
+
+        [JsonConstructor]
         public DiagnosticType(int serialNumber, string name) : base(serialNumber)
         {
             this.name = name;

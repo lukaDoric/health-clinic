@@ -1,6 +1,7 @@
 ﻿using Backend.Model.Util;
 using Model.Hospital;
 using Model.Util;
+using Newtonsoft.Json;
 
 namespace HealthClinic.Backend.Model.Hospital
 {
@@ -25,6 +26,8 @@ namespace HealthClinic.Backend.Model.Hospital
             id = ++idMaker;
             TimeInteval = timeInteval;
         }
+
+        [JsonConstructor]
         public Renovation(int serialNumber, TimeInterval timeInteval) : base(serialNumber)
         {
             id = ++idMaker;

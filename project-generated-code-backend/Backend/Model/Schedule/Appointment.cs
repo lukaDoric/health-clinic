@@ -7,6 +7,7 @@ using Backend.Model.Util;
 using Model.Accounts;
 using Model.Hospital;
 using Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Schedule
@@ -35,6 +36,7 @@ namespace Model.Schedule
             this.procedureType = procedureType;
         }
 
+        [JsonConstructor]
         public Appointment(int serialNumber, Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(serialNumber)
         {
             this.room = room;

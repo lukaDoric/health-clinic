@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Physitian
 
 using Model.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -19,6 +20,7 @@ namespace Model.Accounts
             specialization = new List<Specialization>();
         }
 
+        [JsonConstructor]
         public Physitian(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
