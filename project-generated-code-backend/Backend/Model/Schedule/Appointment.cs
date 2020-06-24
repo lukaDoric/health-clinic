@@ -3,6 +3,7 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Appointment
 
+using Backend.Dto;
 using Backend.Model.Util;
 using Model.Accounts;
 using Model.Hospital;
@@ -20,12 +21,14 @@ namespace Model.Schedule
         private Patient patient;
         private TimeInterval timeInterval;
         private ProcedureType procedureType;
+        private bool urgency;
 
         public Room Room { get => room; }
         public Physitian Physitian { get => physitian; }
         public Patient Patient { get => patient; }
         public TimeInterval TimeInterval { get => timeInterval; }
         public ProcedureType ProcedureType { get => procedureType; }
+        public bool Urgency { get => urgency; }
 
         public Appointment(Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(serialNumberGenerator++)
         {
@@ -44,6 +47,16 @@ namespace Model.Schedule
             this.patient = patient;
             this.timeInterval = timeInterval;
             this.procedureType = procedureType;
+        }
+
+        public Appointment(AppointmentDTO appointmentDTO) : base(serialNumberGenerator++)
+        {
+            this.room = appointmentDTO.Room;
+            this.physitian = appointmentDTO.Physitian;
+            this.patient = appointmentDTO.Patient;
+            this.timeInterval = appointmentDTO.DateTime;
+            this.procedureType = appointmentDTO.ProcedureType;
+            this.urgency = appointmentDTO.Urgency;
         }
 
         public override bool Equals(object obj)

@@ -10,19 +10,24 @@ using System;
 
 namespace Backend.Controller
 {
-   public class PatientRegistrationController
-   {
-      public void RegisterPatient(PatientDTO patientDTO)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void DeletePatientAccount(Patient patient)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public PatientRegistrationService patientRegistrationService;
-   
-   }
+    public class PatientRegistrationController
+    {
+        public PatientRegistrationService patientRegistrationService;
+
+        public PatientRegistrationController()
+        {
+            patientRegistrationService = new PatientRegistrationService();
+        }
+
+        public void RegisterPatient(PatientDTO patientDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeletePatientAccount(Patient patient)
+        {
+            patientRegistrationService.DeletePatientAccount(patient);
+        }
+
+    }
 }

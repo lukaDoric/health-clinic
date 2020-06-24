@@ -17,6 +17,7 @@ namespace Model.Schedule
         private static int serialNumberGenerator = 0;
         private String name;
         private Specialization specialization;
+        private int estimatedTimeInMinutes;
         private List<Equipment> requiredEquipment;
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace Model.Schedule
 
         public Specialization Specialization { get => specialization; }
         public string Name { get => name; }
+        public int EstimatedTimeInMinutes { get => estimatedTimeInMinutes; }
 
         /// <summary>
         /// Add a new Model.Hospital.Equipment in the collection
@@ -108,18 +110,20 @@ namespace Model.Schedule
             return base.GetHashCode();
         }
 
-        public ProcedureType(string name, Specialization specialization) : base(serialNumberGenerator++)
+        public ProcedureType(string name, int estimatedTimeInMinutes, Specialization specialization) : base(serialNumberGenerator++)
         {
             this.name = name;
             this.specialization = specialization;
+            this.estimatedTimeInMinutes = estimatedTimeInMinutes;
             this.requiredEquipment = new List<Equipment>();
         }
 
         [JsonConstructor]
-        public ProcedureType(int serialNumber, string name, Specialization specialization) : base(serialNumber)
+        public ProcedureType(int serialNumber, int estimatedTimeInMinutes, string name, Specialization specialization) : base(serialNumber)
         {
             this.name = name;
             this.specialization = specialization;
+            this.estimatedTimeInMinutes = estimatedTimeInMinutes;
             this.requiredEquipment = new List<Equipment>();
         }
 

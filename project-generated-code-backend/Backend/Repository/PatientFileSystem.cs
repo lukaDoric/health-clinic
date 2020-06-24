@@ -14,7 +14,7 @@ namespace Backend.Repository
     {
         public PatientFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/patients.txt";
+            path = @"./../../data/patients.txt";
         }
         public List<Patient> GetPatientsByPhysitian(Physitian physitian)
         {

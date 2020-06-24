@@ -10,19 +10,24 @@ using System.Collections.Generic;
 
 namespace Backend.Controller.SecretaryControllers
 {
-   public class SecretaryHospitalController
-   {
-      public List<Patient> GetAllPatients()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Physitian> GetAllPhysitians()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public HospitalService hospitalService;
-   
-   }
+    public class SecretaryHospitalController
+    {
+        public HospitalService hospitalService;
+
+        public SecretaryHospitalController()
+        {
+            hospitalService = new HospitalService();
+        }
+
+        public List<Patient> GetAllPatients()
+        {
+            return hospitalService.GetAllPatients();
+        }
+
+        public List<Physitian> GetAllPhysitians()
+        {
+            throw new NotImplementedException();
+        }
+
+    }
 }

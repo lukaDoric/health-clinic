@@ -49,12 +49,9 @@ namespace Backend.Repository
 
         public void Save(T newEntity)
         {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.NullValueHandling = NullValueHandling.Ignore;
-            StreamWriter sw = new StreamWriter(path);
-            JsonWriter writer = new JsonTextWriter(sw);
-            serializer.Serialize(writer, newEntity);
-            writer.WriteRaw("\n");
+            List<T> entities = GetAll();
+            entities.Add(newEntity);
+            SaveAll(entities);
         }
 
         public void Update(T updateEntity)
@@ -67,10 +64,17 @@ namespace Backend.Repository
 
         private void SaveAll(List<T> entities)
         {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+            StreamWriter sw = new StreamWriter(path);
+            JsonWriter writer = new JsonTextWriter(sw);
             foreach (T e in entities)
             {
-                Save(e);
+                serializer.Serialize(writer, e);
+                writer.WriteRaw("\n");
             }
+            sw.Close();
+            writer.Close();
         }
     }
 }

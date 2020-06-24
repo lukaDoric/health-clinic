@@ -3,6 +3,7 @@
 // Created: Sunday, June 7, 2020 4:19:02 PM
 // Purpose: Definition of Class HospitalService
 
+using Backend.Repository;
 using Model.Accounts;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,16 @@ namespace Backend.Service.HospitalAccountsService
 {
     public class HospitalService
     {
+        public PatientRepository patientRepository;
+
+        public HospitalService()
+        {
+            patientRepository = new PatientFileSystem();
+        }
+
         public List<Patient> GetAllPatients()
         {
-            throw new NotImplementedException();
+            return patientRepository.GetAll();
         }
 
         public List<Physitian> GetAllPhysitians()
@@ -41,7 +49,6 @@ namespace Backend.Service.HospitalAccountsService
             throw new NotImplementedException();
         }
 
-        public Backend.Repository.PatientRepository patientRepository;
         public Backend.Repository.PhysitianRepository physitianRepository;
 
     }
