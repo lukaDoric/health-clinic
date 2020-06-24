@@ -3,6 +3,7 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class Prescription
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -18,6 +19,7 @@ namespace Model.MedicalExam
             medicineDosage = new List<MedicineDosage>();
         }
 
+        [JsonConstructor]
         public Prescription(int serialNumber, DateTime date, string notes) : base(serialNumber, date, notes)
         {
             medicineDosage = new List<MedicineDosage>();

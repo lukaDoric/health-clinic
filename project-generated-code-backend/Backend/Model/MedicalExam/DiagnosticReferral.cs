@@ -3,6 +3,7 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class DiagnosticReferral
 
+using Newtonsoft.Json;
 using System;
 
 namespace Model.MedicalExam
@@ -31,6 +32,8 @@ namespace Model.MedicalExam
         {
             this.diagnosticType = diagnosticType;
         }
+
+        [JsonConstructor]
         public DiagnosticReferral(int serialNumber, DateTime date, string notes, DiagnosticType diagnosticType) : base(serialNumber, date, notes)
         {
             this.diagnosticType = diagnosticType;

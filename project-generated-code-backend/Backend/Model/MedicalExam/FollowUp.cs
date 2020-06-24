@@ -4,6 +4,7 @@
 // Purpose: Definition of Class FollowUp
 
 using Model.Accounts;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -19,6 +20,8 @@ namespace Model.MedicalExam
         {
             this.physitian = physitian;
         }
+
+        [JsonConstructor]
         public FollowUp(int serialNumber, DateTime date, string notes, Physitian physitian) : base(serialNumber, date, notes)
         {
             this.physitian = physitian;

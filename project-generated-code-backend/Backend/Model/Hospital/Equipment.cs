@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Equipment
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Hospital
@@ -19,6 +20,8 @@ namespace Model.Hospital
             this.name = name;
             this.id = id;
         }
+
+        [JsonConstructor]
         public Equipment(int serialNumber, string name, string id) : base(serialNumber)
         {
             this.name = name;

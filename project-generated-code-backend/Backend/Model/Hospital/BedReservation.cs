@@ -6,6 +6,7 @@
 using Backend.Model.Util;
 using Model.Accounts;
 using Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Hospital
@@ -39,6 +40,7 @@ namespace Model.Hospital
             this.bed = bed;
         }
 
+        [JsonConstructor]
         public BedReservation(int serialNumber, TimeInterval timeInterval, Patient patient, Bed bed) : base(serialNumber)
         {
             this.timeInterval = timeInterval;

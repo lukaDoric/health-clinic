@@ -4,6 +4,7 @@
 // Purpose: Definition of Class RoomType
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Hospital
@@ -18,6 +19,8 @@ namespace Model.Hospital
         {
             this.name = name;
         }
+
+        [JsonConstructor]
         public RoomType(int serialNumber, string name) : base(serialNumber)
         {
             this.name = name;

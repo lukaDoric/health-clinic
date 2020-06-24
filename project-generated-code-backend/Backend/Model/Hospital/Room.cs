@@ -8,6 +8,7 @@ using Backend.Model.Util;
 using HealthClinic.Backend.Model.Hospital;
 using Model.Hospital;
 using Model.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -158,6 +159,7 @@ namespace Model.Hospital
             this.renovationTime = new List<Renovation>();
         }
 
+        [JsonConstructor]
         public Room(int serialNumber, int id, RoomType roomType) : base(serialNumber)
         {
             this.id = id;

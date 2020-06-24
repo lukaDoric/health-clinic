@@ -5,6 +5,7 @@
 
 using Backend.Model.Util;
 using Model.Accounts;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.MedicalExam
@@ -34,6 +35,7 @@ namespace Model.MedicalExam
             this.patient = patient;
         }
 
+        [JsonConstructor]
         public InpatientCare(int serialNumber, DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(serialNumber)
         {
             this.dateOfAdmition = dateOfAdmition;

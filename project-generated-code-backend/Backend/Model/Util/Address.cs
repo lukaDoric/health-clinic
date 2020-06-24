@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Address
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Util
@@ -23,6 +24,7 @@ namespace Model.Util
             this.number = number;
         }
 
+        [JsonConstructor]
         public Address(int serialNumber, string street, int number) : base(serialNumber)
         {
             this.street = street;

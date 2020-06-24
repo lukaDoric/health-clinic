@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Secretary
 
 using Model.Util;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Accounts
@@ -17,6 +18,7 @@ namespace Model.Accounts
 
         }
 
+        [JsonConstructor]
         public Secretary(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {

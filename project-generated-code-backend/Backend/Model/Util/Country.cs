@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Country
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -46,6 +47,7 @@ namespace Model.Util
             this.name = name;
         }
 
+        [JsonConstructor]
         public Country(int serialNumber, string name) : base(serialNumber)
         {
             this.name = name;

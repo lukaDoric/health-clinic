@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Rejection
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -23,6 +24,8 @@ namespace Model.Hospital
             this.reason = reason;
             this.medicine = medicine;
         }
+
+        [JsonConstructor]
         public Rejection(int serialNumber, string reason, Medicine medicine) : base(serialNumber)
         {
             this.reason = reason;

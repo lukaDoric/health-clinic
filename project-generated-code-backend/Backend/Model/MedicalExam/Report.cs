@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Report
 
 using Backend.Model.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -86,6 +87,8 @@ namespace Model.MedicalExam
             this.findings = findings;
             this.additionalDocument = additionalDocument;
         }
+
+        [JsonConstructor]
         public Report(int serialNumber, DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(serialNumber)
         {
             this.date = date;

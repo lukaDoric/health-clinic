@@ -5,6 +5,7 @@
 
 using Backend.Model.Util;
 using Model.Hospital;
+using Newtonsoft.Json;
 using System;
 
 namespace Model.MedicalExam
@@ -37,6 +38,8 @@ namespace Model.MedicalExam
             this.note = note;
             this.medicine = medicine;
         }
+
+        [JsonConstructor]
         public MedicineDosage(int serialNumber, double ammount, string note, Medicine medicine) : base(serialNumber)
         {
             this.amount = ammount;
