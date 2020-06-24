@@ -10,34 +10,40 @@ using System;
 
 namespace Backend.Controller.SecretaryControllers
 {
-   public abstract class SecretaryScheduleController
-   {
-      public void EditAppointment(Appointment appointment)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void DeleteAppointment(Appointment appointment)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Appointment GetAppointmentsByDate(DateTime date)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void NewAppointment(AppointmentDTO appointmentDTO)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public abstract AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO);
-      
-      public abstract AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO);
-      
-      public AppointmentService appointmentService;
-      public AppointmentSchedulingService appointmentSchedulingService;
-   
-   }
+    public class SecretaryScheduleController
+    {
+        public void EditAppointment(Appointment appointment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteAppointment(Appointment appointment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Appointment GetAppointmentsByDate(DateTime date)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void NewAppointment(AppointmentDTO appointmentDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AppointmentService appointmentService;
+        public AppointmentSchedulingService appointmentSchedulingService;
+
+    }
 }

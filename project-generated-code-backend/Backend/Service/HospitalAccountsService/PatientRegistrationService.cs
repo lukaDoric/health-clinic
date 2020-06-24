@@ -4,6 +4,7 @@
 // Purpose: Definition of Class PatientRegistrationService
 
 using Backend.Dto;
+using Backend.Repository;
 using Model.Accounts;
 using System;
 
@@ -11,6 +12,13 @@ namespace Backend.Service.HospitalAccountsService
 {
     public class PatientRegistrationService
     {
+        public PatientRepository patientRepository;
+
+        public PatientRegistrationService()
+        {
+            patientRepository = new PatientFileSystem();
+        }
+
         private bool IsJMBGValid(String jmbg)
         {
             throw new NotImplementedException();
@@ -28,10 +36,8 @@ namespace Backend.Service.HospitalAccountsService
 
         public void DeletePatientAccount(Patient patient)
         {
-            throw new NotImplementedException();
+            patientRepository.Delete(patient.SerialNumber);
         }
-
-        public Backend.Repository.PatientRepository patientRepository;
 
     }
 }
