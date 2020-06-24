@@ -7,6 +7,7 @@ using Model.Accounts;
 using Backend.Service.HospitalAccountsService;
 using System;
 using System.Collections.Generic;
+using Model.Util;
 
 namespace Backend.Controller.SecretaryControllers
 {
@@ -29,5 +30,9 @@ namespace Backend.Controller.SecretaryControllers
             throw new NotImplementedException();
         }
 
+        internal List<Country> GetAllCountries()
+        {
+            return hospitalService.getAllCountries();
+        }
     }
 }

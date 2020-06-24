@@ -13,7 +13,7 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
     {
         public CountryFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/countries.txt";
+            path = @"./../../data/countries.txt";
         }
         public override Country Instantiate(string objectStringFormat)
         {

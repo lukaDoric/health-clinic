@@ -21,7 +21,7 @@ namespace Backend.Controller
 
         public void RegisterPatient(PatientDTO patientDTO)
         {
-            throw new NotImplementedException();
+            patientRegistrationService.RegisterPatient(patientDTO);
         }
 
         public void DeletePatientAccount(Patient patient)

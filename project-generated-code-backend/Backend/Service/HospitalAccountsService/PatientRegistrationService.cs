@@ -7,6 +7,7 @@ using Backend.Dto;
 using Backend.Repository;
 using Model.Accounts;
 using System;
+using System.Collections.Generic;
 
 namespace Backend.Service.HospitalAccountsService
 {
@@ -21,17 +22,49 @@ namespace Backend.Service.HospitalAccountsService
 
         private bool IsJMBGValid(String jmbg)
         {
-            throw new NotImplementedException();
+            List<Patient> patients = patientRepository.GetAll();
+            foreach (Patient p in patients)
+            {
+                if (p.Id == jmbg)
+                {
+                    Console.WriteLine("JMBG");
+                    return false;
+                }
+            }
+            return true;
         }
 
-        private bool IsGuestAccount(Patient patient)
+        public bool IsGuest(String jmbg)
         {
-            throw new NotImplementedException();
+            List<Patient> patients = patientRepository.GetAll();
+            foreach (Patient p in patients)
+            {
+                if (p.Id == jmbg)
+                {
+                    if (p.Guest)
+                    {
+                        Console.WriteLine("GUEST");
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         public void RegisterPatient(PatientDTO patientDTO)
         {
-            throw new NotImplementedException();
+            if (!IsJMBGValid(patientDTO.Id) && IsGuest(patientDTO.Id))
+            {
+                patientRepository.Update(new Patient(patientDTO));
+            }
+            else if (IsJMBGValid(patientDTO.Id))
+            {
+                patientRepository.Save(new Patient(patientDTO));
+            }
+            else
+            {
+                return;
+            }
         }
 
         public void DeletePatientAccount(Patient patient)
