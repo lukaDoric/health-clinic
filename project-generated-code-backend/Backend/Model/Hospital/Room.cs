@@ -20,7 +20,7 @@ namespace Model.Hospital
         private int id;
         private static int  idMaker = 0;
         private RoomType roomType;
-        private List<Renovation> renovationTime;
+        private List<RenovationDTO> renovationTime;
         private List<Equipment> equipment;
 
 
@@ -92,12 +92,12 @@ namespace Model.Hospital
         /// Property for collection of TimeInterval
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public List<Renovation> RenovationTime
+        public List<RenovationDTO> RenovationTime
         {
             get
             {
                 if (renovationTime == null)
-                    renovationTime = new List<Renovation>();
+                    renovationTime = new List<RenovationDTO>();
                 return renovationTime;
             }
             set
@@ -105,7 +105,7 @@ namespace Model.Hospital
                 RemoveAllRenovationTime();
                 if (value != null)
                 {
-                    foreach (Renovation oRenovationTime in value)
+                    foreach (RenovationDTO oRenovationTime in value)
                         AddRenovationTime(oRenovationTime);
                 }
             }
@@ -118,12 +118,12 @@ namespace Model.Hospital
         /// Add a new TimeInterval in the collection
         /// </summary>
         /// <pdGenerated>Default Add</pdGenerated>
-        public void AddRenovationTime(Renovation newRenovationTime)
+        public void AddRenovationTime(RenovationDTO newRenovationTime)
         {
             if (newRenovationTime == null)
                 return;
             if (this.renovationTime == null)
-                this.renovationTime = new List<Renovation>();
+                this.renovationTime = new List<RenovationDTO>();
             if (!this.renovationTime.Contains(newRenovationTime))
                 this.renovationTime.Add(newRenovationTime);
         }
@@ -132,7 +132,7 @@ namespace Model.Hospital
         /// Remove an existing TimeInterval from the collection
         /// </summary>
         /// <pdGenerated>Default Remove</pdGenerated>
-        public void RemoveRenovationTime(Renovation oldRenovationTime)
+        public void RemoveRenovationTime(RenovationDTO oldRenovationTime)
         {
             if (oldRenovationTime == null)
                 return;
@@ -156,7 +156,7 @@ namespace Model.Hospital
             this.id = id;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
-            this.renovationTime = new List<Renovation>();
+            this.renovationTime = new List<RenovationDTO>();
         }
 
         [JsonConstructor]
@@ -165,7 +165,7 @@ namespace Model.Hospital
             this.id = id;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
-            this.renovationTime = new List<Renovation>();
+            this.renovationTime = new List<RenovationDTO>();
         }
 
         public Room(RoomType roomType) : base(serialNumberGenerator++)
@@ -174,7 +174,7 @@ namespace Model.Hospital
             this.id = idMaker++;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
-            this.renovationTime = new List<Renovation>();
+            this.renovationTime = new List<RenovationDTO>();
         }
 
         public override bool Equals(object obj)
@@ -202,7 +202,7 @@ namespace Model.Hospital
                 ret += "\t" + e.ToString();
             }
             ret += "\nrenovation time: ";
-            foreach(Renovation r in renovationTime)
+            foreach(RenovationDTO r in renovationTime)
             {
                 ret += "\t" + r.ToString();
             }

@@ -4,6 +4,9 @@
 // Purpose: Definition of Class RenovationService
 
 using Backend.Dto;
+using Backend.Repository;
+using HealthClinic.Backend.Model.Hospital;
+using Model.Hospital;
 using System;
 using System.Collections.Generic;
 
@@ -18,7 +21,13 @@ namespace Backend.Service.HospitalResourcesService
 
         public List<RenovationDTO> GetAll()
         {
-            throw new NotImplementedException();
+            List<RenovationDTO> renovations = new List<RenovationDTO>();
+            List<Room> rooms  = roomRepository.GetAll();
+            foreach(Room room in rooms)
+            {
+                renovations.AddRange(room.RenovationTime);
+            }
+            return renovations;
         }
 
         public void EditRenovation(Backend.Dto.RenovationDTO renovation)
@@ -38,5 +47,9 @@ namespace Backend.Service.HospitalResourcesService
 
         public Backend.Repository.RoomRepository roomRepository;
 
+        public RenovationService()
+        {
+            roomRepository = new RoomFileSystem();
+        }
     }
 }

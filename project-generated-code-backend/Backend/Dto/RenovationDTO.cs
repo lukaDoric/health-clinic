@@ -16,5 +16,11 @@ namespace Backend.Dto
 
         public Room Room { get => room; set => room = value; }
         public TimeInterval TimeInterval { get => timeInterval; set => timeInterval = value; }
+
+        public RenovationDTO(Room room, TimeInterval timeInterval)
+        {
+            Room = room;
+            TimeInterval = timeInterval;
+        }
     }
 }
