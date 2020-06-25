@@ -13,13 +13,13 @@ namespace Model.Accounts
     {
         private static int serialNumberGenerator = 0;
         public Secretary(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
-            : base(serialNumberGenerator++, name, surname, id, dateOfBirth, contact, email, address)
+            : base(Guid.NewGuid().ToString(), name, surname, id, dateOfBirth, contact, email, address)
         {
 
         }
 
         [JsonConstructor]
-        public Secretary(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
+        public Secretary(String serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
 

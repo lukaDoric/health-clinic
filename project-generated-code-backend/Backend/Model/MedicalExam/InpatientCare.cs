@@ -26,7 +26,7 @@ namespace Model.MedicalExam
         public Physitian Physitian { get => physitian; }
         public Patient Patient { get => patient; }
 
-        public InpatientCare(DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(serialNumberGenerator++)
+        public InpatientCare(DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(Guid.NewGuid().ToString())
         {
             this.dateOfAdmition = dateOfAdmition;
             this.dateOfDischarge = dateOfDischarge;
@@ -36,7 +36,7 @@ namespace Model.MedicalExam
         }
 
         [JsonConstructor]
-        public InpatientCare(int serialNumber, DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(serialNumber)
+        public InpatientCare(String serialNumber, DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(serialNumber)
         {
             this.dateOfAdmition = dateOfAdmition;
             this.dateOfDischarge = dateOfDischarge;

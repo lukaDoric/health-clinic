@@ -12,16 +12,16 @@ namespace Model.Accounts
 {
     public class Physitian : Account
     {
-        private static int serialNumberGenerator = 0;
+        
         private List<Specialization> specialization;
         public Physitian(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
-            : base(serialNumberGenerator++, name, surname, id, dateOfBirth, contact, email, address)
+            : base(Guid.NewGuid().ToString(), name, surname, id, dateOfBirth, contact, email, address)
         {
             this.specialization = new List<Specialization>();
         }
 
         [JsonConstructor]
-        public Physitian(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, List<Specialization> specialization = null)
+        public Physitian(String serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, List<Specialization> specialization = null)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
             foreach (Specialization s in specialization)

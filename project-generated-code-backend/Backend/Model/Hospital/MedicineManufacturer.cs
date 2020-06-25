@@ -16,13 +16,13 @@ namespace Model.Hospital
 
         public string Name { get => name; }
 
-        public MedicineManufacturer(string name) : base(serialNumberGenerator++)
+        public MedicineManufacturer(string name) : base(Guid.NewGuid().ToString())
         {
             this.name = name;
         }
 
         [JsonConstructor]
-        public MedicineManufacturer(int serialNumber, string name) : base(serialNumber)
+        public MedicineManufacturer(String serialNumber, string name) : base(serialNumber)
         {
             this.name = name;
         }

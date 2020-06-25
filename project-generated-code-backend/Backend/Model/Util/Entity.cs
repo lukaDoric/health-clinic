@@ -8,11 +8,11 @@ namespace Backend.Model.Util
 {
     public abstract class Entity
     {
-        private int serialNumber;
-        public int SerialNumber { get => serialNumber; }
+        private string serialNumber;
+        public string SerialNumber { get => serialNumber; }
 
         [JsonConstructor]
-        public Entity(int serialNumber)
+        public Entity(string serialNumber)
         {
             this.serialNumber = serialNumber;
         }

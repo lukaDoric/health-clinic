@@ -30,7 +30,7 @@ namespace Model.Schedule
         public ProcedureType ProcedureType { get => procedureType; }
         public bool Urgency { get => urgency; }
 
-        public Appointment(Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(serialNumberGenerator++)
+        public Appointment(Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(Guid.NewGuid().ToString())
         {
             this.room = room;
             this.physitian = physitian;
@@ -40,7 +40,7 @@ namespace Model.Schedule
         }
 
         [JsonConstructor]
-        public Appointment(int serialNumber, Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(serialNumber)
+        public Appointment(String serialNumber, Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(serialNumber)
         {
             this.room = room;
             this.physitian = physitian;
@@ -49,7 +49,7 @@ namespace Model.Schedule
             this.procedureType = procedureType;
         }
 
-        public Appointment(AppointmentDTO appointmentDTO) : base(serialNumberGenerator++)
+        public Appointment(AppointmentDTO appointmentDTO) : base(Guid.NewGuid().ToString())
         {
             this.room = appointmentDTO.Room;
             this.physitian = appointmentDTO.Physitian;

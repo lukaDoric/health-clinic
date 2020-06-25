@@ -11,21 +11,20 @@ namespace Model.MedicalExam
 {
     public class SpecialistReferral : AdditionalDocument
     {
-        private static int serialNumberGenerator = 0;
         private Specialization specialization;
         private Physitian physitian;
 
         public Specialization Specialization { get => specialization; }
         public Physitian Physitian { get => physitian; }
 
-        public SpecialistReferral(DateTime date, string notes, Specialization specialization, Physitian physitian) : base(serialNumberGenerator++, date, notes)
+        public SpecialistReferral(DateTime date, string notes, Specialization specialization, Physitian physitian) : base(Guid.NewGuid().ToString(), date, notes)
         {
             this.specialization = specialization;
             this.physitian = physitian;
         }
 
         [JsonConstructor]
-        public SpecialistReferral(int serialNumber, DateTime date, string notes, Specialization specialization, Physitian physitian) : base(serialNumber, date, notes)
+        public SpecialistReferral(String serialNumber, DateTime date, string notes, Specialization specialization, Physitian physitian) : base(serialNumber, date, notes)
         {
             this.specialization = specialization;
             this.physitian = physitian;

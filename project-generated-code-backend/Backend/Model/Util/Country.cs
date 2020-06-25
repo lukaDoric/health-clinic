@@ -42,13 +42,13 @@ namespace Model.Util
 
         public string Name { get => name; }
 
-        public Country(string name) : base(serialNumberGenerator++)
+        public Country(string name) : base(Guid.NewGuid().ToString())
         {
             this.name = name;
         }
 
         [JsonConstructor]
-        public Country(int serialNumber, string name) : base(serialNumber)
+        public Country(String serialNumber, string name) : base(serialNumber)
         {
             this.name = name;
         }

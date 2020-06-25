@@ -43,14 +43,14 @@ namespace Model.Util
         public string Name { get => name; }
         public string PostalCode { get => postalCode; }
 
-        public City(string name, string postalCode) : base(serialNumberGenerator++)
+        public City(string name, string postalCode) : base(Guid.NewGuid().ToString())
         {
             this.name = name;
             this.postalCode = postalCode;
         }
 
         [JsonConstructor]
-        public City(int serialNumber, string name, string postalCode) : base(serialNumber)
+        public City(String serialNumber, string name, string postalCode) : base(serialNumber)
         {
             this.name = name;
             this.postalCode = postalCode;

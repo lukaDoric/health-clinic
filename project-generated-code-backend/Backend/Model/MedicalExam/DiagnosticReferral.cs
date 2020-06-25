@@ -28,13 +28,13 @@ namespace Model.MedicalExam
                 this.diagnosticType = value;
             }
         }
-        public DiagnosticReferral(DateTime date, string notes, DiagnosticType diagnosticType) : base(serialNumberGenerator++, date, notes)
+        public DiagnosticReferral(DateTime date, string notes, DiagnosticType diagnosticType) : base(Guid.NewGuid().ToString(), date, notes)
         {
             this.diagnosticType = diagnosticType;
         }
 
         [JsonConstructor]
-        public DiagnosticReferral(int serialNumber, DateTime date, string notes, DiagnosticType diagnosticType) : base(serialNumber, date, notes)
+        public DiagnosticReferral(String serialNumber, DateTime date, string notes, DiagnosticType diagnosticType) : base(serialNumber, date, notes)
         {
             this.diagnosticType = diagnosticType;
         }

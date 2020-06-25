@@ -16,7 +16,7 @@ namespace Model.MedicalExam
         public DateTime Date { get => date; }
         public string Notes { get => notes; }
 
-        protected AdditionalDocument(int serialNumber, DateTime date, string notes) : base(serialNumber)
+        protected AdditionalDocument(String serialNumber, DateTime date, string notes) : base(serialNumber)
         {
             this.date = date;
             this.notes = notes;

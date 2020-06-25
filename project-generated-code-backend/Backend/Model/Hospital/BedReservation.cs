@@ -33,7 +33,7 @@ namespace Model.Hospital
         public Patient Patient { get => patient; }
         public TimeInterval TimeInterval { get => timeInterval; }
 
-        public BedReservation(TimeInterval timeInterval, Patient patient, Bed bed) : base(serialNumberGenerator++)
+        public BedReservation(TimeInterval timeInterval, Patient patient, Bed bed) : base(Guid.NewGuid().ToString())
         {
             this.timeInterval = timeInterval;
             this.patient = patient;
@@ -41,7 +41,7 @@ namespace Model.Hospital
         }
 
         [JsonConstructor]
-        public BedReservation(int serialNumber, TimeInterval timeInterval, Patient patient, Bed bed) : base(serialNumber)
+        public BedReservation(String serialNumber, TimeInterval timeInterval, Patient patient, Bed bed) : base(serialNumber)
         {
             this.timeInterval = timeInterval;
             this.patient = patient;

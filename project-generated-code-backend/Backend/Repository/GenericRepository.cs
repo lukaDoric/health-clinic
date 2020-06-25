@@ -17,9 +17,9 @@ namespace Backend.Repository
 
         void Update(T updateEntity);
 
-        void Delete(int id);
+        void Delete(String id);
 
-        T GetById(int id);
+        T GetById(String id);
 
         T Instantiate(string objectStringFormat);
     }

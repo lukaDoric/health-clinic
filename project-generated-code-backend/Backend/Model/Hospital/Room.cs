@@ -151,7 +151,7 @@ namespace Model.Hospital
                 renovationTime.Clear();
         }
 
-        public Room(int id, RoomType roomType) : base(serialNumberGenerator++)
+        public Room(int id, RoomType roomType) : base(Guid.NewGuid().ToString())
         {
             this.id = id;
             this.roomType = roomType;
@@ -160,7 +160,7 @@ namespace Model.Hospital
         }
 
         [JsonConstructor]
-        public Room(int serialNumber, int id, RoomType roomType) : base(serialNumber)
+        public Room(String serialNumber, int id, RoomType roomType) : base(serialNumber)
         {
             this.id = id;
             this.roomType = roomType;
@@ -168,7 +168,7 @@ namespace Model.Hospital
             this.renovationTime = new List<RenovationDTO>();
         }
 
-        public Room(RoomType roomType) : base(serialNumberGenerator++)
+        public Room(RoomType roomType) : base(Guid.NewGuid().ToString())
         {
             
             this.id = idMaker++;

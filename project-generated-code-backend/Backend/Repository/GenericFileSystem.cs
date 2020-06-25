@@ -15,7 +15,7 @@ namespace Backend.Repository
    {
       protected String path;
 
-        public void Delete(int id)
+        public void Delete(String id)
         {
             List<T> entities = GetAll();
             T entity = GetById(id);
@@ -35,11 +35,11 @@ namespace Backend.Repository
             return entities;
         }
 
-        public T GetById(int id)
+        public T GetById(String id)
         {
             foreach(T entity in GetAll())
             {
-                if(entity.SerialNumber == id)
+                if(entity.SerialNumber.Equals(id))
                 {
                     return entity;
                 }
