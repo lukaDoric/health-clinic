@@ -1,6 +1,2 @@
-{"SerialNumber":"111","Adress":[{"Number":0}],"Comment":[],"Name":"Nemanja","Surname":"Jovanovic","Id":"123456789","DateOfBirth":"1998-02-16T00:00:00","Contact":"064/1548-457"}
-{"SerialNumber":"112","Adress":[{"Number":0}],"Comment":[],"Name":"Nenad","Surname":"Adamovic","Id":"0011223344","DateOfBirth":"1998-06-25T00:00:00","Contact":"064/1548-457"}
-{"SerialNumber":"113","Adress":[{"Number":0}],"Comment":[],"Name":"Dusan","Surname":"Damnjanovic","Id":"054343332","DateOfBirth":"1998-06-25T00:00:00","Contact":"064/1548-457"}
-{"SerialNumber":"114","Adress":[{"Number":0}],"Comment":[],"Name":"Jovan","Surname":"Adamovic","Id":"645354366","DateOfBirth":"1998-06-25T00:00:00","Contact":"064/453-453"}
-{"SerialNumber":"115","Adress":[{"Number":0}],"Comment":[],"Name":"Marko","Surname":"Markovic","Id":"756545345","DateOfBirth":"1998-06-25T00:00:00","Contact":"064/666-433"}
-{"SerialNumber":"116","Adress":[{"Number":0}],"Comment":[],"Name":"Marko","Surname":"Vidovic","Id":"654645435","DateOfBirth":"1998-06-25T00:00:00","Contact":"064/534-543"}
+{"ParentName":"Luka","Gender":"Muski","Guest":false,"Name":"Luka","Surname":"Luka","FullName":"Luka Luka","Id":"5555","DateOfBirth":"2020-06-26T00:00:00+02:00","Contact":"543543","Email":"adresa@adresa.com","SerialNumber":"a31390a3-d98e-4c5b-a1e6-e3696d31d611"}
+{"ParentName":"Proba","Gender":"Muski","Guest":false,"Name":"Proba","Surname":"Proba","FullName":"Proba Proba","Id":"55555","DateOfBirth":"2020-06-26T00:00:00+02:00","Contact":"234234","Email":"asd@asd.com","SerialNumber":"1fa0e28a-8fa6-4473-9962-eb3201ac9b11"}

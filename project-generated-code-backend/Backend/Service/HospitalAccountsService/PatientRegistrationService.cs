@@ -27,7 +27,6 @@ namespace Backend.Service.HospitalAccountsService
             {
                 if (p.Id == jmbg)
                 {
-                    Console.WriteLine("JMBG");
                     return false;
                 }
             }
@@ -39,11 +38,10 @@ namespace Backend.Service.HospitalAccountsService
             List<Patient> patients = patientRepository.GetAll();
             foreach (Patient p in patients)
             {
-                if (p.Id == jmbg)
+                if (p.Id.Equals(jmbg))
                 {
                     if (p.Guest)
                     {
-                        Console.WriteLine("GUEST");
                         return true;
                     }
                 }
@@ -55,7 +53,17 @@ namespace Backend.Service.HospitalAccountsService
         {
             if (!IsJMBGValid(patientDTO.Id) && IsGuest(patientDTO.Id))
             {
-                patientRepository.Update(new Patient(patientDTO));
+                Patient p = GetExistingPatient(patientDTO.Id);
+                if (p == null)
+                {
+                    return;
+                }
+                else
+                {
+                    Patient newPatient = new Patient(patientDTO);
+                    newPatient.SerialNumber = p.SerialNumber;
+                    patientRepository.Update(newPatient);
+                }
             }
             else if (IsJMBGValid(patientDTO.Id))
             {
@@ -65,6 +73,19 @@ namespace Backend.Service.HospitalAccountsService
             {
                 return;
             }
+        }
+
+        public Patient GetExistingPatient(String jmbg)
+        {
+            List<Patient> patients = patientRepository.GetAll();
+            foreach (Patient p in patients)
+            {
+                if (p.Id.Equals(jmbg))
+                {
+                    return p;
+                }
+            }
+            return null;
         }
 
         public void DeletePatientAccount(Patient patient)
