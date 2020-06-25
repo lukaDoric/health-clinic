@@ -16,11 +16,10 @@ namespace Model.Hospital
 {
     public class Room : Entity
     {
-        private static int serialNumberGenerator = 0;
+  
         private int id;
         private static int  idMaker = 0;
         private RoomType roomType;
-        private List<RenovationDTO> renovationTime;
         private List<Equipment> equipment;
 
 
@@ -92,89 +91,31 @@ namespace Model.Hospital
         /// Property for collection of TimeInterval
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public List<RenovationDTO> RenovationTime
-        {
-            get
-            {
-                if (renovationTime == null)
-                    renovationTime = new List<RenovationDTO>();
-                return renovationTime;
-            }
-            set
-            {
-                RemoveAllRenovationTime();
-                if (value != null)
-                {
-                    foreach (RenovationDTO oRenovationTime in value)
-                        AddRenovationTime(oRenovationTime);
-                }
-            }
-        }
+       
 
         public static int IdMaker { get => idMaker;}
 
 
-        /// <summary>
-        /// Add a new TimeInterval in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
-        public void AddRenovationTime(RenovationDTO newRenovationTime)
-        {
-            if (newRenovationTime == null)
-                return;
-            if (this.renovationTime == null)
-                this.renovationTime = new List<RenovationDTO>();
-            if (!this.renovationTime.Contains(newRenovationTime))
-                this.renovationTime.Add(newRenovationTime);
-        }
 
-        /// <summary>
-        /// Remove an existing TimeInterval from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
-        public void RemoveRenovationTime(RenovationDTO oldRenovationTime)
-        {
-            if (oldRenovationTime == null)
-                return;
-            if (this.renovationTime != null)
-                if (this.renovationTime.Contains(oldRenovationTime))
-                    this.renovationTime.Remove(oldRenovationTime);
-        }
-
-        /// <summary>
-        /// Remove all instances of Equipment from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
-        public void RemoveAllRenovationTime()
-        {
-            if (renovationTime != null)
-                renovationTime.Clear();
-        }
-
-        public Room(int id, RoomType roomType) : base(Guid.NewGuid().ToString())
-        {
-            this.id = id;
-            this.roomType = roomType;
-            this.equipment = new List<Equipment>();
-            this.renovationTime = new List<RenovationDTO>();
-        }
 
         [JsonConstructor]
-        public Room(String serialNumber, int id, RoomType roomType) : base(serialNumber)
+        public Room(String serial,int id, RoomType roomType) : base()
         {
+            this.SerialNumber = serial;
             this.id = id;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
-            this.renovationTime = new List<RenovationDTO>();
+
         }
 
-        public Room(RoomType roomType) : base(Guid.NewGuid().ToString())
+
+
+        public Room(RoomType roomType) : base()
         {
-            
             this.id = idMaker++;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
-            this.renovationTime = new List<RenovationDTO>();
+
         }
 
         public override bool Equals(object obj)
@@ -201,11 +142,7 @@ namespace Model.Hospital
             {
                 ret += "\t" + e.ToString();
             }
-            ret += "\nrenovation time: ";
-            foreach(RenovationDTO r in renovationTime)
-            {
-                ret += "\t" + r.ToString();
-            }
+           
             return ret;
         }
     }

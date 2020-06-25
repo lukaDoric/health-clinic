@@ -19,7 +19,8 @@ namespace Backend.Repository
         {
             List<T> entities = GetAll();
             T entity = GetById(id);
-            entities.Remove(entity);
+            bool b = entities.Remove(entity);
+            if (!b) Console.WriteLine("Nije pronadjen entitet za brisanje");
             SaveAll(entities);
         }
 
