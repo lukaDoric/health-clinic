@@ -13,7 +13,7 @@ namespace Backend.Repository
     {
         public PhysitianFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/physitians.txt";
+            path = @"./../../data/physitians.txt";
         }
         public Specialization GetPhysitiansByProcedureType(Specialization procedureType)
         {

@@ -26,5 +26,10 @@ namespace Model.Accounts
         }
 
         public string Name { get => name; }
+
+        public override string ToString()
+        {
+            return this.name;
+        }
     }
 }

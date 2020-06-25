@@ -27,7 +27,7 @@ namespace Backend.Controller.SecretaryControllers
 
         public List<Physitian> GetAllPhysitians()
         {
-            throw new NotImplementedException();
+            return hospitalService.GetAllPhysitians();
         }
 
         internal List<Country> GetAllCountries()
