@@ -17,14 +17,25 @@ namespace Model.Accounts
         public Physitian(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
             : base(serialNumberGenerator++, name, surname, id, dateOfBirth, contact, email, address)
         {
-            specialization = new List<Specialization>();
+            this.specialization = new List<Specialization>();
         }
 
         [JsonConstructor]
-        public Physitian(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
+        public Physitian(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, List<Specialization> specialization = null)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
-            specialization = new List<Specialization>();
+            foreach (Specialization s in specialization)
+            {
+                Console.WriteLine(s);
+            }
+            if (specialization == null)
+            {
+                this.specialization = new List<Specialization>();
+            }
+            else
+            {
+                this.specialization = specialization;
+            }
         }
 
         /// <summary>
@@ -154,7 +165,17 @@ namespace Model.Accounts
         }
         public TimeInterval WorkSchedule { get => workSchedule; set => workSchedule = value; }
 
-
+        public Specialization OneSpecialization
+        {
+            get
+            {
+                if(specialization[0] != null)
+                {
+                    return specialization[0];
+                }
+                return new Specialization("Nema");
+            }
+        }
 
     }
 }

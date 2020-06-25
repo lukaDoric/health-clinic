@@ -16,11 +16,13 @@ namespace Backend.Service.HospitalAccountsService
     {
         public PatientRepository patientRepository;
         public CountryRepository countryRepository;
+        public PhysitianRepository physitianRepository;
 
         public HospitalService()
         {
             patientRepository = new PatientFileSystem();
             countryRepository = new CountryFileSystem();
+            physitianRepository = new PhysitianFileSystem();
         }
 
         public List<Patient> GetAllPatients()
@@ -30,7 +32,7 @@ namespace Backend.Service.HospitalAccountsService
 
         public List<Physitian> GetAllPhysitians()
         {
-            throw new NotImplementedException();
+            return physitianRepository.GetAll();
         }
 
         public List<Patient> GetPatientsByPhysitian(Patient physitian)
@@ -57,8 +59,6 @@ namespace Backend.Service.HospitalAccountsService
         {
             throw new NotImplementedException();
         }
-
-        public Backend.Repository.PhysitianRepository physitianRepository;
 
     }
 }
