@@ -16,13 +16,13 @@ namespace Model.MedicalExam
 
         public string Name { get => name; }
 
-        public DiagnosticType(string name) : base(serialNumberGenerator++)
+        public DiagnosticType(string name) : base(Guid.NewGuid().ToString())
         {
             this.name = name;
         }
 
         [JsonConstructor]
-        public DiagnosticType(int serialNumber, string name) : base(serialNumber)
+        public DiagnosticType(String serialNumber, string name) : base(serialNumber)
         {
             this.name = name;
         }

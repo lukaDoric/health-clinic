@@ -15,14 +15,14 @@ namespace Model.Hospital
         private String name;
         private String id;
 
-        public Equipment(string name, string id) : base(serialNumberGenerator++)
+        public Equipment(string name, string id) : base(Guid.NewGuid().ToString())
         {
             this.name = name;
             this.id = id;
         }
 
         [JsonConstructor]
-        public Equipment(int serialNumber, string name, string id) : base(serialNumber)
+        public Equipment(String serialNumber, string name, string id) : base(serialNumber)
         {
             this.name = name;
             this.id = id;

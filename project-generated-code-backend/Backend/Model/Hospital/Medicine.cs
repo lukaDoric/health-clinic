@@ -22,7 +22,7 @@ namespace Model.Hospital
         public MedicineManufacturer MedicineManufacturer { get => medicineManufacturer; }
         public MedicineType MedicineType { get => medicineType; }
 
-        public Medicine(string copyrightName, string genericName, MedicineManufacturer medicineManufacturer, MedicineType medicineType) : base(serialNumberGenerator++)
+        public Medicine(string copyrightName, string genericName, MedicineManufacturer medicineManufacturer, MedicineType medicineType) : base(Guid.NewGuid().ToString())
         {
             this.copyrightName = copyrightName;
             this.genericName = genericName;
@@ -31,7 +31,7 @@ namespace Model.Hospital
         }
 
         [JsonConstructor]
-        public Medicine(int serialNumber, string copyrightName, string genericName, MedicineManufacturer medicineManufacturer, MedicineType medicineType) : base(serialNumber)
+        public Medicine(String serialNumber, string copyrightName, string genericName, MedicineManufacturer medicineManufacturer, MedicineType medicineType) : base(serialNumber)
         {
             this.copyrightName = copyrightName;
             this.genericName = genericName;

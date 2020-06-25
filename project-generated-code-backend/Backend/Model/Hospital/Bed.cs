@@ -12,13 +12,13 @@ namespace Model.Hospital
    {
         private static int serialNumberGenerator = 0;
 
-        public Bed(string name, string id) : base(serialNumberGenerator++, name, id)
+        public Bed(string name, string id) : base(Guid.NewGuid().ToString(), name, id)
         {
 
         }
 
         [JsonConstructor]
-        public Bed(int serialNumber, string name, string id) : base(serialNumber, name, id)
+        public Bed(String serialNumber, string name, string id) : base(serialNumber, name, id)
         {
 
         }

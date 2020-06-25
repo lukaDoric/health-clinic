@@ -81,7 +81,7 @@ namespace Model.MedicalExam
                 additionalDocument.Clear();
         }
 
-        public Report(DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(serialNumberGenerator++)
+        public Report(DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(Guid.NewGuid().ToString())
         {
             this.date = date;
             this.findings = findings;
@@ -89,7 +89,7 @@ namespace Model.MedicalExam
         }
 
         [JsonConstructor]
-        public Report(int serialNumber, DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(serialNumber)
+        public Report(String serialNumber, DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(serialNumber)
         {
             this.date = date;
             this.findings = findings;

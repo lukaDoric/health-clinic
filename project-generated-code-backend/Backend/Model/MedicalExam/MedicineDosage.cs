@@ -32,7 +32,7 @@ namespace Model.MedicalExam
         public double Amount { get => amount; }
         public string Note { get => note; }
 
-        public MedicineDosage(double ammount, string note, Medicine medicine) : base(serialNumberGenerator++)
+        public MedicineDosage(double ammount, string note, Medicine medicine) : base(Guid.NewGuid().ToString())
         {
             this.amount = ammount;
             this.note = note;
@@ -40,7 +40,7 @@ namespace Model.MedicalExam
         }
 
         [JsonConstructor]
-        public MedicineDosage(int serialNumber, double ammount, string note, Medicine medicine) : base(serialNumber)
+        public MedicineDosage(String serialNumber, double ammount, string note, Medicine medicine) : base(serialNumber)
         {
             this.amount = ammount;
             this.note = note;

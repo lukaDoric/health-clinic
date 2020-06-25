@@ -2,6 +2,7 @@
 using Model.Hospital;
 using Model.Util;
 using Newtonsoft.Json;
+using System;
 
 namespace HealthClinic.Backend.Model.Hospital
 {
@@ -21,14 +22,14 @@ namespace HealthClinic.Backend.Model.Hospital
         public TimeInterval TimeInteval { get => renovationTime; set => renovationTime = value; }
         public int Id { get => id; set => id = value; }
 
-        public Renovation(TimeInterval timeInteval) : base(serialNumberGenerator++)
+        public Renovation(TimeInterval timeInteval) : base(Guid.NewGuid().ToString())
         {
             id = ++idMaker;
             TimeInteval = timeInteval;
         }
 
         [JsonConstructor]
-        public Renovation(int serialNumber, TimeInterval timeInteval) : base(serialNumber)
+        public Renovation(String serialNumber, TimeInterval timeInteval) : base(serialNumber)
         {
             id = ++idMaker;
             TimeInteval = timeInteval;

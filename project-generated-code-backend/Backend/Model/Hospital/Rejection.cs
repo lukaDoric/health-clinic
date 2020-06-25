@@ -19,14 +19,14 @@ namespace Model.Hospital
         public string Reason { get => reason; }
         public Medicine Medicine { get => medicine; }
 
-        public Rejection(string reason, Medicine medicine) : base(serialNumberGenerator++)
+        public Rejection(string reason, Medicine medicine) : base(Guid.NewGuid().ToString())
         {
             this.reason = reason;
             this.medicine = medicine;
         }
 
         [JsonConstructor]
-        public Rejection(int serialNumber, string reason, Medicine medicine) : base(serialNumber)
+        public Rejection(String serialNumber, string reason, Medicine medicine) : base(serialNumber)
         {
             this.reason = reason;
             this.medicine = medicine;

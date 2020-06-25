@@ -14,13 +14,13 @@ namespace Model.MedicalExam
         private static int serialNumberGenerator = 0;
         private List<MedicineDosage> medicineDosage;
 
-        public Prescription(DateTime date, string notes) : base(serialNumberGenerator++, date, notes)
+        public Prescription(DateTime date, string notes) : base(Guid.NewGuid().ToString(), date, notes)
         {
             medicineDosage = new List<MedicineDosage>();
         }
 
         [JsonConstructor]
-        public Prescription(int serialNumber, DateTime date, string notes) : base(serialNumber, date, notes)
+        public Prescription(String serialNumber, DateTime date, string notes) : base(serialNumber, date, notes)
         {
             medicineDosage = new List<MedicineDosage>();
         }

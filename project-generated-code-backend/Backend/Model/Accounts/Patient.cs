@@ -12,13 +12,13 @@ namespace Model.Accounts
 {
     public class Patient : Account
     {
-        private static int serialNumberGenerator = 0;
+
         private String parentName;
         private String gender;
         private bool guest;
 
         public Patient(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, string parentName, string gender, bool isGuest = false)
-            : base(serialNumberGenerator++, name, surname, id, dateOfBirth, contact, email, address)
+            : base(Guid.NewGuid().ToString(), name, surname, id, dateOfBirth, contact, email, address)
         {
             this.parentName = parentName;
             this.gender = gender;
@@ -26,7 +26,7 @@ namespace Model.Accounts
         }
 
         [JsonConstructor]
-        public Patient(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, string parentName, string gender, bool isGuest = false)
+        public Patient(string serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, string parentName, string gender, bool isGuest = false)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
             this.parentName = parentName;
@@ -34,7 +34,7 @@ namespace Model.Accounts
             this.Guest = isGuest;
         }
 
-        public Patient(PatientDTO patientDTO) : base(serialNumberGenerator++, patientDTO.Name, patientDTO.Surname, patientDTO.Id, patientDTO.DateOfBirth, patientDTO.Contact, patientDTO.Email, patientDTO.Address)
+        public Patient(PatientDTO patientDTO) : base(Guid.NewGuid().ToString(), patientDTO.Name, patientDTO.Surname, patientDTO.Id, patientDTO.DateOfBirth, patientDTO.Contact, patientDTO.Email, patientDTO.Address)
         {
             this.parentName = patientDTO.ParentName;
             this.gender = patientDTO.Gender;
@@ -50,5 +50,6 @@ namespace Model.Accounts
         {
             return base.ToString() + "\nparent name: " + this.parentName + "\ngender: " + this.gender;
         }
+
     }
 }

@@ -16,13 +16,13 @@ namespace Model.MedicalExam
         private Physitian physitian;
         public Physitian Physitian { get => physitian; }
 
-        public FollowUp(DateTime date, string notes, Physitian physitian) : base(serialNumberGenerator++, date, notes)
+        public FollowUp(DateTime date, string notes, Physitian physitian) : base(Guid.NewGuid().ToString(), date, notes)
         {
             this.physitian = physitian;
         }
 
         [JsonConstructor]
-        public FollowUp(int serialNumber, DateTime date, string notes, Physitian physitian) : base(serialNumber, date, notes)
+        public FollowUp(String serialNumber, DateTime date, string notes, Physitian physitian) : base(serialNumber, date, notes)
         {
             this.physitian = physitian;
         }

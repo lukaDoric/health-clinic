@@ -14,13 +14,13 @@ namespace Model.Accounts
         private static int serialNumberGenerator = 0;
         private String name;
 
-        public Specialization(string name) : base(serialNumberGenerator++)
+        public Specialization(string name) : base(Guid.NewGuid().ToString())
         {
             this.name = name;
         }
 
         [JsonConstructor]
-        public Specialization(int serialNumber, string name) : base(serialNumber)
+        public Specialization(String serialNumber, string name) : base(serialNumber)
         {
             this.name = name;
         }

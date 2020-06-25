@@ -28,7 +28,7 @@ namespace Model.Accounts
         public string Email { get => email; }
         public Address Address { get => address; }
 
-        public Account(int serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address) : base(serialNumber)
+        public Account(String serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address) : base(serialNumber)
         {
             this.name = name;
             this.surname = surname;

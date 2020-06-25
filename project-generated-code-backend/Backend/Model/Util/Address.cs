@@ -18,14 +18,14 @@ namespace Model.Util
         public string Street { get => street; }
         public int Number { get => number; }
 
-        public Address(string street, int number) : base(serialNumberGenerator++)
+        public Address(string street, int number) : base(Guid.NewGuid().ToString())
         {
             this.street = street;
             this.number = number;
         }
 
         [JsonConstructor]
-        public Address(int serialNumber, string street, int number) : base(serialNumber)
+        public Address(String serialNumber, string street, int number) : base(serialNumber)
         {
             this.street = street;
             this.number = number;

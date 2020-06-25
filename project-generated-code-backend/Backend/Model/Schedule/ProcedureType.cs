@@ -110,7 +110,7 @@ namespace Model.Schedule
             return base.GetHashCode();
         }
 
-        public ProcedureType(string name, int estimatedTimeInMinutes, Specialization specialization) : base(serialNumberGenerator++)
+        public ProcedureType(string name, int estimatedTimeInMinutes, Specialization specialization) : base(Guid.NewGuid().ToString())
         {
             this.name = name;
             this.specialization = specialization;
@@ -119,7 +119,7 @@ namespace Model.Schedule
         }
 
         [JsonConstructor]
-        public ProcedureType(int serialNumber, int estimatedTimeInMinutes, string name, Specialization specialization) : base(serialNumber)
+        public ProcedureType(String serialNumber, int estimatedTimeInMinutes, string name, Specialization specialization) : base(serialNumber)
         {
             this.name = name;
             this.specialization = specialization;
