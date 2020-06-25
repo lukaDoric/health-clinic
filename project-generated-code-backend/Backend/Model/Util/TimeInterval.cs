@@ -3,6 +3,7 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class TimeInterval
 
+using Newtonsoft.Json;
 using System;
 
 namespace Model.Util
@@ -15,6 +16,7 @@ namespace Model.Util
         public DateTime Start { get => start; set => start = value; }
         public DateTime End { get => end; set => end = value; }
 
+        [JsonConstructor]
         public TimeInterval(DateTime start, DateTime end)
         {
             this.start = start;

@@ -6,6 +6,7 @@
 using Backend.Dto;
 using Backend.Repository;
 using HealthClinic.Backend.Model.Hospital;
+using HealthClinic.Backend.Repository;
 using Model.Hospital;
 using System;
 using System.Collections.Generic;
@@ -14,42 +15,36 @@ namespace Backend.Service.HospitalResourcesService
 {
     public class RenovationService
     {
-        public Backend.Dto.RenovationDTO GetById(String id)
+        public Renovation GetById(String id)
         {
             throw new NotImplementedException();
         }
 
-        public List<RenovationDTO> GetAll()
+        public List<Renovation> GetAll()
         {
-            List<RenovationDTO> renovations = new List<RenovationDTO>();
-            List<Room> rooms  = roomRepository.GetAll();
-            foreach(Room room in rooms)
-            {
-                renovations.AddRange(room.RenovationTime);
-            }
-            return renovations;
+            return renovationRepository.GetAll();
         }
 
-        public void EditRenovation(Backend.Dto.RenovationDTO renovation)
+        public void EditRenovation(Renovation renovation)
         {
-            throw new NotImplementedException();
+            renovationRepository.Update(renovation);
         }
 
-        public void DeleteRenovation(Backend.Dto.RenovationDTO renovation)
+        public void DeleteRenovation(Renovation renovation)
         {
-            throw new NotImplementedException();
+            renovationRepository.Delete(renovation.SerialNumber);
         }
 
-        public void NewRenovation(Backend.Dto.RenovationDTO renovation)
+        public void NewRenovation(Renovation renovation)
         {
-            throw new NotImplementedException();
+            renovationRepository.Save(renovation);
         }
 
-        public Backend.Repository.RoomRepository roomRepository;
+        public RenovationRepository renovationRepository;
 
         public RenovationService()
         {
-            roomRepository = new RoomFileSystem();
+            renovationRepository = new RenovationFileSystem();
         }
     }
 }

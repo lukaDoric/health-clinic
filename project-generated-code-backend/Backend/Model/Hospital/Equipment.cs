@@ -11,7 +11,7 @@ namespace Model.Hospital
 {
     public class Equipment : Entity
     {
-        private static int serialNumberGenerator = 0;
+
         private String name;
         private String id;
 

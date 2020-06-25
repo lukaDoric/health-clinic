@@ -8,10 +8,10 @@ namespace HealthClinic.Backend.Model.Hospital
 {
     public class Renovation : Entity
     {
-        private static int serialNumberGenerator = 0;
         private static int idMaker = 0;
         private int id;
         private TimeInterval renovationTime;
+        private Room room;
 
 
         /// <summary>
@@ -19,20 +19,35 @@ namespace HealthClinic.Backend.Model.Hospital
         /// </summary>
         /// <pdGenerated>Default opposite class property</pdGenerated>
 
-        public TimeInterval TimeInteval { get => renovationTime; set => renovationTime = value; }
+        public TimeInterval TimeInterval { get => renovationTime; set => renovationTime = value; }
         public int Id { get => id; set => id = value; }
+        public Room Room { get => room; set => room = value; }
 
-        public Renovation(TimeInterval timeInteval) : base(Guid.NewGuid().ToString())
+        public Renovation(Room room ,TimeInterval timeInteval) : base(Guid.NewGuid().ToString())
         {
             id = ++idMaker;
-            TimeInteval = timeInteval;
+            TimeInterval = timeInteval;
+            this.room = room;
         }
 
         [JsonConstructor]
-        public Renovation(String serialNumber, TimeInterval timeInteval) : base(serialNumber)
+        public Renovation(String serialNumber,Room room ,TimeInterval timeInteval) : base()
         {
+            this.SerialNumber = serialNumber;
             id = ++idMaker;
-            TimeInteval = timeInteval;
+            this.room = room;
+            TimeInterval = timeInteval;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Renovation other = obj as Renovation;
+            if (other == null)
+            {
+                return false;
+            }
+            return this.Room.Equals(other.Room) && this.TimeInterval.Equals(other.TimeInterval);
+            
         }
     }
 }

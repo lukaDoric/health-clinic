@@ -5,6 +5,7 @@
 
 using Backend.Dto;
 using Backend.Service.HospitalResourcesService;
+using HealthClinic.Backend.Model.Hospital;
 using System;
 using System.Collections.Generic;
 
@@ -12,29 +13,29 @@ namespace Backend.Controller.SuperintendentControllers
 {
    public class RenovationController
    {
-      public Backend.Dto.RenovationDTO GetById(String id)
+      public Renovation GetById(String id)
       {
          throw new NotImplementedException();
       }
       
-      public List<RenovationDTO> GetAll()
+      public List<Renovation> GetAll()
       {
             return renovationService.GetAll();
       }
       
-      public void EditRenovation(Backend.Dto.RenovationDTO renovation)
+      public void EditRenovation(Renovation renovation)
       {
-         throw new NotImplementedException();
+            renovationService.EditRenovation(renovation);
       }
       
-      public void DeleteRenovation(Backend.Dto.RenovationDTO renovation)
+      public void DeleteRenovation(Renovation renovation)
       {
-         throw new NotImplementedException();
+            renovationService.DeleteRenovation(renovation);
       }
       
-      public void NewRenovation(Backend.Dto.RenovationDTO renovation)
+      public void NewRenovation(Renovation renovation)
       {
-         throw new NotImplementedException();
+            renovationService.NewRenovation(renovation);
       }
       
       public RenovationService renovationService;
