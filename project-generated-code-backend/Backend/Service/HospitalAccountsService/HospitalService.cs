@@ -45,6 +45,23 @@ namespace Backend.Service.HospitalAccountsService
             physitianRepository.Delete(id);
         }
 
+        internal List<TimeInterval> GetAllVacations(Physitian physitianDTO)
+        {
+            return physitianRepository.GetById(physitianDTO.SerialNumber).VacationTime;
+        }
+
+        internal void AddVacation(TimeInterval timeInterval, Physitian physitianDTO)
+        {
+            physitianDTO.AddVacationTime(timeInterval);
+            physitianRepository.Update(physitianDTO);
+        }
+
+        internal void RemoveVacation(TimeInterval timeInterval, Physitian physitianDTO)
+        {
+            physitianDTO.RemoveVacationTime(timeInterval);
+            physitianRepository.Update(physitianDTO);
+        }
+
         internal void DeletePhysician(Physitian physitian)
         {
             physitianRepository.Delete(physitian.SerialNumber);

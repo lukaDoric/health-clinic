@@ -5,6 +5,7 @@
 
 using Backend.Service.HospitalAccountsService;
 using Model.Accounts;
+using Model.Util;
 using System;
 using System.Collections.Generic;
 
@@ -38,12 +39,19 @@ namespace Backend.Controller.SuperintendentControllers
             hospitalService.DeletePhysician(physitian);
         }
 
+        internal List<TimeInterval> GetAllVacations(Physitian physitianDTO)
+        {
+            return hospitalService.GetAllVacations(physitianDTO);
+        }
 
+        internal void AddVacation(TimeInterval timeInterval, Physitian physitianDTO)
+        {
+            hospitalService.AddVacation(timeInterval, physitianDTO);
+        }
 
-
-
-
-
-
+        internal void RemoveVacation(TimeInterval timeInterval, Physitian physitianDTO)
+        {
+            hospitalService.RemoveVacation(timeInterval, physitianDTO);
+        }
     }
 }
