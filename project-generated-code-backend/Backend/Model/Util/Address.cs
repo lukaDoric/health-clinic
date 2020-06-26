@@ -13,27 +13,23 @@ namespace Model.Util
     {
         private static int serialNumberGenerator = 0;
         private String street;
-        private int number;
 
         public string Street { get => street; }
-        public int Number { get => number; }
 
-        public Address(string street, int number) : base(Guid.NewGuid().ToString())
+        public Address(string street) : base(Guid.NewGuid().ToString())
         {
             this.street = street;
-            this.number = number;
         }
 
         [JsonConstructor]
         public Address(String serialNumber, string street, int number) : base(serialNumber)
         {
             this.street = street;
-            this.number = number;
         }
 
         public override string ToString()
         {
-            return street + " " + number;
+            return street;
         }
 
         public override bool Equals(object obj)
@@ -43,7 +39,7 @@ namespace Model.Util
             {
                 return false;
             }
-            return this.Street.Equals(other.Street) && this.Number == other.Number;
+            return this.Street.Equals(other.Street);
         }
 
         public override int GetHashCode()
