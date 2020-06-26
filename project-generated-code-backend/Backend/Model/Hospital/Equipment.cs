@@ -22,8 +22,9 @@ namespace Model.Hospital
         }
 
         [JsonConstructor]
-        public Equipment(String serialNumber, string name, string id) : base(serialNumber)
+        public Equipment(String serialNumber, string name, string id) : base()
         {
+            this.SerialNumber = serialNumber;
             this.name = name;
             this.id = id;
         }

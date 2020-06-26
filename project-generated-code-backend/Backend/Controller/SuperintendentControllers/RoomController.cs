@@ -39,15 +39,22 @@ namespace Backend.Controller.SuperintendentControllers
       
       public void AddEquipment(Equipment equipment, Room room)
       {
-         throw new NotImplementedException();
+            roomService.AddEquipment(equipment, room);
       }
       
       public void RemoveEquipmentById(String id, Room room)
       {
-         throw new NotImplementedException();
+            roomService.RemoveEquipmentById(id, room);
       }
-      
-      public RoomService roomService;
+
+      public List<Equipment> GetAllEquipment(Room room)
+      {
+            return roomService.GetAllEquipment(room);
+      }
+
+
+
+        public RoomService roomService;
 
         public RoomController()
         {

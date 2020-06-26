@@ -31,5 +31,15 @@ namespace Model.Accounts
         {
             return this.name;
         }
+
+        public override bool Equals(object obj)
+        {
+            Specialization other = obj as Specialization;
+            if (other == null)
+            {
+                return false;
+            }
+            return this.Name.Equals(other.Name);
+        }
     }
 }

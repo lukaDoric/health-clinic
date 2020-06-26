@@ -30,10 +30,32 @@ namespace Backend.Service.HospitalAccountsService
             return patientRepository.GetAll();
         }
 
+        internal void NewPhysician(Physitian physitian)
+        {
+            physitianRepository.Save(physitian);
+        }
+
+        internal void EditPhysician(Physitian physitian)
+        {
+            physitianRepository.Update(physitian);
+        }
+
+        internal void DeletePhysicianById(string id)
+        {
+            physitianRepository.Delete(id);
+        }
+
+        internal void DeletePhysician(Physitian physitian)
+        {
+            physitianRepository.Delete(physitian.SerialNumber);
+        }
+
         public List<Physitian> GetAllPhysitians()
         {
             return physitianRepository.GetAll();
         }
+
+
 
         public List<Patient> GetPatientsByPhysitian(Patient physitian)
         {
