@@ -10,6 +10,7 @@ namespace Backend.Service.SchedulingService.SchedulingStrategies
 {
     public class PatientSchedulingStrategy : SchedulingStrategy
     {
+        private const int DISALLOW_SCHEDULING_HOURS = 24;
         public AppointmentDTO PrepareAppointment(AppointmentDTO appointment)
         {
             throw new NotImplementedException();

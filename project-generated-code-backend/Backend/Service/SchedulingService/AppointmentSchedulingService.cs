@@ -10,48 +10,34 @@ using Model.Util;
 using Backend.Service.SchedulingService.SchedulingStrategies;
 using System;
 using System.Collections.Generic;
+using Backend.Service.SchedulingService.AppointmentGeneralitiesOptions;
 
 namespace Backend.Service.SchedulingService
 {
-    public abstract class AppointmentSchedulingService
+    public class AppointmentSchedulingService
     {
-        private List<Physitian> GetAvailablePhysitians()
+        private SchedulingStrategy schedulingStrategyContext;
+        private AppointmentGeneralitiesManager appointmentGeneralitiesManager;
+
+        public AppointmentSchedulingService(SchedulingStrategy schedulingStrategyContext)
         {
-            throw new NotImplementedException();
+            this.schedulingStrategyContext = schedulingStrategyContext;
+            this.appointmentGeneralitiesManager = new AppointmentGeneralitiesManager();
         }
 
-        private List<Room> GetAvailableRooms()
+        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentPreferences)
         {
+            AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
+            return appointmentGeneralitiesManager.getAppointmentGeneralities(preparedAppointmentPreferences);
+        }
+        private AppointmentDTO FindNearestAppointment(AppointmentDTO appointmentPreferences)
+        {
+            AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
             throw new NotImplementedException();
         }
-
-        private List<TimeInterval> GetAvailableTimeIntervals(List<Physitian> physitians, List<Room> rooms)
+        public AppointmentDTO GetSuggestedAppointment(AppointmentDTO appointmentPreferences)
         {
-            throw new NotImplementedException();
-        }
-
-        private List<Physitian> FilterOutPhysitians(List<Physitian> physitians, List<TimeInterval> timeIntervals)
-        {
-            throw new NotImplementedException();
-        }
-
-        private List<Room> FilterOutRooms(List<Room> rooms, List<TimeInterval> timeIntervals)
-        {
-            throw new NotImplementedException();
-        }
-
-        private TimeInterval FindNearestTimeInterval(List<TimeInterval> potentialTimeIntervals)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Physitian FindPhysitianByTimeInterval(List<Physitian> physitians, TimeInterval timeInterval)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Room FindRoomByTimeInterval(List<Room> rooms, TimeInterval timeInterval)
-        {
+            AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
             throw new NotImplementedException();
         }
 
@@ -59,22 +45,6 @@ namespace Backend.Service.SchedulingService
         {
             throw new NotImplementedException();
         }
-
-        private SchedulingStrategy schedulingStrategyContext;
-        private Backend.Dto.AppointmentDTO appointmentPreferences;
-
-        public abstract AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities();
-
-        public abstract AppointmentDTO GetRecommendedAppointment();
-
-        public void GetSuggestedAppointment(AppointmentDTO suggestedAppointment)
-        {
-            throw new NotImplementedException();
-        }
-
-        public SchedulingStrategy schedulingStrategy;
-        public Backend.Repository.RoomRepository roomRepository;
-        public Backend.Repository.PhysitianRepository physitianRepository;
 
     }
 }

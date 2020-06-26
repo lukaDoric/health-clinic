@@ -23,14 +23,43 @@ namespace Backend.Repository
             throw new NotImplementedException();
         }
 
+        public List<Appointment> GetAppointmentsByPatient(Patient patient)
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (Appointment appointment in GetAll())
+            {
+                if (patient.Equals(appointment.Patient))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
+        }
+
         public List<Appointment> GetAppointmentsByPhysitian(Physitian physitian)
         {
-            throw new NotImplementedException();
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (Appointment appointment in GetAll())
+            {
+                if (physitian.Equals(appointment.Physitian))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
         }
 
         public List<Appointment> GetAppointmentsByRoom(Room room)
         {
-            throw new NotImplementedException();
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (Appointment appointment in GetAll())
+            {
+                if (room.Equals(appointment.Room))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
         }
 
         public override Appointment Instantiate(string objectStringFormat)

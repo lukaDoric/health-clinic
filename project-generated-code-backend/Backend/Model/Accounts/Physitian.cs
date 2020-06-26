@@ -21,13 +21,10 @@ namespace Model.Accounts
         }
    
         [JsonConstructor]
-        public Physitian(String serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, List<Specialization> specialization = null)
+        public Physitian(String serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, TimeInterval workSchedule, List<Specialization> specialization = null)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
         {
-            foreach (Specialization s in specialization)
-            {
-                Console.WriteLine(s);
-            }
+            this.workSchedule = workSchedule;
             if (specialization == null)
             {
                 this.specialization = new List<Specialization>();
@@ -183,5 +180,20 @@ namespace Model.Accounts
             }
         }
 
+        public bool IsOnVacation(TimeInterval timeInterval)
+        {
+            foreach (TimeInterval vacation in VacationTime)
+            {
+                if (vacation.IsOverLapping(timeInterval))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool IsTheirShift(TimeInterval timeInterval)
+        {
+            return workSchedule.IsTimeOfDayContained(timeInterval);
+        }
     }
 }

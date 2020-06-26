@@ -5,6 +5,7 @@
 
 using Model.Hospital;
 using Model.MedicalExam;
+using Model.Schedule;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,20 @@ namespace Backend.Repository
     {
         public RoomFileSystem()
         {
-            path = @"./../../../HealthClinic/data/rooms.txt";
+            path = @"./../../../../project-generated-code-backend/data/rooms.txt";
         }
-        public List<Room> GetRoomsByEquipment(List<Equipment> equipment)
+
+        public List<Room> GetRoomsByProcedureType(ProcedureType procedureType)
         {
-            throw new NotImplementedException();
+            List<Room> rooms = new List<Room>();
+            foreach (Room room in GetAll())
+            {
+                if (room.ContainsAllEquipment(procedureType.RequiredEquipment))
+                {
+                    rooms.Add(room);
+                }
+            }
+            return rooms;
         }
 
         public override Room Instantiate(string objectStringFormat)

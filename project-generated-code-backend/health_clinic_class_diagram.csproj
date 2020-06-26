@@ -90,6 +90,8 @@
     <Compile Include="Backend\Repository\GenericFileSystem.cs" />
     <Compile Include="Backend\Repository\ProcedureTypeFileSystem.cs" />
     <Compile Include="Backend\Repository\ProcedureTypeRepository.cs" />
+    <Compile Include="Backend\Repository\RenovationFileSystem.cs" />
+    <Compile Include="Backend\Repository\RenovationRepository.cs" />
     <Compile Include="Backend\Repository\RoomTypeFileSystem.cs" />
     <Compile Include="Backend\Repository\RoomTypeRepository.cs" />
     <Compile Include="Backend\Repository\SpecializationFileSystem.cs" />
@@ -98,6 +100,12 @@
     <Compile Include="Backend\Service\MedicineService\MedicineApprovalService.cs" />
     <Compile Include="Backend\Service\MedicineService\PhysitianMedicineService.cs" />
     <Compile Include="Backend\Service\MedicineService\SuperintendentMedicineService.cs" />
+    <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\AppointmentGeneralitiesManager.cs" />
+    <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\PatientAvailabilityService.cs" />
+    <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\PhysitianAvailabilityService.cs" />
+    <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\RoomAvailabilityService.cs" />
+    <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\TimeIntervalFilter.cs" />
+    <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\TimeIntervalGenerator.cs" />
     <Compile Include="Backend\Service\SchedulingService\PatientScheduleService.cs" />
     <Compile Include="Backend\Service\SchedulingService\SchedulingStrategies\SchedulingStrategy.cs" />
     <Compile Include="Backend\Service\SchedulingService\PriorityStrategies\PriorityStrategy.cs" />
@@ -183,6 +191,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

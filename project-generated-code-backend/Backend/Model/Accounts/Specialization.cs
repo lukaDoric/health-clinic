@@ -6,6 +6,7 @@
 using Backend.Model.Util;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace Model.Accounts
 {
@@ -32,6 +33,10 @@ namespace Model.Accounts
             return this.name;
         }
 
+        public override int GetHashCode()
+        {
+            return 363513814 + EqualityComparer<string>.Default.GetHashCode(name);
+        }
         public override bool Equals(object obj)
         {
             Specialization other = obj as Specialization;

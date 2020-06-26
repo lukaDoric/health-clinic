@@ -4,8 +4,10 @@
 // Purpose: Definition of Class PhysitianFileSystem
 
 using Model.Accounts;
+using Model.Schedule;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace Backend.Repository
 {
@@ -13,11 +15,20 @@ namespace Backend.Repository
     {
         public PhysitianFileSystem()
         {
-            path = @"./../../data/physitians.txt";
+            path = @"./../../../../project-generated-code-backend/data/physitians.txt";
         }
-        public Specialization GetPhysitiansByProcedureType(Specialization procedureType)
+
+        public List<Physitian> GetPhysitiansByProcedureType(ProcedureType procedureType)
         {
-            throw new NotImplementedException();
+            List<Physitian> physitians = new List<Physitian>();
+            foreach (Physitian physitian in GetAll())
+            {
+                if (physitian.Specialization.Contains(procedureType.Specialization))
+                {
+                    physitians.Add(physitian);
+                }
+            }
+            return physitians;
         }
 
         public override Physitian Instantiate(string objectStringFormat)

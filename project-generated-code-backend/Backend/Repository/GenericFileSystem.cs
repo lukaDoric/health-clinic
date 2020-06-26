@@ -30,8 +30,7 @@ namespace Backend.Repository
             String[] lines = File.ReadAllLines(path);
             foreach (String line in lines)
             {
-                Console.WriteLine(line);
-                entities.Add(Instantiate(line)); //u svaku implementaciju Instantiate JsonConvert.DeserializeObject<T>(line);
+                entities.Add(Instantiate(line));
             }
             return entities;
         }
