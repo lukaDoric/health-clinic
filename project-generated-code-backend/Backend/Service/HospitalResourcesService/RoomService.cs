@@ -7,6 +7,7 @@ using Backend.Repository;
 using Model.Hospital;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Backend.Service.HospitalResourcesService
 {
@@ -40,13 +41,28 @@ namespace Backend.Service.HospitalResourcesService
 
         public void AddEquipment(Equipment equipment, Room room)
         {
-            throw new NotImplementedException();
+            room.AddEquipment(equipment);
+            roomRepository.Update(room);
         }
 
         public void RemoveEquipmentById(String id, Room room)
         {
-            throw new NotImplementedException();
+           
+            foreach(Equipment e in room.Equipment.ToList())
+            {
+                if (e.SerialNumber.Equals(id))
+                {
+                    room.RemoveEquipment(e);
+                }
+            }
+            roomRepository.Update(room);
         }
+
+        public List<Equipment> GetAllEquipment(Room room)
+        {
+            return roomRepository.GetById(room.SerialNumber).Equipment;
+        }
+
 
         public Backend.Repository.RoomRepository roomRepository;
 
