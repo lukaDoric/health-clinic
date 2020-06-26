@@ -1,0 +1,4 @@
+{"RoomType":{"Name":"Sala za pregled","SerialNumber":"186d0520-8b70-4bfa-99c7-10005e993899"},"Id":1,"Equipment":[],"SerialNumber":"59e1c273-6669-4e60-a9a8-c9d0c559125f"}
+{"RoomType":{"Name":"Ostava","SerialNumber":"f3e21862-dd66-4746-8d43-e66942ff17cd"},"Id":2,"Equipment":[],"SerialNumber":"71cc42d1-87d1-465f-947f-7a6df171009c"}
+{"RoomType":{"Name":"Sala za pregled","SerialNumber":"848c20be-1c8f-4620-bb18-7b9f67aaebd6"},"Id":3,"Equipment":[],"SerialNumber":"867809f3-f508-4f1c-b1c8-4136858837ae"}
+{"RoomType":{"Name":"Sala za operaciju","SerialNumber":"9765db2b-33c6-45b1-87b0-e2f8b39d7d40"},"Id":0,"Equipment":[],"SerialNumber":"f966c7f0-9b4b-4b76-8471-c6d9e82537c1"}
