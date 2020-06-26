@@ -18,7 +18,6 @@ namespace Model.Hospital
     {
   
         private int id;
-        private static int  idMaker = 0;
         private RoomType roomType;
         private List<Equipment> equipment;
 
@@ -93,13 +92,13 @@ namespace Model.Hospital
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
        
 
-        public static int IdMaker { get => idMaker;}
+   
 
 
 
 
         [JsonConstructor]
-        public Room(String serial,int id, RoomType roomType) : base()
+        public Room(String serial,int id, RoomType roomType) : base(serial)
         {
             this.SerialNumber = serial;
             this.id = id;
@@ -110,9 +109,9 @@ namespace Model.Hospital
 
 
 
-        public Room(RoomType roomType) : base()
+        public Room(int id, RoomType roomType) : base()
         {
-            this.id = idMaker++;
+            this.id = id;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
 

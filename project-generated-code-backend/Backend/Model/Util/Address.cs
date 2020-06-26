@@ -11,7 +11,7 @@ namespace Model.Util
 {
     public class Address : Entity
     {
-        private static int serialNumberGenerator = 0;
+  
         private String street;
 
         public string Street { get => street; }
@@ -22,7 +22,7 @@ namespace Model.Util
         }
 
         [JsonConstructor]
-        public Address(String serialNumber, string street, int number) : base(serialNumber)
+        public Address(String serialNumber, string street) : base(serialNumber)
         {
             this.street = street;
         }
