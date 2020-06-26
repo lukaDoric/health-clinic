@@ -19,7 +19,7 @@ namespace Model.Accounts
         {
             this.specialization = new List<Specialization>();
         }
-
+   
         [JsonConstructor]
         public Physitian(String serialNumber, string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address, List<Specialization> specialization = null)
             : base(serialNumber, name, surname, id, dateOfBirth, contact, email, address)
@@ -168,11 +168,17 @@ namespace Model.Accounts
         public Specialization OneSpecialization
         {
             get
-            {
-                if(specialization[0] != null)
+            { //TODO: OVDE MORA ONAJ PROFI EKSEPSN PO KLIN KODU
+                try
                 {
-                    return specialization[0];
+                    if (specialization[0] != null)
+                    {
+                        return specialization[0];
+                    }
                 }
+                catch { 
+                }
+              
                 return new Specialization("Nema");
             }
         }
