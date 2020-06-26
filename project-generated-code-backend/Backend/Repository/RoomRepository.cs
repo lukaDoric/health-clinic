@@ -4,14 +4,15 @@
 // Purpose: Definition of Interface RoomRepository
 
 using Model.Hospital;
+using Model.Schedule;
 using System;
 using System.Collections.Generic;
 
 namespace Backend.Repository
 {
-   public interface RoomRepository : GenericRepository<Room>
-   {
-      List<Room> GetRoomsByEquipment(List<Equipment> equipment);
-   
-   }
+    public interface RoomRepository : GenericRepository<Room>
+    {
+        List<Room> GetRoomsByProcedureType(ProcedureType procedureType);
+
+    }
 }

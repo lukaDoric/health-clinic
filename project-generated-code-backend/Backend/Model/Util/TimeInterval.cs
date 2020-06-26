@@ -60,5 +60,31 @@ namespace Model.Util
         {
             return "start: " + start.ToString("HH:mm") + "\nend: " + end.ToString("HH:mm");
         }
+        public bool IsOverLapping(TimeInterval other)
+        {
+            bool condition1 = other.Start.CompareTo(this.End) < 0 && other.End.CompareTo(this.Start) > 0;
+            bool condition2 = this.Start.CompareTo(other.End) < 0 && this.End.CompareTo(other.Start) > 0;
+            return condition1 || condition2;
+        }
+        public bool IsTimeOfDayContained(TimeInterval other)
+        {
+            int thisStart = this.Start.Hour * 60 + this.Start.Minute;
+            int thisEnd = this.End.Hour * 60 + this.End.Minute;
+            if(thisEnd < thisStart)
+            {
+                thisEnd += 24 * 60;
+            }
+            int otherStart = other.Start.Hour * 60 + other.Start.Minute;
+            int otherEnd = other.End.Hour * 60 + other.End.Minute;
+            if(otherEnd < otherStart)
+            {
+                otherEnd += 24 * 60;
+            }
+            return thisStart <= otherStart && thisEnd >= otherEnd;
+        }
+        public bool TimeOfDayEquals(TimeInterval other)
+        {
+            return this.Start.TimeOfDay.Equals(other.Start.TimeOfDay) && this.End.TimeOfDay.Equals(other.End.TimeOfDay);
+        }
     }
 }

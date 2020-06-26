@@ -10,9 +10,11 @@ namespace Backend.Service.SchedulingService.SchedulingStrategies
 {
     public class PhysitianSpecialistSchedulingStrategy : SchedulingStrategy
     {
+        private const int DISALLOW_SCHEDULING_HOURS = 24;
         public AppointmentDTO PrepareAppointment(AppointmentDTO appointment)
         {
-            throw new NotImplementedException();
+            appointment.RestrictedHours = DISALLOW_SCHEDULING_HOURS;
+            return appointment;
         }
     }
 }

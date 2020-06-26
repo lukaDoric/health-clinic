@@ -10,6 +10,7 @@ namespace Backend.Service.SchedulingService.SchedulingStrategies
 {
     public class SecretarySchedulingStrategy : SchedulingStrategy
     {
+        private const int DISALLOW_SCHEDULING_HOURS = 0;
         public AppointmentDTO PrepareAppointment(AppointmentDTO appointment)
         {
             throw new NotImplementedException();

@@ -4,13 +4,15 @@
 // Purpose: Definition of Interface PhysitianRepository
 
 using Model.Accounts;
+using Model.Schedule;
 using System;
+using System.Collections.Generic;
 
 namespace Backend.Repository
 {
    public interface PhysitianRepository : GenericRepository<Physitian>
    {
-      Specialization GetPhysitiansByProcedureType(Specialization procedureType);
-   
-   }
+        List<Physitian> GetPhysitiansByProcedureType(ProcedureType procedureType);
+
+    }
 }

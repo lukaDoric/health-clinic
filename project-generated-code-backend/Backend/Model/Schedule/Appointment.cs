@@ -54,7 +54,7 @@ namespace Model.Schedule
             this.room = appointmentDTO.Room;
             this.physitian = appointmentDTO.Physitian;
             this.patient = appointmentDTO.Patient;
-            this.timeInterval = appointmentDTO.DateTime;
+            this.timeInterval = appointmentDTO.Time;
             this.procedureType = appointmentDTO.ProcedureType;
             this.urgency = appointmentDTO.Urgency;
         }

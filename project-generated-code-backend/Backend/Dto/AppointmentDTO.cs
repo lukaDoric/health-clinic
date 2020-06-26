@@ -13,35 +13,42 @@ namespace Backend.Dto
 {
     public class AppointmentDTO
     {
-        private bool IsPreferedPhysitianSelected()
+        public bool IsPreferedPhysitianSelected()
         {
             return (Physitian != null);
         }
 
-        private bool IsPreferedDateTimeSelected()
+        public bool IsPreferredTimeSelected()
         {
-            return (DateTime != null);
+            return (Time != null);
+        }
+        public bool IsPreferredDateSelected()
+        {
+            DateTime defaultDate = DateTime.MinValue;
+            return !date.Equals(defaultDate);
         }
 
-        private bool IsPreferedRoomSelected()
+        public bool IsPreferedRoomSelected()
         {
             return (Room != null);
         }
 
         private ProcedureType procedureType;
-        private TimeInterval dateTime;
+        private TimeInterval time;
+        private DateTime date;
         private Physitian physitian;
         private Patient patient;
         private Room room;
         private bool urgency;
-        private bool timeRestriction;
+        private int restrictedHours;
 
         public ProcedureType ProcedureType { get => procedureType; set => procedureType = value; }
-        public TimeInterval DateTime { get => dateTime; set => dateTime = value; }
+        public TimeInterval Time { get => time; set => time = value; }
         public Physitian Physitian { get => physitian; set => physitian = value; }
         public Patient Patient { get => patient; set => patient = value; }
         public Room Room { get => room; set => room = value; }
         public bool Urgency { get => urgency; set => urgency = value; }
-        public bool TimeRestriction { get => timeRestriction; set => timeRestriction = value; }
+        public int RestrictedHours { get => restrictedHours; set => restrictedHours = value; }
+        public DateTime Date { get => date; set => date = value; }
     }
 }

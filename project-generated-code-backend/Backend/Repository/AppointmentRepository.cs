@@ -14,6 +14,8 @@ namespace Backend.Repository
    public interface AppointmentRepository : GenericRepository<Appointment>
    {
       List<Appointment> GetAppointmentsByDate(DateTime date);
+
+      List<Appointment> GetAppointmentsByPatient(Patient patient);
       
       List<Appointment> GetAppointmentsByPhysitian(Physitian physitian);
       

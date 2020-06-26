@@ -145,5 +145,17 @@ namespace Model.Hospital
            
             return ret;
         }
+
+        public bool ContainsAllEquipment(List<Equipment> requiredEquipment)
+        {
+            foreach (Equipment e in requiredEquipment)
+            {
+                if (!this.Equipment.Contains(e))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
