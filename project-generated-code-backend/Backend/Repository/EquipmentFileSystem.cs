@@ -11,9 +11,11 @@ namespace Backend.Repository
 {
     public class EquipmentFileSystem : GenericFileSystem<Equipment>, EquipmentRepository
     {
-        EquipmentFileSystem()
+        public EquipmentFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/equipment.txt";
+            //path = @"./../../../../project-generated-code-backend/data/equipment.txt";
+            path = @"./../../data/equipment.txt";
+
         }
         public override Equipment Instantiate(string objectStringFormat)
         {

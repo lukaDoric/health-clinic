@@ -11,9 +11,11 @@ namespace Model.Hospital
 {
     public class RoomType : Entity
     {
-        private static int serialNumberGenerator = 0;
+     
         private string name;
+
         public string Name { get => name; }
+
 
         public RoomType(string name) : base(Guid.NewGuid().ToString())
         {
