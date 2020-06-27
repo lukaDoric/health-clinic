@@ -16,7 +16,7 @@ namespace Model.Hospital
 {
     public class Room : Entity
     {
-  
+
         private int id;
         private RoomType roomType;
         private List<Equipment> equipment;
@@ -25,6 +25,10 @@ namespace Model.Hospital
         public RoomType RoomType { get => roomType; }
         public int Id { get => id; }
 
+        /// <summary>
+        /// Property for collection of Equipment
+        /// </summary>
+        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<Equipment> Equipment
         {
             get
@@ -44,6 +48,10 @@ namespace Model.Hospital
             }
         }
 
+        /// <summary>
+        /// Add a new Equipment in the collection
+        /// </summary>
+        /// <pdGenerated>Default Add</pdGenerated>
         public void AddEquipment(Equipment newEquipment)
         {
             if (newEquipment == null)
@@ -54,6 +62,10 @@ namespace Model.Hospital
                 this.equipment.Add(newEquipment);
         }
 
+        /// <summary>
+        /// Remove an existing Equipment from the collection
+        /// </summary>
+        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveEquipment(Equipment oldEquipment)
         {
             if (oldEquipment == null)
@@ -63,11 +75,26 @@ namespace Model.Hospital
                     this.equipment.Remove(oldEquipment);
         }
 
+        /// <summary>
+        /// Remove all instances of Equipment from the collection
+        /// </summary>
+        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllEquipment()
         {
             if (equipment != null)
                 equipment.Clear();
         }
+
+        //------------------------------------------------------------
+        /// <summary>
+        /// Property for collection of TimeInterval
+        /// </summary>
+        /// <pdGenerated>Default opposite class collection property</pdGenerated>
+
+
+
+
+
 
 
         [JsonConstructor]
@@ -80,17 +107,20 @@ namespace Model.Hospital
 
         }
 
+
+
         public Room(int id, RoomType roomType) : base()
         {
             this.id = id;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
+
         }
 
         public override bool Equals(object obj)
         {
             Room other = obj as Room;
-            if(other == null)
+            if (other == null)
             {
                 return false;
             }
@@ -104,7 +134,15 @@ namespace Model.Hospital
 
         public override string ToString()
         {
-            return this.id.ToString();
+            string ret = "id: " + this.id + "\nroom type: " + this.roomType.ToString();
+
+            ret += "\nequipment:\n";
+            foreach (Equipment e in equipment)
+            {
+                ret += "\t" + e.ToString();
+            }
+
+            return ret;
         }
 
         public bool ContainsAllEquipment(List<Equipment> requiredEquipment)

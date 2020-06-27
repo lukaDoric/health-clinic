@@ -14,6 +14,8 @@ namespace Backend.Repository
         public SecretaryFileSystem()
         {
             path = @"./../../../../project-generated-code-backend/data/secretaries.txt";
+            path = @"./../../data/secretaries.txt";
+
         }
         public override Secretary Instantiate(string objectStringFormat)
         {

@@ -29,7 +29,7 @@ namespace Model.Hospital
         public override bool Equals(object obj)
         {
             RoomType other = obj as RoomType;
-            if(other == null)
+            if (other == null)
             {
                 return false;
             }

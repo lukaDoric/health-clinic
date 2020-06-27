@@ -11,6 +11,8 @@ using Model.Util;
 using Backend.Service.HospitalResourcesService;
 using Model.Hospital;
 using Model.Schedule;
+using Backend.Controller.PhysitianControllers;
+using HealthClinic.Backend.Service.HospitalAccountsService;
 
 namespace Backend.Controller.SecretaryControllers
 {
@@ -18,6 +20,7 @@ namespace Backend.Controller.SecretaryControllers
     {
         public HospitalService hospitalService;
         public RoomService roomService;
+        public PhysicianAccountService physicianService;
 
         public SecretaryHospitalController()
         {
@@ -32,7 +35,7 @@ namespace Backend.Controller.SecretaryControllers
 
         public List<Physitian> GetAllPhysitians()
         {
-            return hospitalService.GetAllPhysitians();
+            return physicianService.GetAllPhysitians();
         }
 
         public List<Room> GetAllRooms()
