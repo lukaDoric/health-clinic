@@ -22,10 +22,6 @@ namespace Model.MedicalExam
 
         private List<AdditionalDocument> additionalDocument;
 
-        /// <summary>
-        /// Property for collection of AdditionalDocument
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<AdditionalDocument> AdditionalDocument
         {
             get
@@ -51,10 +47,6 @@ namespace Model.MedicalExam
         public Physitian Physitian { get => physitian; }
         public string PatientConditions { get => patientConditions; set => patientConditions = value; }
 
-        /// <summary>
-        /// Add a new AdditionalDocument in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddAdditionalDocument(AdditionalDocument newAdditionalDocument)
         {
             if (newAdditionalDocument == null)
@@ -65,10 +57,6 @@ namespace Model.MedicalExam
                 this.additionalDocument.Add(newAdditionalDocument);
         }
 
-        /// <summary>
-        /// Remove an existing AdditionalDocument from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveAdditionalDocument(AdditionalDocument oldAdditionalDocument)
         {
             if (oldAdditionalDocument == null)
@@ -78,10 +66,6 @@ namespace Model.MedicalExam
                     this.additionalDocument.Remove(oldAdditionalDocument);
         }
 
-        /// <summary>
-        /// Remove all instances of AdditionalDocument from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllAdditionalDocument()
         {
             if (additionalDocument != null)

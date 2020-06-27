@@ -20,7 +20,16 @@ namespace Backend.Repository
         }
         public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
-            throw new NotImplementedException();
+            List<Appointment> appointmentsByDate = new List<Appointment>();
+            List<Appointment> allAppointments = GetAll();
+            foreach (Appointment a in allAppointments)
+            {
+                if (a.TimeInterval.Start.Date.Equals(date))
+                {
+                    appointmentsByDate.Add(a);
+                }
+            }
+            return appointmentsByDate;
         }
 
         public List<Appointment> GetAppointmentsByPatient(Patient patient)

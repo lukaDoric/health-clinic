@@ -1,8 +1,0 @@
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\obj\Debug\health_clinic_class_diagram.csprojAssemblyReference.cache
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\bin\Debug\health_clinic_class_diagram.dll
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\bin\Debug\health_clinic_class_diagram.pdb
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\obj\Debug\health_clinic_class_diagram.csproj.CopyComplete
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\obj\Debug\health_clinic_class_diagram.dll
-C:\Users\Milica\Desktop\sims najnovija verzija\health-clinic\project-generated-code-backend\obj\Debug\health_clinic_class_diagram.pdb

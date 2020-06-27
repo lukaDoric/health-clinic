@@ -12,13 +12,8 @@ namespace Model.Blog
     {
         private String text;
         private DateTime date;
-
         private Account account;
 
-        /// <summary>
-        /// Property for Model.Accounts.Account
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
         public Account Account
         {
             get

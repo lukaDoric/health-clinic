@@ -15,10 +15,6 @@ namespace Model.Blog
       
       private List<Comment> comment;
       
-      /// <summary>
-      /// Property for collection of Comment
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
       public List<Comment> Comment
       {
          get
@@ -38,10 +34,6 @@ namespace Model.Blog
          }
       }
       
-      /// <summary>
-      /// Add a new Comment in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
       public void AddComment(Comment newComment)
       {
          if (newComment == null)
@@ -52,10 +44,6 @@ namespace Model.Blog
             this.comment.Add(newComment);
       }
       
-      /// <summary>
-      /// Remove an existing Comment from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
       public void RemoveComment(Comment oldComment)
       {
          if (oldComment == null)
@@ -65,21 +53,14 @@ namespace Model.Blog
                this.comment.Remove(oldComment);
       }
       
-      /// <summary>
-      /// Remove all instances of Comment from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
       public void RemoveAllComment()
       {
          if (comment != null)
             comment.Clear();
       }
+
       private Model.Accounts.Physitian physitian;
       
-      /// <summary>
-      /// Property for Model.Accounts.Physitian
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
       public Physitian Physitian
       {
          get

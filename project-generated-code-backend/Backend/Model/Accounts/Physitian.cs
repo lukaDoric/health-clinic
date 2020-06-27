@@ -35,10 +35,6 @@ namespace Model.Accounts
             }
         }
 
-        /// <summary>
-        /// Property for collection of Specialization
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<Specialization> Specialization
         {
             get
@@ -49,10 +45,6 @@ namespace Model.Accounts
             }
         }
 
-        /// <summary>
-        /// Add a new Specialization in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddSpecialization(Specialization newSpecialization)
         {
             if (newSpecialization == null)
@@ -63,10 +55,6 @@ namespace Model.Accounts
                 this.specialization.Add(newSpecialization);
         }
 
-        /// <summary>
-        /// Remove an existing Specialization from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveSpecialization(Specialization oldSpecialization)
         {
             if (oldSpecialization == null)
@@ -76,10 +64,6 @@ namespace Model.Accounts
                     this.specialization.Remove(oldSpecialization);
         }
 
-        /// <summary>
-        /// Remove all instances of Specialization from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllSpecialization()
         {
             if (specialization != null)
@@ -95,10 +79,6 @@ namespace Model.Accounts
         private TimeInterval workSchedule;
         private System.Collections.Generic.List<TimeInterval> vacationTime;
 
-        /// <summary>
-        /// Property for collection of Backend.Model.Util.TimeInterval
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public System.Collections.Generic.List<TimeInterval> VacationTime
         {
             get
@@ -118,10 +98,6 @@ namespace Model.Accounts
             }
         }
 
-        /// <summary>
-        /// Add a new Backend.Model.Util.TimeInterval in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddVacationTime(TimeInterval newTimeInterval)
         {
             if (newTimeInterval == null)
@@ -132,10 +108,6 @@ namespace Model.Accounts
                 this.vacationTime.Add(newTimeInterval);
         }
 
-        /// <summary>
-        /// Remove an existing Backend.Model.Util.TimeInterval from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveVacationTime(TimeInterval oldTimeInterval)
         {
             if (oldTimeInterval == null)
@@ -145,10 +117,6 @@ namespace Model.Accounts
                     this.vacationTime.Remove(oldTimeInterval);
         }
 
-        /// <summary>
-        /// Remove all instances of Backend.Model.Util.TimeInterval from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllVacationTime()
         {
             if (vacationTime != null)

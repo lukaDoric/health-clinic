@@ -22,31 +22,22 @@ namespace Backend.Service.SchedulingService
 
         public void EditAppointment(Appointment appointment)
         {
-            throw new NotImplementedException();
+            appointmentRepository.Update(appointment);
         }
 
         public void DeleteAppointment(Appointment appointment)
         {
-            throw new NotImplementedException();
+            appointmentRepository.Delete(appointment.SerialNumber);
         }
 
         public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
-            List<Appointment> appointmentsByDate = new List<Appointment>();
-            List<Appointment> allAppointments = appointmentRepository.GetAll();
-            foreach (Appointment a in allAppointments)
-            {
-                if (a.TimeInterval.Start.Date.Equals(date))
-                {
-                    appointmentsByDate.Add(a);
-                }
-            }
-            return appointmentsByDate;
+            return appointmentRepository.GetAppointmentsByDate(date);
         }
 
         public void NewAppointment(AppointmentDTO appointmentDTO)
         {
-            throw new NotImplementedException();
+            appointmentRepository.Save(new Appointment(appointmentDTO));
         }
 
     }

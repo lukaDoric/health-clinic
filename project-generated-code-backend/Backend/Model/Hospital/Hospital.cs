@@ -17,10 +17,6 @@ namespace Model.Hospital
       private Secretary[] secretary;
       private List<Physitian> physitian;
       
-      /// <summary>
-      /// Property for collection of Model.Accounts.Physitian
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
       public List<Physitian> Physitian
       {
          get
@@ -39,11 +35,7 @@ namespace Model.Hospital
             }
          }
       }
-      
-      /// <summary>
-      /// Add a new Model.Accounts.Physitian in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
+
       public void AddPhysitian(Physitian newPhysitian)
       {
          if (newPhysitian == null)
@@ -54,10 +46,6 @@ namespace Model.Hospital
             this.physitian.Add(newPhysitian);
       }
       
-      /// <summary>
-      /// Remove an existing Model.Accounts.Physitian from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
       public void RemovePhysitian(Physitian oldPhysitian)
       {
          if (oldPhysitian == null)
@@ -67,10 +55,6 @@ namespace Model.Hospital
                this.physitian.Remove(oldPhysitian);
       }
       
-      /// <summary>
-      /// Remove all instances of Model.Accounts.Physitian from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
       public void RemoveAllPhysitian()
       {
          if (physitian != null)
@@ -78,10 +62,6 @@ namespace Model.Hospital
       }
       private List<Patient> patient;
       
-      /// <summary>
-      /// Property for collection of Model.Accounts.Patient
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
       public List<Patient> Patient
       {
          get
@@ -101,10 +81,6 @@ namespace Model.Hospital
          }
       }
       
-      /// <summary>
-      /// Add a new Model.Accounts.Patient in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
       public void AddPatient(Patient newPatient)
       {
          if (newPatient == null)
@@ -115,10 +91,6 @@ namespace Model.Hospital
             this.patient.Add(newPatient);
       }
       
-      /// <summary>
-      /// Remove an existing Model.Accounts.Patient from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
       public void RemovePatient(Patient oldPatient)
       {
          if (oldPatient == null)
@@ -128,10 +100,6 @@ namespace Model.Hospital
                this.patient.Remove(oldPatient);
       }
       
-      /// <summary>
-      /// Remove all instances of Model.Accounts.Patient from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
       public void RemoveAllPatient()
       {
          if (patient != null)
@@ -142,10 +110,6 @@ namespace Model.Hospital
       private Model.Schedule.Schedule schedule;
       private System.Collections.Generic.List<Medicine> medicine;
       
-      /// <summary>
-      /// Property for collection of Medicine
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
       public List<Medicine> Medicine
       {
          get
@@ -165,10 +129,6 @@ namespace Model.Hospital
          }
       }
       
-      /// <summary>
-      /// Add a new Medicine in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
       public void AddMedicine(Medicine newMedicine)
       {
          if (newMedicine == null)
@@ -179,10 +139,6 @@ namespace Model.Hospital
             this.medicine.Add(newMedicine);
       }
       
-      /// <summary>
-      /// Remove an existing Medicine from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
       public void RemoveMedicine(Medicine oldMedicine)
       {
          if (oldMedicine == null)
@@ -192,10 +148,6 @@ namespace Model.Hospital
                this.medicine.Remove(oldMedicine);
       }
       
-      /// <summary>
-      /// Remove all instances of Medicine from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
       public void RemoveAllMedicine()
       {
          if (medicine != null)

@@ -11,10 +11,6 @@ namespace Model.Schedule
    {
       private System.Collections.Generic.List<Appointment> appointment;
       
-      /// <summary>
-      /// Property for collection of Appointment
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
       public System.Collections.Generic.List<Appointment> Appointment
       {
          get
@@ -34,10 +30,6 @@ namespace Model.Schedule
          }
       }
       
-      /// <summary>
-      /// Add a new Appointment in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
       public void AddAppointment(Appointment newAppointment)
       {
          if (newAppointment == null)
@@ -48,10 +40,6 @@ namespace Model.Schedule
             this.appointment.Add(newAppointment);
       }
       
-      /// <summary>
-      /// Remove an existing Appointment from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
       public void RemoveAppointment(Appointment oldAppointment)
       {
          if (oldAppointment == null)
@@ -61,10 +49,6 @@ namespace Model.Schedule
                this.appointment.Remove(oldAppointment);
       }
       
-      /// <summary>
-      /// Remove all instances of Appointment from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
       public void RemoveAllAppointment()
       {
          if (appointment != null)
