@@ -88,7 +88,7 @@ namespace Model.Accounts
 
         public override string ToString()
         {
-            base.ToString();
+            return base.ToString();
         }
 
 

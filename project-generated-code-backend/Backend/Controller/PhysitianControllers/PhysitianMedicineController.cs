@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Backend.Dto;
 
 namespace Backend.Controller.PhysitianControllers
 {
@@ -13,22 +14,26 @@ namespace Backend.Controller.PhysitianControllers
         private Physitian loggedPhysitian;
         private PhysitianMedicineService physitianMedicineService;
 
-        public Medicine getFromWaitingList(Medicine medicine)
+        public PhysitianMedicineController()
         {
-            throw new NotImplementedException();
+            this.physitianMedicineService = new PhysitianMedicineService();
         }
 
         public List<Medicine> getAllFromWaitingList()
         {
-            throw new NotImplementedException();
+            //TODO: Medicine
+            return new List<Medicine>();
         }
-
-        public Medicine getApproved(Medicine medicine)
+        public List<Medicine> getAllApproved()
+        {
+            //TODO: Medicine
+            return new List<Medicine>();
+        }
+        public void Approve(Medicine medicine)
         {
             throw new NotImplementedException();
         }
-
-        public List<Medicine> getAllApproved()
+        public void Reject(RejectedMedicineDTO rejection)
         {
             throw new NotImplementedException();
         }

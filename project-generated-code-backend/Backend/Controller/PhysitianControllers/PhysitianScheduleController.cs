@@ -12,26 +12,33 @@ using Model.Accounts;
 
 namespace Backend.Controller.PhysitianControllers
 {
-   public class PhysitianScheduleController
-   {
-      private Physitian loggedPhysitian;
-      
-      public List<Appointment> GetAppointmentsByDate(DateTime date)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Appointment NextAppointment()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void NewAppointment(AppointmentDTO appointmentDTO)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public PhysitianScheduleService physitianScheduleService;
-   
-   }
+    public class PhysitianScheduleController
+    {
+        private Physitian loggedPhysitian;
+        private PhysitianScheduleService physitianScheduleService;
+
+        public PhysitianScheduleController(Physitian loggedPhysitian)
+        {
+            this.loggedPhysitian = loggedPhysitian;
+            this.physitianScheduleService = new PhysitianScheduleService(loggedPhysitian);
+        }
+
+        public List<Appointment> GetAppointmentsByDate(DateTime date)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Appointment NextAppointment()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void NewAppointment(AppointmentDTO appointmentDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+    }
 }

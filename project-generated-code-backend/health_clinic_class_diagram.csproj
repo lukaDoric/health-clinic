@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backend\Controller\SuperintendentControllers\MedicineAddingController.cs" />
-    <Compile Include="Backend\Controller\PhysitianControllers\MedicineApprovalController.cs" />
     <Compile Include="Backend\Controller\PhysitianControllers\PhysitianMedicineController.cs" />
     <Compile Include="Backend\Controller\SuperintendentControllers\SuperintendentMedicineController.cs" />
     <Compile Include="Backend\Model\Hospital\Hospital.cs" />
@@ -96,10 +95,12 @@
     <Compile Include="Backend\Repository\RoomTypeRepository.cs" />
     <Compile Include="Backend\Repository\SpecializationFileSystem.cs" />
     <Compile Include="Backend\Repository\SpecializationRepository.cs" />
+    <Compile Include="Backend\Service\HospitalAccountsService\PatientAccountsService.cs" />
     <Compile Include="Backend\Service\MedicineService\MedicineAddingService.cs" />
     <Compile Include="Backend\Service\MedicineService\MedicineApprovalService.cs" />
     <Compile Include="Backend\Service\MedicineService\PhysitianMedicineService.cs" />
     <Compile Include="Backend\Service\MedicineService\SuperintendentMedicineService.cs" />
+    <Compile Include="Backend\Service\PatientCareService\ReportService.cs" />
     <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\AppointmentGeneralitiesManager.cs" />
     <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\PatientAvailabilityService.cs" />
     <Compile Include="Backend\Service\SchedulingService\AppointmentGeneralitiesOptions\PhysitianAvailabilityService.cs" />
@@ -112,7 +113,6 @@
     <Compile Include="Backend\Service\SchedulingService\AppointmentService.cs" />
     <Compile Include="Backend\Service\HospitalAccountsService\PatientRegistrationService.cs" />
     <Compile Include="Backend\Service\HospitalAccountsService\HospitalService.cs" />
-    <Compile Include="Backend\Service\PatientCareService\ExamService.cs" />
     <Compile Include="Backend\Service\PatientCareService\InpatientCareService.cs" />
     <Compile Include="Backend\Service\SchedulingService\PhysitianScheduleService.cs" />
     <Compile Include="Backend\Service\SchedulingService\AppointmentSchedulingService.cs" />
@@ -161,7 +161,7 @@
     <Compile Include="Backend\Controller\SuperintendentControllers\RoomController.cs" />
     <Compile Include="Backend\Controller\SuperintendentControllers\EquipmentController.cs" />
     <Compile Include="Backend\Controller\SuperintendentControllers\RenovationController.cs" />
-    <Compile Include="Backend\Controller\PhysitianControllers\PhysitianHospitalController.cs" />
+    <Compile Include="Backend\Controller\PhysitianControllers\PhysitianHospitalAccountsController.cs" />
     <Compile Include="Backend\Controller\SuperintendentControllers\SuperIntendentHospitalController.cs" />
     <Compile Include="Backend\Dto\AppointmentDTO.cs" />
     <Compile Include="Backend\Dto\AppointmentGeneralitiesDTO.cs" />

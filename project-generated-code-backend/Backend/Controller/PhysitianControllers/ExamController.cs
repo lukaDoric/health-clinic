@@ -4,43 +4,58 @@
 // Purpose: Definition of Class ExamController
 
 using Backend.Service.PatientCareService;
+using Backend.Service.PatientCareService;
 using Model.Accounts;
 using Model.MedicalExam;
+using Model.Schedule;
 using System;
 
 namespace Backend.Controller.PhysitianControllers
 {
-   public class ExamController
-   {
-      private Physitian loggedPhysitian;
-      private Patient selectedPatient;
-      
-      public void NewReport(Patient patient)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void NewSpecialistReferral(Report report)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void NewFollowUp()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void NewPrescription()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void NewDiagnosticReferral()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public ExamService examService;
-   
-   }
+    public class ExamController
+    {
+        private Physitian loggedPhysitian;
+        private Patient selectedPatient;
+        private Report currentReport;
+
+        private ReportService reportService;
+
+        public ExamController(Appointment appointment)
+        {
+            this.loggedPhysitian = appointment.Physitian;
+            this.SelectedPatient = appointment.Patient;
+            ProcedureType procedure = appointment.ProcedureType;
+
+            reportService = new ReportService();
+
+            String patientConditions = this.getPatientConditions();
+            this.CurrentReport = new Report(DateTime.Today, "", selectedPatient, loggedPhysitian, patientConditions);
+        }
+
+        public void SaveReport()
+        {
+            reportService.newReport(currentReport);
+        }
+
+        public void AddDocument(AdditionalDocument additionalDocument)
+        {
+            currentReport.AddAdditionalDocument(additionalDocument);
+        }
+
+        private String getPatientConditions()
+        {
+            Report lastReport = reportService.getLastReportByPatient(selectedPatient);
+
+            if (lastReport != null)
+            {
+                return lastReport.PatientConditions;
+            }
+
+            return "";
+        }
+
+        public Report CurrentReport { get => currentReport; set => currentReport = value; }
+        public Patient SelectedPatient { get => selectedPatient; set => selectedPatient = value; }
+
+    }
 }
