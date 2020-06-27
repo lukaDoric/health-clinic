@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Report
 
 using Backend.Model.Util;
+using Model.Accounts;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,9 @@ namespace Model.MedicalExam
         private static int serialNumberGenerator = 0;
         private DateTime date;
         private String findings;
+        private Patient patient;
+        private Physitian physitian;
+        private String patientConditions;
 
         private List<AdditionalDocument> additionalDocument;
 
@@ -42,7 +46,10 @@ namespace Model.MedicalExam
         }
 
         public DateTime Date { get => date; }
-        public string Findings { get => findings; }
+        public string Findings { get => findings; set => findings = value; }
+        public Patient Patient { get => patient; }
+        public Physitian Physitian { get => physitian; }
+        public string PatientConditions { get => patientConditions; set => patientConditions = value; }
 
         /// <summary>
         /// Add a new AdditionalDocument in the collection
@@ -81,19 +88,23 @@ namespace Model.MedicalExam
                 additionalDocument.Clear();
         }
 
-        public Report(DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(Guid.NewGuid().ToString())
+        public Report(DateTime date, string findings, Patient patient, Physitian physitian, string patientConditions) : base(Guid.NewGuid().ToString())
         {
             this.date = date;
             this.findings = findings;
-            this.additionalDocument = additionalDocument;
+            this.patient = patient;
+            this.physitian = physitian;
+            this.patientConditions = patientConditions;
         }
 
         [JsonConstructor]
-        public Report(String serialNumber, DateTime date, string findings, List<AdditionalDocument> additionalDocument) : base(serialNumber)
+        public Report(String serialNumber, DateTime date, string findings, Patient patient, Physitian physitian, string patientConditions) : base(serialNumber)
         {
             this.date = date;
             this.findings = findings;
-            this.additionalDocument = additionalDocument;
+            this.patient = patient;
+            this.physitian = physitian;
+            this.patientConditions = patientConditions;
         }
 
         public override bool Equals(object obj)
@@ -130,6 +141,10 @@ namespace Model.MedicalExam
                 ret += "\ndocument: " + doc.ToString();
             }
             return ret;
+        }
+        public int CompareTo(Report other)
+        {
+            return this.Date.CompareTo(other.Date);
         }
     }
 }

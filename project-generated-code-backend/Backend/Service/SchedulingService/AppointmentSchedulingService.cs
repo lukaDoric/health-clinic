@@ -30,7 +30,7 @@ namespace Backend.Service.SchedulingService
             AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
             return appointmentGeneralitiesManager.getAppointmentGeneralities(preparedAppointmentPreferences);
         }
-        private AppointmentDTO FindNearestAppointment(AppointmentDTO appointmentPreferences)
+        public AppointmentDTO FindNearestAppointment(AppointmentDTO appointmentPreferences)
         {
             AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
             throw new NotImplementedException();

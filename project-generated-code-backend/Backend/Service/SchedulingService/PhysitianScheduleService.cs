@@ -4,6 +4,7 @@
 // Purpose: Definition of Class PhysitianScheduleService
 
 using Backend.Dto;
+using Backend.Repository;
 using Model.Accounts;
 using Model.Schedule;
 using System;
@@ -14,13 +15,15 @@ namespace Backend.Service.SchedulingService
     public class PhysitianScheduleService
     {
         private Physitian loggedPhysitian;
+        private AppointmentRepository appointmentRepository;
 
-        public List<Appointment> GetAppointmentsByDate(DateTime date)
+        public PhysitianScheduleService(Physitian loggedPhysitian)
         {
-            throw new NotImplementedException();
+            this.loggedPhysitian = loggedPhysitian;
+            this.appointmentRepository = new AppointmentFileSystem();
         }
 
-        public Appointment NextAppointment()
+        public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
             throw new NotImplementedException();
         }
@@ -29,8 +32,5 @@ namespace Backend.Service.SchedulingService
         {
             throw new NotImplementedException();
         }
-
-        public Backend.Repository.AppointmentRepository appointmentRepository;
-
     }
 }

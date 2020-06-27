@@ -12,7 +12,6 @@ namespace Model.MedicalExam
 {
     public class InpatientCare : Entity
     {
-        private static int serialNumberGenerator = 0;
         private DateTime dateOfAdmition;
         private DateTime dateOfDischarge;
         private String reason;

@@ -12,6 +12,8 @@ using System.Collections.Generic;
 
 namespace Backend.Service.HospitalAccountsService
 {
+    //TODO: REFAKTORISATI samo geteri za country, procedure type, room type... (stvari koje idu u CB)
+    // Dodati PhysitianAccountsService i SecretaryAccountsService 
     public class HospitalService
     {
         public PatientRepository patientRepository;
@@ -70,11 +72,6 @@ namespace Backend.Service.HospitalAccountsService
         public List<Physitian> GetAllPhysitians()
         {
             return physitianRepository.GetAll();
-        }
-
-        public List<Patient> GetPatientsByPhysitian(Patient physitian)
-        {
-            throw new NotImplementedException();
         }
 
         public List<Secretary> GetSecretaries()

@@ -5,22 +5,30 @@
 
 using Backend.Dto;
 using Backend.Service.SchedulingService;
+using Backend.Service.SchedulingService.SchedulingStrategies;
 using Model.Accounts;
 using Model.MedicalExam;
 using System;
 
 namespace Backend.Controller.PhysitianControllers
 {
-   public abstract class FollowUpAppointmentSchedulingController
-   {
-      private Physitian loggedPhysitian;
-      private Report currentReport;
-      
-      public abstract AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(Backend.Dto.AppointmentDTO appointmentDTO);
-      
-      public abstract AppointmentDTO GetRecommendedAppointment(Backend.Dto.AppointmentDTO appointmentDTO);
-      
-      public AppointmentSchedulingService appointmentSchedulingService;
-   
-   }
+    public class FollowUpAppointmentSchedulingController
+    {
+        private AppointmentSchedulingService appointmentSchedulingService;
+
+        public FollowUpAppointmentSchedulingController()
+        {
+            this.appointmentSchedulingService = new AppointmentSchedulingService(new PhysitianFollowUpSchedulingStrategy());
+        }
+
+        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO)
+        {
+            return appointmentSchedulingService.GetUpdatedAppointmentGeneralities(appointmentDTO);
+        }
+
+        public AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO)
+        {
+            return appointmentSchedulingService.FindNearestAppointment(appointmentDTO);
+        }
+    }
 }
