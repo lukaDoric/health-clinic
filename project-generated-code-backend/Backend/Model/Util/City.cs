@@ -17,10 +17,6 @@ namespace Model.Util
 
         private System.Collections.Generic.List<Address> address;
 
-        /// <summary>
-        /// Property for collection of Address
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public System.Collections.Generic.List<Address> Address
         {
             get
@@ -56,10 +52,6 @@ namespace Model.Util
             this.postalCode = postalCode;
         }
 
-        /// <summary>
-        /// Add a new Address in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddAddress(Address newAddress)
         {
             if (newAddress == null)
@@ -70,10 +62,6 @@ namespace Model.Util
                 this.address.Add(newAddress);
         }
 
-        /// <summary>
-        /// Remove an existing Address from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveAddress(Address oldAddress)
         {
             if (oldAddress == null)
@@ -83,10 +71,6 @@ namespace Model.Util
                     this.address.Remove(oldAddress);
         }
 
-        /// <summary>
-        /// Remove all instances of Address from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllAddress()
         {
             if (address != null)

@@ -25,10 +25,6 @@ namespace Model.MedicalExam
             medicineDosage = new List<MedicineDosage>();
         }
 
-        /// <summary>
-        /// Property for collection of MedicineDosage
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<MedicineDosage> MedicineDosage
         {
             get
@@ -48,10 +44,6 @@ namespace Model.MedicalExam
             }
         }
 
-        /// <summary>
-        /// Add a new MedicineDosage in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddMedicineDosage(MedicineDosage newMedicineDosage)
         {
             if (newMedicineDosage == null)
@@ -62,10 +54,6 @@ namespace Model.MedicalExam
                 this.medicineDosage.Add(newMedicineDosage);
         }
 
-        /// <summary>
-        /// Remove an existing MedicineDosage from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveMedicineDosage(MedicineDosage oldMedicineDosage)
         {
             if (oldMedicineDosage == null)
@@ -75,10 +63,6 @@ namespace Model.MedicalExam
                     this.medicineDosage.Remove(oldMedicineDosage);
         }
 
-        /// <summary>
-        /// Remove all instances of MedicineDosage from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllMedicineDosage()
         {
             if (medicineDosage != null)

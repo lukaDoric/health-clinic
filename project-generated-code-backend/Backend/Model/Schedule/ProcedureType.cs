@@ -20,10 +20,6 @@ namespace Model.Schedule
         private int estimatedTimeInMinutes;
         private List<Equipment> requiredEquipment;
 
-        /// <summary>
-        /// Property for collection of Model.Hospital.Equipment
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<Equipment> RequiredEquipment
         {
             get
@@ -47,10 +43,6 @@ namespace Model.Schedule
         public string Name { get => name; }
         public int EstimatedTimeInMinutes { get => estimatedTimeInMinutes; }
 
-        /// <summary>
-        /// Add a new Model.Hospital.Equipment in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddRequiredEquipment(Equipment newEquipment)
         {
             if (newEquipment == null)
@@ -61,10 +53,6 @@ namespace Model.Schedule
                 this.requiredEquipment.Add(newEquipment);
         }
 
-        /// <summary>
-        /// Remove an existing Model.Hospital.Equipment from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveRequiredEquipment(Equipment oldEquipment)
         {
             if (oldEquipment == null)
@@ -74,10 +62,6 @@ namespace Model.Schedule
                     this.requiredEquipment.Remove(oldEquipment);
         }
 
-        /// <summary>
-        /// Remove all instances of Model.Hospital.Equipment from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllRequiredEquipment()
         {
             if (requiredEquipment != null)

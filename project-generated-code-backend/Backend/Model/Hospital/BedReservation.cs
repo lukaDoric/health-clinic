@@ -18,10 +18,6 @@ namespace Model.Hospital
         private Patient patient;
         private Bed bed;
 
-        /// <summary>
-        /// Property for Bed
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
         public Bed Bed
         {
             get

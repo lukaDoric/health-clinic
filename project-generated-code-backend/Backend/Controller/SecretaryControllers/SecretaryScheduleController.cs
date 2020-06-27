@@ -27,12 +27,12 @@ namespace Backend.Controller.SecretaryControllers
 
         public void EditAppointment(Appointment appointment)
         {
-            throw new NotImplementedException();
+            appointmentService.EditAppointment(appointment);
         }
 
         public void DeleteAppointment(Appointment appointment)
         {
-            throw new NotImplementedException();
+            appointmentService.DeleteAppointment(appointment);
         }
 
         public List<Appointment> GetAppointmentsByDate(DateTime date)
@@ -42,7 +42,7 @@ namespace Backend.Controller.SecretaryControllers
 
         public void NewAppointment(AppointmentDTO appointmentDTO)
         {
-            throw new NotImplementedException();
+            appointmentService.NewAppointment(appointmentDTO);
         }
 
         public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO)

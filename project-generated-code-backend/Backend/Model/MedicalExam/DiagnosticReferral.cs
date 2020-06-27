@@ -13,10 +13,6 @@ namespace Model.MedicalExam
         private static int serialNumberGenerator = 0;
         private DiagnosticType diagnosticType;
 
-        /// <summary>
-        /// Property for DiagnosticType
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
         public DiagnosticType DiagnosticType
         {
             get

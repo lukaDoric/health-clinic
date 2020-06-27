@@ -17,10 +17,6 @@ namespace Model.MedicalExam
         private String note;
         private Medicine medicine;
 
-        /// <summary>
-        /// Property for Model.Hospital.Medicine
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
         public Medicine Medicine
         {
             get

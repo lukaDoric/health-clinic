@@ -17,10 +17,6 @@ namespace Model.Util
 
         private List<City> city;
 
-        /// <summary>
-        /// Property for collection of City
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<City> City
         {
             get
@@ -53,10 +49,6 @@ namespace Model.Util
             this.name = name;
         }
 
-        /// <summary>
-        /// Add a new City in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddCity(City newCity)
         {
             if (newCity == null)
@@ -67,10 +59,6 @@ namespace Model.Util
                 this.city.Add(newCity);
         }
 
-        /// <summary>
-        /// Remove an existing City from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveCity(City oldCity)
         {
             if (oldCity == null)
@@ -80,10 +68,6 @@ namespace Model.Util
                     this.city.Remove(oldCity);
         }
 
-        /// <summary>
-        /// Remove all instances of City from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllCity()
         {
             if (city != null)

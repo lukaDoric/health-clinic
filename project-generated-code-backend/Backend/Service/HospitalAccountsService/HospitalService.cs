@@ -6,6 +6,7 @@
 using Backend.Repository;
 using HCI_SIMS_PROJEKAT.Backend.Repository;
 using Model.Accounts;
+using Model.Schedule;
 using Model.Util;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,14 @@ namespace Backend.Service.HospitalAccountsService
         public PatientRepository patientRepository;
         public CountryRepository countryRepository;
         public PhysitianRepository physitianRepository;
+        public ProcedureTypeRepository procedureTypeRepository;
 
         public HospitalService()
         {
             patientRepository = new PatientFileSystem();
             countryRepository = new CountryFileSystem();
             physitianRepository = new PhysitianFileSystem();
+            procedureTypeRepository = new ProcedureTypeFileSystem();
         }
 
         public List<Patient> GetAllPatients()
@@ -45,6 +48,11 @@ namespace Backend.Service.HospitalAccountsService
         internal void DeletePhysicianById(string id)
         {
             physitianRepository.Delete(id);
+        }
+
+        internal List<ProcedureType> GetAllProcedureTypes()
+        {
+            return procedureTypeRepository.GetAll();
         }
 
         internal List<TimeInterval> GetAllVacations(Physitian physitianDTO)

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using Model.Util;
 using Backend.Service.HospitalResourcesService;
 using Model.Hospital;
+using Model.Schedule;
 
 namespace Backend.Controller.SecretaryControllers
 {
@@ -42,6 +43,11 @@ namespace Backend.Controller.SecretaryControllers
         internal List<Country> GetAllCountries()
         {
             return hospitalService.getAllCountries();
+        }
+
+        internal List<ProcedureType> GetAllProcedureTypes()
+        {
+            return hospitalService.GetAllProcedureTypes();
         }
     }
 }

@@ -13,12 +13,6 @@ namespace HealthClinic.Backend.Model.Hospital
         private TimeInterval renovationTime;
         private Room room;
 
-
-        /// <summary>
-        /// Property for Room
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-
         public TimeInterval TimeInterval { get => renovationTime; set => renovationTime = value; }
         public int Id { get => id; set => id = value; }
         public Room Room { get => room; set => room = value; }
