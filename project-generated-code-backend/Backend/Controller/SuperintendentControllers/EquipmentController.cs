@@ -19,7 +19,7 @@ namespace Backend.Controller.SuperintendentControllers
       
       public List<Equipment> GetAll()
       {
-         throw new NotImplementedException();
+           return equipmentService.GetAll();
       }
       
       public void EditEquipment(Equipment equipment)
@@ -29,7 +29,7 @@ namespace Backend.Controller.SuperintendentControllers
       
       public void NewEquipment(Equipment equipment)
       {
-         throw new NotImplementedException();
+            equipmentService.NewEquipment(equipment);
       }
       
       public void DeleteEquipment(Equipment equipment)

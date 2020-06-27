@@ -13,7 +13,8 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
     {
         public RoomTypeFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/room_types.txt";
+            //path = @"./../../../../project-generated-code-backend/data/room_types.txt";
+            path = @"./../../data/room_types.txt";
         }
         public override RoomType Instantiate(string objectStringFormat)
         {
