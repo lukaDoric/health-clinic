@@ -88,13 +88,7 @@ namespace Model.Accounts
 
         public override string ToString()
         {
-            string ret = base.ToString();
-            ret += "\nspecialization: ";
-            foreach(Specialization s in specialization)
-            {
-                ret += s.Name + "\n";
-            }
-            return ret;
+            base.ToString();
         }
 
 
@@ -162,21 +156,16 @@ namespace Model.Accounts
         }
         public TimeInterval WorkSchedule { get => workSchedule; set => workSchedule = value; }
 
-        public Specialization OneSpecialization
+        public String AllSpecializations
         {
             get
-            { //TODO: OVDE MORA ONAJ PROFI EKSEPSN PO KLIN KODU
-                try
+            {
+                String specializations = "";
+                foreach (Specialization s in Specialization)
                 {
-                    if (specialization[0] != null)
-                    {
-                        return specialization[0];
-                    }
+                    specializations += s.ToString() + ", ";
                 }
-                catch { 
-                }
-              
-                return new Specialization("Nema");
+                return specializations;
             }
         }
 

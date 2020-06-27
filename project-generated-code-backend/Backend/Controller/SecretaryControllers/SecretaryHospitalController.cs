@@ -8,16 +8,20 @@ using Backend.Service.HospitalAccountsService;
 using System;
 using System.Collections.Generic;
 using Model.Util;
+using Backend.Service.HospitalResourcesService;
+using Model.Hospital;
 
 namespace Backend.Controller.SecretaryControllers
 {
     public class SecretaryHospitalController
     {
         public HospitalService hospitalService;
+        public RoomService roomService;
 
         public SecretaryHospitalController()
         {
             hospitalService = new HospitalService();
+            roomService = new RoomService();
         }
 
         public List<Patient> GetAllPatients()
@@ -28,6 +32,11 @@ namespace Backend.Controller.SecretaryControllers
         public List<Physitian> GetAllPhysitians()
         {
             return hospitalService.GetAllPhysitians();
+        }
+
+        public List<Room> GetAllRooms()
+        {
+            return roomService.GetAll();
         }
 
         internal List<Country> GetAllCountries()

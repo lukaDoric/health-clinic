@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace HCI_SIMS_PROJEKAT.Backend.Repository
 {
-    class ProcedureTypeFileSystem : GenericFileSystem<ProcedureType>, ProcedureTypeRepository
+    public class ProcedureTypeFileSystem : GenericFileSystem<ProcedureType>, ProcedureTypeRepository
     {
         public ProcedureTypeFileSystem()
         {

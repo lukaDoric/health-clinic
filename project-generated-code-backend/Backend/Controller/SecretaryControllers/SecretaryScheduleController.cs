@@ -5,13 +5,26 @@
 
 using Backend.Dto;
 using Backend.Service.SchedulingService;
+using Backend.Service.SchedulingService.SchedulingStrategies;
 using Model.Schedule;
 using System;
+using System.Collections.Generic;
 
 namespace Backend.Controller.SecretaryControllers
 {
     public class SecretaryScheduleController
     {
+
+        public AppointmentService appointmentService;
+        public AppointmentSchedulingService appointmentSchedulingService;
+
+
+        public SecretaryScheduleController()
+        {
+            appointmentSchedulingService = new AppointmentSchedulingService(new SecretarySchedulingStrategy());
+            appointmentService = new AppointmentService();
+        }
+
         public void EditAppointment(Appointment appointment)
         {
             throw new NotImplementedException();
@@ -22,9 +35,9 @@ namespace Backend.Controller.SecretaryControllers
             throw new NotImplementedException();
         }
 
-        public Appointment GetAppointmentsByDate(DateTime date)
+        public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
-            throw new NotImplementedException();
+            return appointmentService.GetAppointmentsByDate(date);
         }
 
         public void NewAppointment(AppointmentDTO appointmentDTO)
@@ -34,16 +47,12 @@ namespace Backend.Controller.SecretaryControllers
 
         public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO)
         {
-            throw new NotImplementedException();
+            return appointmentSchedulingService.GetUpdatedAppointmentGeneralities(appointmentDTO);
         }
 
         public AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO)
         {
             throw new NotImplementedException();
         }
-
-        public AppointmentService appointmentService;
-        public AppointmentSchedulingService appointmentSchedulingService;
-
     }
 }

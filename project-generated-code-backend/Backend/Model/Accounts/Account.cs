@@ -58,9 +58,7 @@ namespace Model.Accounts
 
         public override string ToString()
         {
-            return "name: " + this.name + "\nsurname: " + this.surname + "\nid: " + this.id
-                + "\ndate of birth: " + this.dateOfBirth.ToString("dd.MM.yyyy.") + "\ncontact: " + this.contact
-                + "\nemail: " + this.email + "\nadress: " + this.address;
+            return FullName;
         }
     }
 }
