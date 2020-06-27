@@ -15,7 +15,9 @@ namespace Backend.Repository
     {
         public PhysitianFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/physitians.txt";
+            //path = @"./../../../../project-generated-code-backend/data/physitians.txt";
+            path = @"./../../data/physitians.txt";
+
         }
 
         public List<Physitian> GetPhysitiansByProcedureType(ProcedureType procedureType)

@@ -16,7 +16,9 @@ namespace Backend.Repository
     {
         public RoomFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/rooms.txt";
+            //path = @"./../../../../project-generated-code-backend/data/rooms.txt";
+            path = @"./../../data/rooms.txt";
+
         }
 
         public List<Room> GetRoomsByProcedureType(ProcedureType procedureType)
