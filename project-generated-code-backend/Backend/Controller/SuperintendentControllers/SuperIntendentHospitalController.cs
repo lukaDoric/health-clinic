@@ -53,5 +53,6 @@ namespace Backend.Controller.SuperintendentControllers
         {
             hospitalService.RemoveVacation(timeInterval, physitianDTO);
         }
+
     }
 }

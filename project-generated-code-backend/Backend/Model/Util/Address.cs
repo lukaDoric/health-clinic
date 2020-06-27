@@ -11,7 +11,7 @@ namespace Model.Util
 {
     public class Address : Entity
     {
-  
+
         private String street;
 
         public string Street { get => street; }
