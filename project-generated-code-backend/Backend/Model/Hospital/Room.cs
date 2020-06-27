@@ -90,15 +90,9 @@ namespace Model.Hospital
         /// Property for collection of TimeInterval
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-       
-
-   
-
-
-
 
         [JsonConstructor]
-        public Room(String serial,int id, RoomType roomType) : base(serial)
+        public Room(String serial, int id, RoomType roomType) : base(serial)
         {
             this.SerialNumber = serial;
             this.id = id;
@@ -107,14 +101,11 @@ namespace Model.Hospital
 
         }
 
-
-
         public Room(int id, RoomType roomType) : base()
         {
             this.id = id;
             this.roomType = roomType;
             this.equipment = new List<Equipment>();
-
         }
 
         public override bool Equals(object obj)

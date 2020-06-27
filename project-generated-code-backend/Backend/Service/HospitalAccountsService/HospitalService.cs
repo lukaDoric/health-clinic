@@ -72,8 +72,6 @@ namespace Backend.Service.HospitalAccountsService
             return physitianRepository.GetAll();
         }
 
-
-
         public List<Patient> GetPatientsByPhysitian(Patient physitian)
         {
             throw new NotImplementedException();

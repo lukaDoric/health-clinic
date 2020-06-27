@@ -15,7 +15,7 @@ namespace Backend.Repository
     {
         public RenovationFileSystem()
         {
-            path = @"./../../data/renovations.txt";
+            path = @"./../../../../project-generated-code-backend/data/rooms.txt";
         }
 
         public List<Renovation> GetRenovationsByRoom(Room room)
