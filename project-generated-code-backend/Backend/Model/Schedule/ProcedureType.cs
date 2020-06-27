@@ -129,12 +129,7 @@ namespace Model.Schedule
 
         public override string ToString()
         {
-            string ret = "name: " + name + "/nspecialization: " + specialization.ToString();
-            foreach(Equipment e in requiredEquipment)
-            {
-                ret += "\nequipment: " + e.ToString();
-            }
-            return ret;
+            return name;
         }
     }
 }

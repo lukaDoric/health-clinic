@@ -28,3 +28,18 @@ C:\Users\Milica\Desktop\pRoJeKaT\health-clinic\Test\obj\Debug\netcoreapp3.1\Test
 C:\Users\Milica\Desktop\pRoJeKaT\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.csproj.CopyComplete
 C:\Users\Milica\Desktop\pRoJeKaT\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.dll
 C:\Users\Milica\Desktop\pRoJeKaT\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.pdb
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\Test.exe
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\Test.deps.json
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\Test.runtimeconfig.json
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\Test.runtimeconfig.dev.json
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\Test.dll
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\Test.pdb
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\health_clinic_class_diagram.dll
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\bin\Debug\netcoreapp3.1\health_clinic_class_diagram.pdb
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.csprojAssemblyReference.cache
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfoInputs.cache
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfo.cs
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.csproj.CopyComplete
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.dll
+C:\Users\Luka Doric\Desktop\cloneee\health-clinic\Test\obj\Debug\netcoreapp3.1\Test.pdb

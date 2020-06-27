@@ -13,7 +13,8 @@ namespace Backend.Service.SchedulingService.SchedulingStrategies
         private const int DISALLOW_SCHEDULING_HOURS = 0;
         public AppointmentDTO PrepareAppointment(AppointmentDTO appointment)
         {
-            throw new NotImplementedException();
+            appointment.RestrictedHours = DISALLOW_SCHEDULING_HOURS;
+            return appointment;
         }
     }
 }

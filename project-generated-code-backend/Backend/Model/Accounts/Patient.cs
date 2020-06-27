@@ -48,7 +48,7 @@ namespace Model.Accounts
 
         public override string ToString()
         {
-            return base.ToString() + "\nparent name: " + this.parentName + "\ngender: " + this.gender;
+            return base.ToString();
         }
 
     }
