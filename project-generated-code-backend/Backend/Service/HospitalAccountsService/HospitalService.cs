@@ -28,11 +28,6 @@ namespace Backend.Service.HospitalAccountsService
             procedureTypeRepository = new ProcedureTypeFileSystem();
         }
 
-        public List<Patient> GetAllPatients()
-        {
-            return patientRepository.GetAll();
-        }
-
         internal List<ProcedureType> GetAllProcedureTypes()
         {
             return procedureTypeRepository.GetAll();

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace health_clinic_class_diagram.Backend.Service.HospitalAccountsService
 {
-    class PatientAccountsService
+    public class PatientAccountsService
     {
         private PatientRepository patientRepository;
         private AppointmentRepository appointmentRepository;

@@ -13,7 +13,8 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
     {
         public ProcedureTypeFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/procedure_types.txt";
+            //path = @"./../../../../project-generated-code-backend/data/procedure_types.txt";
+            path = @"./../../data/procedure_types.txt";
         }
         public override ProcedureType Instantiate(string objectStringFormat)
         {
