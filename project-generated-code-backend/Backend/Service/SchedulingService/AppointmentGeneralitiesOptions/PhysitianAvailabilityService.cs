@@ -47,6 +47,13 @@ namespace Backend.Service.SchedulingService.AppointmentGeneralitiesOptions
             bool isNotScheduled = !IsPhysitianScheduled(physitian, timeInterval);
             return isTheirShift && isNotOnVacation && isNotScheduled;
         }
+        public bool canGoOnVacation(Physitian physitian, TimeInterval timeInterval)
+        {
+            bool isNotOnVacation = !physitian.IsOnVacation(timeInterval);
+            bool isNotScheduled = !IsPhysitianScheduled(physitian, timeInterval);
+            return isNotOnVacation && isNotScheduled;
+        }
+
         private bool IsPhysitianScheduled(Physitian physitian, TimeInterval timeInterval)
         {
             List<Appointment> appointments = appointmentRepository.GetAppointmentsByPhysitian(physitian);

@@ -59,4 +59,3 @@ namespace Model.Accounts
     }
 
 }
-}
