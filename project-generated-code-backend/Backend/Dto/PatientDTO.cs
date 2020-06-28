@@ -20,6 +20,7 @@ namespace Backend.Dto
         private bool isGuest;
         private String email;
         private Address address;
+        private string password;
 
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
@@ -31,5 +32,6 @@ namespace Backend.Dto
         public bool IsGuest { get => isGuest; set => isGuest = value; }
         public string Email { get => email; set => email = value; }
         public Address Address { get => address; set => address = value; }
+        public string Password { get => password; set => password = value; }
     }
 }
