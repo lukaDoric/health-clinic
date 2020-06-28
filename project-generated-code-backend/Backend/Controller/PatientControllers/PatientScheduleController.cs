@@ -11,37 +11,46 @@ using System.Collections.Generic;
 
 namespace Backend.Controller.PatientControllers
 {
-   public abstract class PatientScheduleController
-   {
-      public void EditAppointment(Appointment appointment)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void DeleteAppointment(Appointment appointment)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Appointment GetAppointmentsByDate(DateTime date)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public void NewAppointment(Backend.Dto.AppointmentDTO appointmentDTO)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Backend.Dto.AppointmentDTO GetSuggestedAppointment(String physitiansID, List<DateTime> dates, int prior)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public abstract AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(Backend.Dto.AppointmentDTO appointmentDTO);
-      
-      public AppointmentService appointmentService;
-      public AppointmentSchedulingService appointmentSchedulingService;
-   
-   }
+    public class PatientScheduleController
+    {
+        public PatientScheduleController()
+        {
+            appointmentSchedulingService = new AppointmentSchedulingService(new PatientSchedulingStrategy());
+            appointmentService = new AppointmentService();
+        }
+
+        public void EditAppointment(Appointment appointment)
+        {
+            appointmentService.EditAppointment(appointment);
+        }
+
+        public void DeleteAppointment(Appointment appointment)
+        {
+            appointmentService.DeleteAppointment(appointment);
+        }
+
+        public List<Appointment> GetAppointmentsByDate(DateTime date)
+        {
+            return appointmentService.GetAppointmentsByDate(date);
+        }
+
+        public void NewAppointment(Backend.Dto.AppointmentDTO appointmentDTO)
+        {
+            appointmentService.NewAppointment(appointmentDTO);
+        }
+
+        public Backend.Dto.AppointmentDTO GetSuggestedAppointment(String physitiansID, List<DateTime> dates, int prior)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(Backend.Dto.AppointmentDTO appointmentDTO)
+        {
+            return appointmentSchedulingService.GetUpdatedAppointmentGeneralities(appointmentDTO);
+        }
+
+        public AppointmentService appointmentService;
+        public AppointmentSchedulingService appointmentSchedulingService;
+
+    }
 }
