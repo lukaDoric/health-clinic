@@ -134,15 +134,7 @@ namespace Model.Hospital
 
         public override string ToString()
         {
-            string ret = "id: " + this.id + "\nroom type: " + this.roomType.ToString();
-
-            ret += "\nequipment:\n";
-            foreach (Equipment e in equipment)
-            {
-                ret += "\t" + e.ToString();
-            }
-
-            return ret;
+            return this.id.ToString();
         }
 
         public bool ContainsAllEquipment(List<Equipment> requiredEquipment)

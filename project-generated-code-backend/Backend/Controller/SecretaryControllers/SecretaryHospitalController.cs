@@ -13,6 +13,7 @@ using Model.Hospital;
 using Model.Schedule;
 using Backend.Controller.PhysitianControllers;
 using HealthClinic.Backend.Service.HospitalAccountsService;
+using health_clinic_class_diagram.Backend.Service.HospitalAccountsService;
 
 namespace Backend.Controller.SecretaryControllers
 {
@@ -21,16 +22,19 @@ namespace Backend.Controller.SecretaryControllers
         public HospitalService hospitalService;
         public RoomService roomService;
         public PhysicianAccountService physicianService;
+        public PatientAccountsService patientAccountsService;
 
         public SecretaryHospitalController()
         {
             hospitalService = new HospitalService();
             roomService = new RoomService();
+            physicianService = new PhysicianAccountService();
+            patientAccountsService = new PatientAccountsService();
         }
 
         public List<Patient> GetAllPatients()
         {
-            return hospitalService.GetAllPatients();
+            return patientAccountsService.getAllPatients();
         }
 
         public List<Physitian> GetAllPhysitians()

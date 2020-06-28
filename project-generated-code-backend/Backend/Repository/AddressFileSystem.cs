@@ -13,7 +13,8 @@ namespace HCI_SIMS_PROJEKAT.Backend.Repository
     {
         public AddressFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/addresses.txt";
+            //path = @"./../../../../project-generated-code-backend/data/addresses.txt";
+            path = @"./../../data/addresses.txt";
         }
         public override Address Instantiate(string objectStringFormat)
         {

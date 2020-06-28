@@ -18,7 +18,6 @@ namespace Backend.Controller.SecretaryControllers
         public AppointmentService appointmentService;
         public AppointmentSchedulingService appointmentSchedulingService;
 
-
         public SecretaryScheduleController()
         {
             appointmentSchedulingService = new AppointmentSchedulingService(new SecretarySchedulingStrategy());

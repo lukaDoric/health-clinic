@@ -96,6 +96,7 @@
     <Compile Include="Backend\Repository\SpecializationFileSystem.cs" />
     <Compile Include="Backend\Repository\SpecializationRepository.cs" />
     <Compile Include="Backend\Service\HospitalAccountsService\PatientAccountsService.cs" />
+    <Compile Include="Backend\Service\HospitalAccountsService\PhysicianAccountService.cs" />
     <Compile Include="Backend\Service\MedicineService\MedicineAddingService.cs" />
     <Compile Include="Backend\Service\MedicineService\MedicineApprovalService.cs" />
     <Compile Include="Backend\Service\MedicineService\PhysitianMedicineService.cs" />
