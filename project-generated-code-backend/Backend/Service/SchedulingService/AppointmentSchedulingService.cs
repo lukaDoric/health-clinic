@@ -11,6 +11,7 @@ using Backend.Service.SchedulingService.SchedulingStrategies;
 using System;
 using System.Collections.Generic;
 using Backend.Service.SchedulingService.AppointmentGeneralitiesOptions;
+using Backend.Service.SchedulingService.PriorityStrategies;
 
 namespace Backend.Service.SchedulingService
 {
@@ -35,10 +36,50 @@ namespace Backend.Service.SchedulingService
             AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
             throw new NotImplementedException();
         }
-        public AppointmentDTO GetSuggestedAppointment(AppointmentDTO appointmentPreferences)
+        public AppointmentDTO GetSuggestedAppointment(SuggestedAppointmentDTO suggestedAppointmentDTO)
         {
-            AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
-            throw new NotImplementedException();
+            DateTime currentDate = suggestedAppointmentDTO.Date_start;
+            
+            while (!currentDate.Equals(suggestedAppointmentDTO.Date_end))
+            {
+                AppointmentDTO appointment = new AppointmentDTO();
+                appointment.Date = currentDate;
+                appointment.Physitian = suggestedAppointmentDTO.Physitian;
+                appointment.Patient = suggestedAppointmentDTO.Patient;
+                List<AppointmentDTO> suggestedAppointmentDTOs = GetAvailableAppointments(appointment);
+                if (suggestedAppointmentDTOs.Count != 0)
+                {
+                    return suggestedAppointmentDTOs[0];
+                }
+                currentDate = currentDate.AddDays(1);
+            }
+            if (suggestedAppointmentDTO.Prior)
+            {
+                DatePriorityStrategy datePriorityStrategy = new DatePriorityStrategy();
+                List<AppointmentDTO> suggestedAppointmentDTOsDate = datePriorityStrategy.FindSuggestedAppointments(suggestedAppointmentDTO);
+                foreach(AppointmentDTO appointmentDTO in suggestedAppointmentDTOsDate)
+                {
+                    List<AppointmentDTO> suggestedAppointmentDTOs = GetAvailableAppointments(appointmentDTO);
+                    if (suggestedAppointmentDTOs.Count != 0)
+                    {
+                        return suggestedAppointmentDTOs[0];
+                    }
+                }
+            }
+            else
+            {
+                PhysitianPriorityStrategy physitianPriorityStrategy = new PhysitianPriorityStrategy();
+                List<AppointmentDTO> suggestedAppointmentDTOsPhysitian = physitianPriorityStrategy.FindSuggestedAppointments(suggestedAppointmentDTO);
+                foreach (AppointmentDTO appointmentDTO in suggestedAppointmentDTOsPhysitian)
+                {
+                    List<AppointmentDTO> suggestedAppointmentDTOs = GetAvailableAppointments(appointmentDTO);
+                    if (suggestedAppointmentDTOs.Count != 0)
+                    {
+                        return suggestedAppointmentDTOs[0];
+                    }
+                }
+            }
+            return null;
         }
 
     }

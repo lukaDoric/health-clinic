@@ -6,12 +6,13 @@
 using Model.Schedule;
 using System;
 using System.Collections.Generic;
+using Backend.Dto;
 
 namespace Backend.Service.SchedulingService.PriorityStrategies
 {
     public interface PriorityStrategy
     {
-        List<Appointment> FindSuggestedAppointments();
+        List<AppointmentDTO> FindSuggestedAppointments(SuggestedAppointmentDTO suggestedAppointmentDTO);
 
     }
 }
