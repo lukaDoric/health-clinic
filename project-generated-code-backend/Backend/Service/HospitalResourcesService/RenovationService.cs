@@ -46,5 +46,17 @@ namespace Backend.Service.HospitalResourcesService
         {
             renovationRepository = new RenovationFileSystem();
         }
+
+        public void DeleteRenovationsWithRoom(Room room)
+        {
+           foreach (Renovation r in renovationRepository.GetAll())
+            {
+                if (r.Room.SerialNumber.Equals(room.SerialNumber))
+                {
+                    renovationRepository.Delete(r.SerialNumber);
+                }
+            }
+            
+        }
     }
 }

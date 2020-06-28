@@ -36,5 +36,9 @@ namespace HealthClinic.Backend.Controller.SuperintendentControllers
             secretaryService.DeleteSecretary(secretary);
         }
 
+        public bool jmbgExists(string jmbg)
+        {
+            return secretaryService.jmbgExists(jmbg);
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace HealthClinic.Backend.Controller.SuperintendentControllers
         {
             physiciansService.RemoveVacation(timeInterval, physitianDTO);
         }
+
+        public bool jmbgExists(string jmbg)
+        {
+            return physiciansService.jmbgExists(jmbg);
+        }
     }
 }

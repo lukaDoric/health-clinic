@@ -6,6 +6,7 @@
 using Backend.Dto;
 using Backend.Service.HospitalResourcesService;
 using HealthClinic.Backend.Model.Hospital;
+using Model.Hospital;
 using System;
 using System.Collections.Generic;
 
@@ -43,6 +44,11 @@ namespace Backend.Controller.SuperintendentControllers
         public RenovationController()
         {
             this.renovationService =new RenovationService();
+        }
+
+        public void DeleteRenovationsWithRoom(Room room)
+        {
+            renovationService.DeleteRenovationsWithRoom(room);
         }
     }
 }

@@ -43,5 +43,6 @@ namespace Backend.Service.HospitalResourcesService
         }
         public Backend.Repository.EquipmentRepository equipmentRepository;
 
+
     }
 }
