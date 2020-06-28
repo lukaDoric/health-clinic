@@ -13,7 +13,9 @@ namespace Backend.Repository
     {
         public ApprovedMedicineFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/approved_medicine.txt";
+            //path = @"./../../../../project-generated-code-backend/data/approved_medicine.txt";
+            path = @"./../../data/approved_medicine.txt";
+
         }
         public override Medicine Instantiate(string objectStringFormat)
         {

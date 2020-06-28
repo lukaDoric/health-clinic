@@ -13,20 +13,70 @@ namespace health_clinic_class_diagram.Backend.Service.MedicineService
         private WaitingMedicineRepository waitingRepostitory;
         private ApprovedMedicineRepository approvedRepository;
 
+        public SuperintendentMedicineService()
+        {
+            rejectionRepository = new RejectionFileSystem();
+            waitingRepostitory = new WaitingMedicineFileSystem();
+            approvedRepository = new ApprovedMedicineFileSystem();
+        }
+
         public List<Medicine> getAllApproved()
         {
-            throw new NotImplementedException();
+            return approvedRepository.GetAll();
         }
 
         public List<Rejection> getAllRejected()
         {
-            throw new NotImplementedException();
+            return rejectionRepository.GetAll();
         }
 
         public List<Medicine> getAllWaiting()
         {
-            throw new NotImplementedException();
+            return waitingRepostitory.GetAll();
         }
+
+        public void DeleteWaitingMedicine(Medicine medicine)
+        {
+            waitingRepostitory.Delete(medicine.SerialNumber);
+        }
+
+        public void NewWaitinMedicine(Medicine medicine)
+        {
+            waitingRepostitory.Save(medicine);
+        }
+
+        public void EditWaitingMedicine(Medicine medicineDTO)
+        {
+            waitingRepostitory.Update(medicineDTO);
+        }
+
+        public void DeleteRejection(Rejection rejection)
+        {
+            rejectionRepository.Delete(rejection.SerialNumber);
+        }
+
+        public void NewRejection(Rejection rejection)
+        {
+            rejectionRepository.Save(rejection);
+        }
+
+        public void EditRejection(Rejection rejection)
+        {
+            waitingRepostitory.Save(rejection.Medicine);
+            rejectionRepository.Delete(rejection.SerialNumber);
+        }
+
+        public void DeleteApprovedMedicine(Medicine medicine)
+        {
+            approvedRepository.Delete(medicine.SerialNumber);
+        }
+
+        public void NewApprovedMedicine(Medicine medicine)
+        {
+            approvedRepository.Save(medicine);
+        }
+
+
 
         //TODO: Dodati metode za getovanje pojedinacnih i brisanje ako treba
     }
