@@ -25,10 +25,10 @@ namespace Backend.Service.SchedulingService
             this.appointmentGeneralitiesManager = new AppointmentGeneralitiesManager();
         }
 
-        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentPreferences)
+        public List<AppointmentDTO> GetAvailableAppointments(AppointmentDTO appointmentPreferences)
         {
             AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
-            return appointmentGeneralitiesManager.getAppointmentGeneralities(preparedAppointmentPreferences);
+            return appointmentGeneralitiesManager.GetAllAvailableAppointments(preparedAppointmentPreferences);
         }
         public AppointmentDTO FindNearestAppointment(AppointmentDTO appointmentPreferences)
         {
@@ -38,11 +38,6 @@ namespace Backend.Service.SchedulingService
         public AppointmentDTO GetSuggestedAppointment(AppointmentDTO appointmentPreferences)
         {
             AppointmentDTO preparedAppointmentPreferences = schedulingStrategyContext.PrepareAppointment(appointmentPreferences);
-            throw new NotImplementedException();
-        }
-
-        private List<TimeInterval> TimeIntersectionAvailableAndSuggested(List<TimeInterval> availableTimeIntervals, List<TimeInterval> suggestedTimeInterval)
-        {
             throw new NotImplementedException();
         }
 

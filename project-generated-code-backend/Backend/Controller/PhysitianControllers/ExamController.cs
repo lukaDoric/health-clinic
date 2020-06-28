@@ -28,13 +28,13 @@ namespace Backend.Controller.PhysitianControllers
 
             reportService = new ReportService();
 
-            String patientConditions = this.getPatientConditions();
+            String patientConditions = this.GetPatientConditions();
             this.CurrentReport = new Report(DateTime.Today, "", selectedPatient, loggedPhysitian, patientConditions);
         }
 
         public void SaveReport()
         {
-            reportService.newReport(currentReport);
+            reportService.NewReport(currentReport);
         }
 
         public void AddDocument(AdditionalDocument additionalDocument)
@@ -42,9 +42,9 @@ namespace Backend.Controller.PhysitianControllers
             currentReport.AddAdditionalDocument(additionalDocument);
         }
 
-        private String getPatientConditions()
+        private String GetPatientConditions()
         {
-            Report lastReport = reportService.getLastReportByPatient(selectedPatient);
+            Report lastReport = reportService.GetLastReportByPatient(selectedPatient);
 
             if (lastReport != null)
             {

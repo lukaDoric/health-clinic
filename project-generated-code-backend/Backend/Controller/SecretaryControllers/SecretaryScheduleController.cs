@@ -44,9 +44,9 @@ namespace Backend.Controller.SecretaryControllers
             appointmentService.NewAppointment(appointmentDTO);
         }
 
-        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO)
+        public List<AppointmentDTO> GetAllAvailableAppointments(AppointmentDTO appointmentDTO)
         {
-            return appointmentSchedulingService.GetUpdatedAppointmentGeneralities(appointmentDTO);
+            return appointmentSchedulingService.GetAvailableAppointments(appointmentDTO);
         }
 
         public AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO)

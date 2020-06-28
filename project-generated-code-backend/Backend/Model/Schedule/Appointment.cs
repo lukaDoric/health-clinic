@@ -15,7 +15,6 @@ namespace Model.Schedule
 {
     public class Appointment : Entity
     {
-        private static int serialNumberGenerator;
         private Room room;
         private Physitian physitian;
         private Patient patient;
@@ -29,6 +28,7 @@ namespace Model.Schedule
         public TimeInterval TimeInterval { get => timeInterval; }
         public ProcedureType ProcedureType { get => procedureType; }
         public bool Urgency { get => urgency; }
+        public DateTime Date { get => timeInterval.Start.Date; }
 
         public Appointment(Room room, Physitian physitian, Patient patient, TimeInterval timeInterval, ProcedureType procedureType) : base(Guid.NewGuid().ToString())
         {

@@ -17,12 +17,12 @@ namespace Backend.Service.PatientCareService
             this.reportRepository = new ReportFileSystem();
         }
 
-        public List<Report> getReportsByPatient(Patient patient)
+        public List<Report> GetReportsByPatient(Patient patient)
         {
             return reportRepository.GetReportsByPatient(patient);
         }
 
-        public Report getLastReportByPatient(Patient patient)
+        public Report GetLastReportByPatient(Patient patient)
         {
             List<Report> reports = reportRepository.GetReportsByPatient(patient);
             if(reports.Count > 0)
@@ -33,7 +33,7 @@ namespace Backend.Service.PatientCareService
             return null;
         }
 
-        public void newReport(Report report)
+        public void NewReport(Report report)
         {
             reportRepository.Save(report);
         }

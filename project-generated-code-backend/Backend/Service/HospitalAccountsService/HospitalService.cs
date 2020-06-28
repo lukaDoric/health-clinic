@@ -33,25 +33,14 @@ namespace Backend.Service.HospitalAccountsService
             return procedureTypeRepository.GetAll();
         }
 
-        public List<Secretary> GetSecretaries()
-        {
-            throw new NotImplementedException();
-        }
-
         internal List<Country> getAllCountries()
         {
             return countryRepository.GetAll();
         }
 
-        public Patient getPatient(String id)
+        public List<ProcedureType> GetProcedureTypes()
         {
-            throw new NotImplementedException();
+            return procedureTypeRepository.GetAll();
         }
-
-        public Physitian getPhysitian(String id)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

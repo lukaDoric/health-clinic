@@ -40,7 +40,7 @@ namespace Backend.Controller.PhysitianControllers
         public List<BedReservationDTO> getPreviousInpatientCares(Patient patient)
         {
             //TODO: Get inpatient cares
-            throw new NotImplementedException();
+            return new List<BedReservationDTO>();
         }
 
     }

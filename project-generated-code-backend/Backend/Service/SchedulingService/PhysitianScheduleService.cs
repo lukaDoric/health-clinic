@@ -23,14 +23,42 @@ namespace Backend.Service.SchedulingService
             this.appointmentRepository = new AppointmentFileSystem();
         }
 
-        public List<Appointment> GetAppointmentsByDate(DateTime date)
-        {
-            throw new NotImplementedException();
-        }
-
         public void NewAppointment(AppointmentDTO appointmentDTO)
         {
             throw new NotImplementedException();
         }
+        public List<Appointment> GetAppointmentsByDate(DateTime date)
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (Appointment appointment in appointmentRepository.GetAppointmentsByPhysitian(loggedPhysitian))
+            {
+                if (date.Equals(appointment.Date))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
+        }
+        public Appointment GetTodaysAppointmentForPatient(Patient patient)
+        {
+            List<Appointment> appointments = appointmentRepository.GetAppointmentsByPatient(patient);
+            foreach (Appointment appointment in appointments)
+            {
+                if (patient.Equals(appointment.Patient))
+                {
+                    return appointment;
+                }
+            }
+            return null;
+        }
+        public Appointment GetPreviousAppointmentForPatient(Patient patient)
+        {
+            throw new NotImplementedException();
+        }
+        public Appointment GetNextAppointmentForPatient(Patient patient)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

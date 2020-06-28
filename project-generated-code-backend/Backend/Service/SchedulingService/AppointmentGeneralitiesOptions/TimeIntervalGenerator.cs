@@ -19,7 +19,7 @@ namespace Backend.Service.SchedulingService.AppointmentGeneralitiesOptions
             this.restrictedSchedulingHours = restrictedSchedulingHours;
         }
 
-        public List<TimeInterval> getTimeIntervals()
+        public List<TimeInterval> generateAllTimeIntervals()
         {
             List<TimeInterval> timeIntervals = new List<TimeInterval>();
             DateTime currentDay = DateTime.Today.AddHours(restrictedSchedulingHours);
@@ -31,7 +31,7 @@ namespace Backend.Service.SchedulingService.AppointmentGeneralitiesOptions
             return timeIntervals;
         }
 
-        private List<TimeInterval> generateTimeIntervalsForDay(DateTime day)
+        public List<TimeInterval> generateTimeIntervalsForDay(DateTime day)
         {
             List<TimeInterval> timeIntervals = new List<TimeInterval>();
             DateTime currentStart = day.Date;

@@ -9,6 +9,7 @@ using Backend.Service.SchedulingService.SchedulingStrategies;
 using Model.Accounts;
 using Model.MedicalExam;
 using System;
+using System.Collections.Generic;
 
 namespace Backend.Controller.PhysitianControllers
 {
@@ -21,15 +22,14 @@ namespace Backend.Controller.PhysitianControllers
             this.appointmentSchedulingService = new AppointmentSchedulingService(new PhysitianSpecialistSchedulingStrategy());
         }
 
-        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO)
+        public List<AppointmentDTO> GetAllAvailableAppointments(AppointmentDTO appointmentDTO)
         {
-            return appointmentSchedulingService.GetUpdatedAppointmentGeneralities(appointmentDTO);
+            return appointmentSchedulingService.GetAvailableAppointments(appointmentDTO);
         }
 
         public AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO)
         {
             return appointmentSchedulingService.FindNearestAppointment(appointmentDTO);
         }
-
     }
 }

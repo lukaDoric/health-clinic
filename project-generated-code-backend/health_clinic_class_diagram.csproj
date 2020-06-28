@@ -47,6 +47,7 @@
     <Compile Include="Backend\Model\Hospital\Hospital.cs" />
     <Compile Include="Backend\Model\Hospital\Renovation.cs" />
     <Compile Include="Backend\Model\Hospital\Room.cs" />
+    <Compile Include="Backend\Model\Hospital\RoomBedType.cs" />
     <Compile Include="Backend\Model\Hospital\RoomType.cs" />
     <Compile Include="Backend\Model\Hospital\Equipment.cs" />
     <Compile Include="Backend\Model\Hospital\Bed.cs" />
@@ -91,6 +92,8 @@
     <Compile Include="Backend\Repository\ProcedureTypeRepository.cs" />
     <Compile Include="Backend\Repository\RenovationFileSystem.cs" />
     <Compile Include="Backend\Repository\RenovationRepository.cs" />
+    <Compile Include="Backend\Repository\RoomBedTypeFileSystem.cs" />
+    <Compile Include="Backend\Repository\RoomBedTypeRepository.cs" />
     <Compile Include="Backend\Repository\RoomTypeFileSystem.cs" />
     <Compile Include="Backend\Repository\RoomTypeRepository.cs" />
     <Compile Include="Backend\Repository\SpecializationFileSystem.cs" />
