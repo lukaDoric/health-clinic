@@ -15,115 +15,86 @@ namespace Backend.Service.SchedulingService.AppointmentGeneralitiesOptions
         private AppointmentDTO appointmentPreferrences;
         private PhysitianRepository physitianRepository;
         private RoomRepository roomRepository;
-        private List<TimeInterval> timeIntervals;
-        private List<Physitian> physitians;
-        private List<Room> rooms;
+
         public AppointmentGeneralitiesManager()
         {
             this.physitianRepository = new PhysitianFileSystem();
             this.roomRepository = new RoomFileSystem();
         }
 
-        public AppointmentGeneralitiesDTO getAppointmentGeneralities(AppointmentDTO appointmentPreferrences)
+        public List<AppointmentDTO> GetAllAvailableAppointments(AppointmentDTO appointmentPreferrences)
         {
             this.appointmentPreferrences = appointmentPreferrences;
-            rooms = GetAllRooms();
-            physitians = GetAllPhysitians();
-            timeIntervals = GetAvailableTimeIntervals();
-            AppointmentGeneralitiesDTO updatedGeneralities = new AppointmentGeneralitiesDTO();
-            updatedGeneralities.AvailableTimeIntervals = timeIntervals;
-            updatedGeneralities.AvailablePhysitians = GetAvailablePhysitians();
-            updatedGeneralities.AvailableRooms = GetAvailableRooms();
-            return updatedGeneralities;
-        }
-        private List<TimeInterval> GetAvailableTimeIntervals()
-        {
-            List<TimeInterval> availableTimeIntervals = new List<TimeInterval>();
-            foreach (TimeInterval timeInterval in GetAllTimeIntervals())
+            List<AppointmentDTO> appointments = new List<AppointmentDTO>();
+
+            List<TimeInterval> allTimeIntervals = GetAllTimeIntervals();
+            List<Physitian> allPhysitians = GetAllPhysitians();
+            List<Room> allRooms = GetAllRooms();
+
+            PhysitianAvailabilityService physitianAvailabilityService = new PhysitianAvailabilityService();
+            RoomAvailabilityService roomAvailabilityService = new RoomAvailabilityService();
+
+            foreach (TimeInterval timeInterval in allTimeIntervals)
             {
-                if (IsTimeIntervalAvailable(timeInterval))
+                foreach (Physitian physitian in allPhysitians)
                 {
-                    availableTimeIntervals.Add(timeInterval);
+                    if (physitianAvailabilityService.IsPhysitianAvailable(physitian, timeInterval))
+                    {
+                        foreach (Room room in allRooms)
+                        {
+                            if (roomAvailabilityService.IsRoomAvailable(room, timeInterval))
+                            {
+                                AppointmentDTO appointmentDTO = createAppointment(physitian, room, timeInterval);
+                                appointments.Add(appointmentDTO);
+                            }
+                        }
+                    }
                 }
             }
-            return availableTimeIntervals;
+
+            return appointments;
         }
-        private List<Physitian> GetAvailablePhysitians()
+
+        private AppointmentDTO createAppointment(Physitian physitian, Room room, TimeInterval timeInterval)
         {
-            List<Physitian> availablePhysitians = new List<Physitian>();
-            PhysitianAvailabilityService physitianAvailability = new PhysitianAvailabilityService();
-            foreach (Physitian physitian in physitians)
-            {
-                if (physitianAvailability.IsPhysitianAvailableAtAnyTime(physitian, timeIntervals))
-                {
-                    availablePhysitians.Add(physitian);
-                }
-            }
-            return availablePhysitians;
-        }
-        private List<Room> GetAvailableRooms()
-        {
-            List<Room> availableRooms = new List<Room>();
-            RoomAvailabilityService roomAvailability = new RoomAvailabilityService();
-            foreach (Room room in rooms)
-            {
-                if (roomAvailability.IsRoomAvailableAtAnyTime(room, timeIntervals))
-                {
-                    availableRooms.Add(room);
-                }
-            }
-            return availableRooms;
+            AppointmentDTO appointment = new AppointmentDTO();
+            appointment.ProcedureType = appointmentPreferrences.ProcedureType;
+            appointment.Patient = appointmentPreferrences.Patient;
+            appointment.Time = timeInterval;
+            appointment.Physitian = physitian;
+            appointment.Room = room;
+            return appointment;
         }
         private List<Physitian> GetAllPhysitians()
         {
-            List<Physitian> allPhysitians = new List<Physitian>();
+            List<Physitian> physitians = new List<Physitian>();
             if (appointmentPreferrences.IsPreferedPhysitianSelected())
             {
-                allPhysitians.Add(appointmentPreferrences.Physitian);
+                physitians.Add(appointmentPreferrences.Physitian);
             }
             else
             {
-                allPhysitians = physitianRepository.GetPhysitiansByProcedureType(appointmentPreferrences.ProcedureType);
+                physitians = physitianRepository.GetPhysitiansByProcedureType(appointmentPreferrences.ProcedureType);
             }
-            return allPhysitians;
+            return physitians;
         }
         private List<Room> GetAllRooms()
         {
-            List<Room> allRooms = new List<Room>();
-            if (appointmentPreferrences.IsPreferedRoomSelected())
-            {
-                allRooms.Add(appointmentPreferrences.Room);
-            }
-            else
-            {
-                allRooms = roomRepository.GetRoomsByProcedureType(appointmentPreferrences.ProcedureType);
-            }
-            return allRooms;
+            return roomRepository.GetRoomsByProcedureType(appointmentPreferrences.ProcedureType);
         }
         private List<TimeInterval> GetAllTimeIntervals()
         {
             TimeIntervalGenerator generator = new TimeIntervalGenerator(appointmentPreferrences.ProcedureType, appointmentPreferrences.RestrictedHours);
-            List<TimeInterval> allTimeIntervals = generator.getTimeIntervals();
-            TimeIntervalFilter filter = new TimeIntervalFilter();
+            List<TimeInterval> timeIntervals = new List<TimeInterval>();
             if (appointmentPreferrences.IsPreferredDateSelected())
             {
-                allTimeIntervals = filter.flterByDate(allTimeIntervals, appointmentPreferrences.Date);
+                timeIntervals = generator.generateTimeIntervalsForDay(appointmentPreferrences.Date);
             }
-            if (appointmentPreferrences.IsPreferredTimeSelected())
+            else
             {
-                allTimeIntervals = filter.flterByTime(allTimeIntervals, appointmentPreferrences.Time);
+                timeIntervals = generator.generateAllTimeIntervals(); ;
             }
-            return allTimeIntervals;
-        }
-        private bool IsTimeIntervalAvailable(TimeInterval timeInterval)
-        {
-            PatientAvailabilityService patientAvailability = new PatientAvailabilityService();
-            bool isPatientAvailable = patientAvailability.IsPatientAvailable(appointmentPreferrences.Patient, timeInterval);
-            PhysitianAvailabilityService physitianAvailability = new PhysitianAvailabilityService();
-            bool isAnyPhysitianAvailable = physitianAvailability.IsAnyPhysitianAvailable(physitians, timeInterval);
-            RoomAvailabilityService roomAvailability = new RoomAvailabilityService();
-            bool isAnyRoomAvailable = roomAvailability.IsAnyRoomAvailable(rooms, timeInterval);
-            return isPatientAvailable && isAnyPhysitianAvailable && isAnyRoomAvailable;
+            return timeIntervals;
         }
     }
 }

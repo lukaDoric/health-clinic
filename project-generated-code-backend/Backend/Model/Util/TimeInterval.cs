@@ -16,6 +16,16 @@ namespace Model.Util
         public DateTime Start { get => start; set => start = value; }
         public DateTime End { get => end; set => end = value; }
 
+        public String Time
+        {
+            get
+            {
+                String start = this.start.ToString("HH:mm");
+                String end = this.end.ToString("HH:mm");
+                return start + " - " + end;
+            }
+        }
+
         [JsonConstructor]
         public TimeInterval(DateTime start, DateTime end)
         {
@@ -38,7 +48,7 @@ namespace Model.Util
 
         public override string ToString()
         {
-            return "start: " + start.ToString("dd.MM.yyyy. HH:mm") + "\nend: " + end.ToString("dd.MM.yyyy. HH:mm");
+            return Start.ToString("HH:mm") + " - " + End.ToString("HH:mm");
         }
 
         public override bool Equals(object obj)

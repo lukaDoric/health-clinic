@@ -25,7 +25,7 @@ namespace Backend.Controller.PhysitianControllers
 
         public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
-            throw new NotImplementedException();
+            return physitianScheduleService.GetAppointmentsByDate(date);
         }
 
         public Appointment NextAppointment()
@@ -37,8 +37,5 @@ namespace Backend.Controller.PhysitianControllers
         {
             throw new NotImplementedException();
         }
-
-        
-
     }
 }

@@ -5,6 +5,7 @@
 
 using Backend.Model.Util;
 using Model.Accounts;
+using Model.Schedule;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,12 @@ namespace Model.MedicalExam
 {
     public class Report : Entity
     {
-        private static int serialNumberGenerator = 0;
         private DateTime date;
         private String findings;
         private Patient patient;
         private Physitian physitian;
         private String patientConditions;
+        private ProcedureType procedureType;
 
         private List<AdditionalDocument> additionalDocument;
 
@@ -46,6 +47,7 @@ namespace Model.MedicalExam
         public Patient Patient { get => patient; }
         public Physitian Physitian { get => physitian; }
         public string PatientConditions { get => patientConditions; set => patientConditions = value; }
+        public ProcedureType ProcedureType { get => procedureType; }
 
         public void AddAdditionalDocument(AdditionalDocument newAdditionalDocument)
         {

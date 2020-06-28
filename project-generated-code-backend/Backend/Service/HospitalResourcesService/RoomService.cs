@@ -6,11 +6,12 @@
 using Backend.Repository;
 using HCI_SIMS_PROJEKAT.Backend.Repository;
 using HealthClinic.Backend.Model.Hospital;
-using HealthClinic.Backend.Repository;
+using Backend.Repository;
 using Model.Hospital;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using HealthClinic.Backend.Repository;
 
 namespace Backend.Service.HospitalResourcesService
 {

@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using Backend.Service.PatientCareService;
 using Model.MedicalExam;
 using Model.Schedule;
+using health_clinic_class_diagram.Backend.Service.HospitalAccountsService;
+using Backend.Service.SchedulingService;
 
 namespace Backend.Controller.PhysitianControllers
 {
@@ -18,21 +20,26 @@ namespace Backend.Controller.PhysitianControllers
         private Physitian loggedPhysitian;
         private HospitalService hospitalService;
         private ReportService reportService;
+        private PatientAccountsService patientAccountsService;
+        private PhysitianScheduleService physitianScheduleService;
 
         public PhysitianHospitalAccountsController(Physitian loggedPhysitian)
         {
             this.loggedPhysitian = loggedPhysitian;
             this.hospitalService = new HospitalService();
             this.reportService = new ReportService();
+            this.patientAccountsService = new PatientAccountsService();
+            this.physitianScheduleService = new PhysitianScheduleService(loggedPhysitian);
         }
 
-        public List<Patient> GetPatientsByPhysitian(Patient physitian)
+        public List<Patient> GetPatientsByPhysitian()
         {
-            throw new NotImplementedException();
+            return patientAccountsService.getPatientsForPhysitian(loggedPhysitian);
         }
 
         public Appointment GetNextAppointmentForPatient(Patient patient)
         {
+
             throw new NotImplementedException();
         }
 
@@ -42,16 +49,22 @@ namespace Backend.Controller.PhysitianControllers
         }
         public bool IsPatientScheduledToday(Patient patient)
         {
-            throw new NotImplementedException();
+            //TODO:
+            return true;
         }
 
         public List<Report> getAllReportsForPatient(Patient patient)
         {
-            throw new NotImplementedException();
+            return reportService.GetReportsByPatient(patient);
         }
         public Report getLastReportForPatient(Patient patient)
         {
-            throw new NotImplementedException();
+            return reportService.GetLastReportByPatient(patient);
+        }
+
+        internal Appointment getTodaysAppointmentForPatient(Patient patient)
+        {
+            return physitianScheduleService.GetTodaysAppointmentForPatient(patient);
         }
     }
 }

@@ -44,10 +44,9 @@ namespace Backend.Controller.PatientControllers
         {
             throw new NotImplementedException();
         }
-
-        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(Backend.Dto.AppointmentDTO appointmentDTO)
+        public List<AppointmentDTO> GetAllAvailableAppointments(AppointmentDTO appointmentDTO)
         {
-            return appointmentSchedulingService.GetUpdatedAppointmentGeneralities(appointmentDTO);
+            return appointmentSchedulingService.GetAvailableAppointments(appointmentDTO);
         }
 
         public AppointmentService appointmentService;

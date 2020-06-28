@@ -21,11 +21,6 @@ namespace Backend.Controller.PhysitianControllers
             this.appointmentSchedulingService = new AppointmentSchedulingService(new PhysitianFollowUpSchedulingStrategy());
         }
 
-        public AppointmentGeneralitiesDTO GetUpdatedAppointmentGeneralities(AppointmentDTO appointmentDTO)
-        {
-            return appointmentSchedulingService.GetUpdatedAppointmentGeneralities(appointmentDTO);
-        }
-
         public AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO)
         {
             return appointmentSchedulingService.FindNearestAppointment(appointmentDTO);
