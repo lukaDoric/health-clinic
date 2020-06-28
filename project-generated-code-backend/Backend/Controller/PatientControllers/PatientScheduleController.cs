@@ -5,6 +5,7 @@
 
 using Backend.Dto;
 using Backend.Service.SchedulingService;
+using Backend.Service.SchedulingService.SchedulingStrategies;
 using Model.Schedule;
 using System;
 using System.Collections.Generic;
