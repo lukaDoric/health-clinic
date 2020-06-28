@@ -11,7 +11,6 @@ namespace Model.Hospital
 {
     public class MedicineManufacturer : Entity
     {
-        private static int serialNumberGenerator = 0;
         private String name;
 
         public string Name { get => name; }
@@ -42,7 +41,7 @@ namespace Model.Hospital
         }
         public override string ToString()
         {
-            return "name: " + this.Name;
+            return this.Name;
         }
     }
 }

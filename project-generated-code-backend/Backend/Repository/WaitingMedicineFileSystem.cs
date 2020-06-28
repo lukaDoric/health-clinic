@@ -13,7 +13,9 @@ namespace Backend.Repository
     {
         public WaitingMedicineFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/waiting_medicine.txt";
+            //path = @"./../../../../project-generated-code-backend/data/waiting_medicine.txt";
+            path = @"./../../data/waiting_medicine.txt";
+
         }
         public override Medicine Instantiate(string objectStringFormat)
         {

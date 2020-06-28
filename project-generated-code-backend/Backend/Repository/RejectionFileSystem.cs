@@ -13,7 +13,8 @@ namespace Backend.Repository
     {
         public RejectionFileSystem()
         {
-            path = @"./../../../../project-generated-code-backend/data/rejections.txt";
+            //path = @"./../../../../project-generated-code-backend/data/rejections.txt";
+            path = @"./../../data/rejections.txt";
         }
         public override Rejection Instantiate(string objectStringFormat)
         {
