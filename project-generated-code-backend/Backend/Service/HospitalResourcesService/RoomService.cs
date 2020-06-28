@@ -89,7 +89,20 @@ namespace Backend.Service.HospitalResourcesService
             roomBedTypeRepository.Save(roomType);
         }
 
-     
+
+        public bool RoomNumberExists(int RoomNumber)
+        {
+            bool exists = false;
+            foreach (Room r in roomRepository.GetAll())
+            {
+                if (r.Id == RoomNumber)
+                {
+                    exists = true;
+                }
+            }
+            return exists;
+        }
+
         public List<Equipment> GetAllEquipment(Room room)
         {
             return roomRepository.GetById(room.SerialNumber).Equipment;
@@ -99,6 +112,7 @@ namespace Backend.Service.HospitalResourcesService
         private Backend.Repository.RoomRepository roomRepository;
         private RoomTypeRepository roomTypeRepository;
         private RoomBedTypeRepository roomBedTypeRepository;
+
 
         public RoomService()
         {

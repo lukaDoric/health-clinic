@@ -36,10 +36,22 @@ namespace HealthClinic.Backend.Service.HospitalAccountsService
         {
             secretaryRepository.Delete(id);
         }
-        internal void DeleteSecretary(Secretary secretary)
+        public void DeleteSecretary(Secretary secretary)
         {
             secretaryRepository.Delete(secretary.SerialNumber);
         }
 
+        public bool jmbgExists(string jmbg)
+        {
+            bool exists = false;
+            foreach (Secretary p in secretaryRepository.GetAll())
+            {
+                if (p.Id.Equals(jmbg))
+                {
+                    exists = true;
+                }
+            }
+            return exists;
+        }
     }
 }

@@ -74,6 +74,12 @@ namespace Backend.Controller.SuperintendentControllers
             roomService.AddRoomBedType(roomType);
         }
 
+        public bool RoomNumberExists(int RoomNumber)
+        {
+            return roomService.RoomNumberExists(RoomNumber);
+        }
+
+
 
         public RoomService roomService;
 
@@ -81,5 +87,6 @@ namespace Backend.Controller.SuperintendentControllers
         {
             roomService = new RoomService();
         }
+
     }
 }

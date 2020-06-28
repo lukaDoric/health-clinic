@@ -59,5 +59,18 @@ namespace HealthClinic.Backend.Service.HospitalAccountsService
         {
             physitianRepository.Delete(id);
         }
+
+        public bool jmbgExists(string jmbg)
+        {
+            bool exists = false;
+            foreach (Physitian p in physitianRepository.GetAll())
+            {
+                if (p.Id.Equals(jmbg))
+                {
+                    exists = true;
+                }
+            }
+            return exists;
+        }
     }
 }

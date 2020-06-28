@@ -43,5 +43,6 @@ namespace Backend.Controller.SuperintendentControllers
         {
             equipmentService = new EquipmentService();
         }
+
     }
 }
