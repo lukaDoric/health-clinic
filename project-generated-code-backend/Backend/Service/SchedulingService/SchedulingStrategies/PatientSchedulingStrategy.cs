@@ -18,8 +18,7 @@ namespace Backend.Service.SchedulingService.SchedulingStrategies
             appointment.RestrictedHours = DISALLOW_SCHEDULING_HOURS;
             appointment.ProcedureType = new ProcedureType("Pregled opšte prakse", 39, new Specialization("Opšta praksa"));
             appointment.Urgency = false;
-
-            throw new NotImplementedException();
+            return appointment;
         }
     }
 }

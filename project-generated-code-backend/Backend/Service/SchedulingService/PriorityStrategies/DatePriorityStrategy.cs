@@ -7,16 +7,35 @@ using Model.Schedule;
 using Model.Util;
 using System;
 using System.Collections.Generic;
+using Backend.Dto;
+using Backend.Repository;
+using Model.Accounts;
 
 namespace Backend.Service.SchedulingService.PriorityStrategies
 {
     public class DatePriorityStrategy : PriorityStrategy
     {
-        private TimeInterval timeInterval;
 
-        public List<Appointment> FindSuggestedAppointments()
+        public List<AppointmentDTO> FindSuggestedAppointments(SuggestedAppointmentDTO suggestedAppointmentDTO)
         {
-            throw new NotImplementedException();
+            PhysitianFileSystem pfs = new PhysitianFileSystem();
+            List<Physitian> physitians = pfs.GetAll();
+            List<AppointmentDTO> appointmentDTOs = new List<AppointmentDTO>();
+            foreach (Physitian physitian in physitians)
+            {
+                DateTime currentDate = suggestedAppointmentDTO.Date_start;
+
+                while (!currentDate.Equals(suggestedAppointmentDTO.Date_end))
+                {
+                    AppointmentDTO appointment = new AppointmentDTO();
+                    appointment.Date = currentDate;
+                    appointment.Physitian = physitian;
+                    appointment.Patient = suggestedAppointmentDTO.Patient;
+                    appointmentDTOs.Add(appointment);
+                    currentDate = currentDate.AddDays(1);
+                }
+            }
+            return appointmentDTOs;
         }
 
     }
