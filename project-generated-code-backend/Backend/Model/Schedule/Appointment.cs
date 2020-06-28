@@ -62,12 +62,11 @@ namespace Model.Schedule
         public override bool Equals(object obj)
         {
             Appointment other = obj as Appointment;
-            if(other == null)
+            if (other == null)
             {
                 return false;
             }
-            return this.Room.Equals(other.Room) && this.Physitian.Equals(other.Physitian) && this.Patient.Equals(this.Patient)
-                && this.TimeInterval.Equals(other.TimeInterval) && this.ProcedureType.Equals(other.ProcedureType);
+            return this.SerialNumber.Equals(other.SerialNumber);
         }
 
         public override int GetHashCode()

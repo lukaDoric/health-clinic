@@ -1,28 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\Test\\Test.csproj": {}
+    "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj": {
+    "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj",
+        "projectUniqueName": "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj",
         "projectName": "health_clinic_class_diagram",
-        "projectPath": "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj"
+        "projectPath": "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj"
       },
       "frameworks": {
         "net40": {}
       }
     },
-    "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\Test\\Test.csproj": {
+    "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\Test\\Test.csproj",
+        "projectPath": "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\Test\\Test.csproj",
         "packagesPath": "C:\\Users\\Luka Doric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\Test\\obj\\",
+        "outputPath": "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luka Doric\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,8 +38,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj": {
-                "projectPath": "C:\\Users\\Luka Doric\\Desktop\\cloneee\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj"
+              "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj": {
+                "projectPath": "C:\\Users\\Luka Doric\\Desktop\\noviclone\\health-clinic\\project-generated-code-backend\\health_clinic_class_diagram.csproj"
               }
             }
           }

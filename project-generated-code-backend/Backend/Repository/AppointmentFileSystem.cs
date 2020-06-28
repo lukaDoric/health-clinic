@@ -25,7 +25,7 @@ namespace Backend.Repository
             List<Appointment> allAppointments = GetAll();
             foreach (Appointment a in allAppointments)
             {
-                if (a.TimeInterval.Start.Date.Equals(date))
+                if (date.Equals(a.TimeInterval.Start.Date))
                 {
                     appointmentsByDate.Add(a);
                 }
