@@ -25,11 +25,11 @@ namespace Model.MedicalExam
         public override bool Equals(object obj)
         {
             AdditionalDocument other = obj as AdditionalDocument;
-            if(other == null)
+            if (other == null)
             {
                 return false;
             }
-            return this.Date.Equals(other.Date) && this.Notes.Equals(other.Notes);
+            return this.SerialNumber.Equals(other.SerialNumber);
         }
 
         public override int GetHashCode()

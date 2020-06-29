@@ -27,5 +27,10 @@ namespace Backend.Controller.PhysitianControllers
         {
             return physitianScheduleService.GetAppointmentsByDate(date);
         }
+
+        public void NewAppointment(AppointmentDTO appointment)
+        {
+            physitianScheduleService.NewAppointment(appointment);
+        }
     }
 }
