@@ -11,7 +11,6 @@ namespace Model.Hospital
 {
     public class Medicine : Entity
     {
-        private static int serialNumberGenerator = 0;
         private String copyrightName;
         private String genericName;
         private MedicineManufacturer medicineManufacturer;

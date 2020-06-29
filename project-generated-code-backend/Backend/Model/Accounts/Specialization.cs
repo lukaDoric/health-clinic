@@ -12,7 +12,6 @@ namespace Model.Accounts
 {
     public class Specialization : Entity
     {
-        private static int serialNumberGenerator = 0;
         private String name;
 
         public Specialization(string name) : base(Guid.NewGuid().ToString())

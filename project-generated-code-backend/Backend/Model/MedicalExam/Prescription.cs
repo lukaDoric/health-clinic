@@ -11,7 +11,6 @@ namespace Model.MedicalExam
 {
     public class Prescription : AdditionalDocument
     {
-        private static int serialNumberGenerator = 0;
         private List<MedicineDosage> medicineDosage;
 
         public Prescription(DateTime date, string notes) : base(Guid.NewGuid().ToString(), date, notes)

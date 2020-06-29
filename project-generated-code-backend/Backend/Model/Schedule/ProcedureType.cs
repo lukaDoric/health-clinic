@@ -14,7 +14,7 @@ namespace Model.Schedule
 {
     public class ProcedureType : Entity
     {
-        private static int serialNumberGenerator = 0;
+
         private String name;
         private Specialization specialization;
         private int estimatedTimeInMinutes;

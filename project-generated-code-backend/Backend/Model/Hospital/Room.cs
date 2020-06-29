@@ -21,14 +21,9 @@ namespace Model.Hospital
         private RoomType roomType;
         private List<Equipment> equipment;
 
-
         public RoomType RoomType { get => roomType; }
         public int Id { get => id; }
 
-        /// <summary>
-        /// Property for collection of Equipment
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
         public List<Equipment> Equipment
         {
             get
@@ -48,10 +43,6 @@ namespace Model.Hospital
             }
         }
 
-        /// <summary>
-        /// Add a new Equipment in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
         public void AddEquipment(Equipment newEquipment)
         {
             if (newEquipment == null)
@@ -62,10 +53,6 @@ namespace Model.Hospital
                 this.equipment.Add(newEquipment);
         }
 
-        /// <summary>
-        /// Remove an existing Equipment from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
         public void RemoveEquipment(Equipment oldEquipment)
         {
             if (oldEquipment == null)
@@ -75,27 +62,11 @@ namespace Model.Hospital
                     this.equipment.Remove(oldEquipment);
         }
 
-        /// <summary>
-        /// Remove all instances of Equipment from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
         public void RemoveAllEquipment()
         {
             if (equipment != null)
                 equipment.Clear();
         }
-
-        //------------------------------------------------------------
-        /// <summary>
-        /// Property for collection of TimeInterval
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
-
-
-
-
-
-
 
         [JsonConstructor]
         public Room(String serial, int id, RoomType roomType) : base(serial)
@@ -106,8 +77,6 @@ namespace Model.Hospital
             this.equipment = new List<Equipment>();
 
         }
-
-
 
         public Room(int id, RoomType roomType) : base()
         {

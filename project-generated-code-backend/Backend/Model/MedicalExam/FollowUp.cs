@@ -12,7 +12,6 @@ namespace Model.MedicalExam
 {
     public class FollowUp : AdditionalDocument
     {
-        private static int serialNumberGenerator = 0;
         private Physitian physitian;
         public Physitian Physitian { get => physitian; }
 

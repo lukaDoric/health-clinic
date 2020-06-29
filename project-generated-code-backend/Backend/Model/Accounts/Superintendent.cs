@@ -11,7 +11,7 @@ namespace Model.Accounts
 {
     public class Superintendent : Account
     {
-        private static int serialNumberGenerator = 0;
+
         public Superintendent(string name, string surname, string id, DateTime dateOfBirth, string contact, string email, Address address)
             : base(Guid.NewGuid().ToString(), name, surname, id, dateOfBirth, contact, email, address)
         {

@@ -11,7 +11,6 @@ namespace Model.MedicalExam
 {
     public class DiagnosticType : Entity
     {
-        private static int serialNumberGenerator = 0;
         private String name;
 
         public string Name { get => name; }

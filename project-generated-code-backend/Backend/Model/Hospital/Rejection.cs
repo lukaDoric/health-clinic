@@ -12,7 +12,6 @@ namespace Model.Hospital
 {
     public class Rejection : Entity
     {
-        private static int serialNumberGenerator = 0;
         private String reason;
         private Medicine medicine;
 
