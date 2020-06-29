@@ -41,10 +41,10 @@ namespace Backend.Service.SchedulingService
         }
         public Appointment GetTodaysAppointmentForPatient(Patient patient)
         {
-            List<Appointment> appointments = appointmentRepository.GetAppointmentsByPatient(patient);
+            List<Appointment> appointments = appointmentRepository.GetAppointmentsByPhysitian(loggedPhysitian);
             foreach (Appointment appointment in appointments)
             {
-                if (patient.Equals(appointment.Patient))
+                if (appointment.Date.Equals(DateTime.Today) && appointment.Patient.Equals(patient))
                 {
                     return appointment;
                 }
@@ -53,11 +53,46 @@ namespace Backend.Service.SchedulingService
         }
         public Appointment GetPreviousAppointmentForPatient(Patient patient)
         {
-            throw new NotImplementedException();
+            List<Appointment> appointments = appointmentRepository.GetAppointmentsByPatient(patient);
+            foreach (Appointment appointment in SortAppointmentsDescending(appointments))
+            {
+                if (IsInPast(appointment))
+                {
+                    return appointment;
+                }
+            }
+            return null;
         }
         public Appointment GetNextAppointmentForPatient(Patient patient)
         {
-            throw new NotImplementedException();
+            List<Appointment> appointments = appointmentRepository.GetAppointmentsByPatient(patient);
+            foreach (Appointment appointment in SortAppointmentsAscending(appointments))
+            {
+                if (IsInFuture(appointment))
+                {
+                    return appointment;
+                }
+            }
+            return null;
+        }
+
+        private bool IsInPast(Appointment appointment)
+        {
+            return appointment.Date.CompareTo(DateTime.Today) < 0;
+        }
+        private bool IsInFuture(Appointment appointment)
+        {
+            return appointment.Date.CompareTo(DateTime.Today) > 0;
+        }
+        private List<Appointment> SortAppointmentsDescending(List<Appointment> appointments)
+        {
+            appointments.Sort((a, b) => b.CompareTo(a));
+            return appointments;
+        }
+        private List<Appointment> SortAppointmentsAscending(List<Appointment> appointments)
+        {
+            appointments.Sort((a, b) => a.CompareTo(b));
+            return appointments;
         }
 
     }

@@ -6,6 +6,7 @@
 using Backend.Repository;
 using HCI_SIMS_PROJEKAT.Backend.Repository;
 using Model.Accounts;
+using Model.MedicalExam;
 using Model.Schedule;
 using Model.Util;
 using System;
@@ -17,15 +18,17 @@ namespace Backend.Service.HospitalAccountsService
     // Dodati PhysitianAccountsService i SecretaryAccountsService 
     public class HospitalService
     {
-        public PatientRepository patientRepository;
-        public CountryRepository countryRepository;
-        public ProcedureTypeRepository procedureTypeRepository;
+        private PatientRepository patientRepository;
+        private CountryRepository countryRepository;
+        private ProcedureTypeRepository procedureTypeRepository;
+        private DiagnosticTypeRepository diagnosticTypeRepository;
 
         public HospitalService()
         {
-            patientRepository = new PatientFileSystem();
-            countryRepository = new CountryFileSystem();
-            procedureTypeRepository = new ProcedureTypeFileSystem();
+            this.patientRepository = new PatientFileSystem();
+            this.countryRepository = new CountryFileSystem();
+            this.procedureTypeRepository = new ProcedureTypeFileSystem();
+            this.diagnosticTypeRepository = new DiagnosticTypeFileSystem();
         }
 
         internal List<ProcedureType> GetAllProcedureTypes()
@@ -41,6 +44,11 @@ namespace Backend.Service.HospitalAccountsService
         public List<ProcedureType> GetProcedureTypes()
         {
             return procedureTypeRepository.GetAll();
+        }
+
+        public List<DiagnosticType> GetDiagnosticTypes()
+        {
+            return diagnosticTypeRepository.GetAll();
         }
     }
 }

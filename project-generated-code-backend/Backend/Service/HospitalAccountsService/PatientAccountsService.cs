@@ -1,5 +1,6 @@
 ﻿using Backend.Repository;
 using Model.Accounts;
+using Model.Schedule;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +27,29 @@ namespace health_clinic_class_diagram.Backend.Service.HospitalAccountsService
         }
         public List<Patient> getPatientsForPhysitian(Physitian physitian)
         {
-            //TODO: naci pacijente koji su ili zakazani u buducnosti ili imaju neki report kod zadatog lekara
-            return patientRepository.GetAll();
+            List<Patient> allPatients = patientRepository.GetAll();
+            List<Patient> patients = new List<Patient>();
+            foreach (Patient patient in allPatients)
+            {
+                if (IsPatientScheduledForPhysitian(patient, physitian))
+                {
+                    patients.Add(patient);
+                }
+            }
+            return patients;
+        }
+
+        private bool IsPatientScheduledForPhysitian(Patient patient, Physitian physitian)
+        {
+            List<Appointment> patientAppointments = appointmentRepository.GetAppointmentsByPatient(patient);
+            foreach (Appointment appointment in patientAppointments)
+            {
+                if (appointment.Physitian.Equals(physitian))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

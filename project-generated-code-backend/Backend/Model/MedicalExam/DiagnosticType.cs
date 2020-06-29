@@ -41,7 +41,7 @@ namespace Model.MedicalExam
 
         public override string ToString()
         {
-            return "name: " + this.Name;
+            return Name;
         }
     }
 }
