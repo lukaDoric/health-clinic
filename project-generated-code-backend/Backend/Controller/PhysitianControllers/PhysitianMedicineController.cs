@@ -11,31 +11,31 @@ namespace Backend.Controller.PhysitianControllers
 {
     class PhysitianMedicineController
     {
-        private Physitian loggedPhysitian;
         private PhysitianMedicineService physitianMedicineService;
-
         public PhysitianMedicineController()
         {
             this.physitianMedicineService = new PhysitianMedicineService();
         }
 
+        public List<MedicineManufacturer> GetMedicineManufacturers()
+        {
+            return physitianMedicineService.GetMedicineManufacturers();
+        }
         public List<Medicine> getAllFromWaitingList()
         {
-            //TODO: Medicine
-            return new List<Medicine>();
+            return physitianMedicineService.getAllFromWaitingList();
         }
         public List<Medicine> getAllApproved()
         {
-            //TODO: Medicine
-            return new List<Medicine>();
+            return physitianMedicineService.getAllApproved();
         }
         public void Approve(Medicine medicine)
         {
-            throw new NotImplementedException();
+            physitianMedicineService.Approve(medicine);
         }
-        public void Reject(RejectedMedicineDTO rejection)
+        public void Reject(Rejection rejection)
         {
-            throw new NotImplementedException();
+            physitianMedicineService.Reject(rejection);
         }
     }
 }

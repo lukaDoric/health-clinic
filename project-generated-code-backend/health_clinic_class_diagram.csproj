@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\Controller\PhysitianControllers\PhysitianHospitalController.cs" />
     <Compile Include="Backend\Controller\SuperintendentControllers\MedicineAddingController.cs" />
     <Compile Include="Backend\Controller\PhysitianControllers\PhysitianMedicineController.cs" />
     <Compile Include="Backend\Controller\SuperintendentControllers\SuperintendentMedicineController.cs" />
+    <Compile Include="Backend\Dto\SuggestedAppointmentDTO.cs" />
     <Compile Include="Backend\Model\Hospital\Hospital.cs" />
     <Compile Include="Backend\Model\Hospital\Renovation.cs" />
     <Compile Include="Backend\Model\Hospital\Room.cs" />
@@ -87,6 +89,8 @@
     <Compile Include="Backend\Repository\CityRepository.cs" />
     <Compile Include="Backend\Repository\CountryFileSystem.cs" />
     <Compile Include="Backend\Repository\CountryRepository.cs" />
+    <Compile Include="Backend\Repository\DiagnosticTypeFileSystem.cs" />
+    <Compile Include="Backend\Repository\DiagnosticTypeRepository.cs" />
     <Compile Include="Backend\Repository\GenericFileSystem.cs" />
     <Compile Include="Backend\Repository\ProcedureTypeFileSystem.cs" />
     <Compile Include="Backend\Repository\ProcedureTypeRepository.cs" />
@@ -179,6 +183,7 @@
     <Content Include="data\appointments.txt" />
     <Content Include="data\approved_medicine.txt" />
     <Content Include="data\countries.txt" />
+    <Content Include="data\diagnostic_types.txt" />
     <Content Include="data\equipment.txt" />
     <Content Include="data\inpatient_care.txt" />
     <Content Include="data\patients.txt" />

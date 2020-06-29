@@ -27,9 +27,5 @@ namespace Backend.Controller.PhysitianControllers
             return appointmentSchedulingService.GetAvailableAppointments(appointmentDTO);
         }
 
-        public AppointmentDTO GetRecommendedAppointment(AppointmentDTO appointmentDTO)
-        {
-            return appointmentSchedulingService.FindNearestAppointment(appointmentDTO);
-        }
     }
 }

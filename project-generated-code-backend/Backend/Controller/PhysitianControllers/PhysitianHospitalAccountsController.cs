@@ -40,29 +40,29 @@ namespace Backend.Controller.PhysitianControllers
         public Appointment GetNextAppointmentForPatient(Patient patient)
         {
 
-            throw new NotImplementedException();
+            return physitianScheduleService.GetNextAppointmentForPatient(patient);
         }
 
         public Appointment GetPreviousAppointmentForPatient(Patient patient)
         {
-            throw new NotImplementedException();
+            return physitianScheduleService.GetPreviousAppointmentForPatient(patient);
         }
         public bool IsPatientScheduledToday(Patient patient)
         {
-            //TODO:
-            return true;
+            Appointment todaysAppointment = physitianScheduleService.GetTodaysAppointmentForPatient(patient);
+            return todaysAppointment != null;
         }
 
-        public List<Report> getAllReportsForPatient(Patient patient)
+        public List<Report> GetAllReportsForPatient(Patient patient)
         {
             return reportService.GetReportsByPatient(patient);
         }
-        public Report getLastReportForPatient(Patient patient)
+        public Report GetLastReportForPatient(Patient patient)
         {
             return reportService.GetLastReportByPatient(patient);
         }
 
-        internal Appointment getTodaysAppointmentForPatient(Patient patient)
+        internal Appointment GetTodaysAppointmentForPatient(Patient patient)
         {
             return physitianScheduleService.GetTodaysAppointmentForPatient(patient);
         }

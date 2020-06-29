@@ -57,8 +57,7 @@ namespace Model.Hospital
 
         public override string ToString()
         {
-            return "copyright name: " + this.CopyrightName + "\ngeneric name: " + this.GenericName
-                + "\nmedicineManufacturer: " + this.MedicineManufacturer.ToString() + "\nmedicineType: " + this.MedicineType.ToString();
+            return CopyrightName;
         }
     }
 }
