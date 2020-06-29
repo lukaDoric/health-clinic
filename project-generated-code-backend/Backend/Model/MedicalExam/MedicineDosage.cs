@@ -12,7 +12,6 @@ namespace Model.MedicalExam
 {
     public class MedicineDosage : Entity
     {
-        private static int serialNumberGenerator = 0;
         private double amount;
         private String note;
         private Medicine medicine;

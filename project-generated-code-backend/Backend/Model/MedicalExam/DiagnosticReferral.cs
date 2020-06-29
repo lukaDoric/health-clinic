@@ -10,7 +10,6 @@ namespace Model.MedicalExam
 {
     public class DiagnosticReferral : AdditionalDocument
     {
-        private static int serialNumberGenerator = 0;
         private DiagnosticType diagnosticType;
 
         public DiagnosticType DiagnosticType

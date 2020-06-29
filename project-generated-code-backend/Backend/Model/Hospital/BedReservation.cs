@@ -13,7 +13,6 @@ namespace Model.Hospital
 {
     public class BedReservation : Entity
     {
-        private static int serialNumberGenerator;
         private TimeInterval timeInterval;
         private Patient patient;
         private Bed bed;

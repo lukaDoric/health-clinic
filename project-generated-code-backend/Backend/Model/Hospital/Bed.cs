@@ -10,7 +10,6 @@ namespace Model.Hospital
 {
    public class Bed : Equipment
    {
-        private static int serialNumberGenerator = 0;
 
         public Bed(string name, string id) : base(Guid.NewGuid().ToString(), name, id)
         {
