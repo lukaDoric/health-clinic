@@ -34,6 +34,19 @@ namespace Backend.Repository
             return rooms;
         }
 
+        public List<Room> GetRoomsByRoomType(RoomType roomType)
+        {
+            List<Room> rooms = new List<Room>();
+            foreach (Room room in GetAll())
+            {
+                if (room.RoomType.Equals(roomType))
+                {
+                    rooms.Add(room);
+                }
+            }
+            return rooms;
+        }
+
         public override Room Instantiate(string objectStringFormat)
         {
             return JsonConvert.DeserializeObject<Room>(objectStringFormat);

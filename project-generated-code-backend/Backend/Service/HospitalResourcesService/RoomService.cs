@@ -4,14 +4,13 @@
 // Purpose: Definition of Class RoomService
 
 using Backend.Repository;
-using HCI_SIMS_PROJEKAT.Backend.Repository;
 using HealthClinic.Backend.Model.Hospital;
 using Backend.Repository;
 using Model.Hospital;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using HealthClinic.Backend.Repository;
+using HCI_SIMS_PROJEKAT.Backend.Repository;
 
 namespace Backend.Service.HospitalResourcesService
 {

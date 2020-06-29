@@ -13,6 +13,6 @@ namespace Backend.Repository
     public interface RoomRepository : GenericRepository<Room>
     {
         List<Room> GetRoomsByProcedureType(ProcedureType procedureType);
-
+        List<Room> GetRoomsByRoomType(RoomType roomType);
     }
 }
