@@ -4,6 +4,7 @@
 // Purpose: Definition of Class SpecialistReferral
 
 using Model.Accounts;
+using Model.Schedule;
 using Newtonsoft.Json;
 using System;
 
@@ -11,22 +12,22 @@ namespace Model.MedicalExam
 {
     public class SpecialistReferral : AdditionalDocument
     {
-        private Specialization specialization;
+        private ProcedureType procedureType;
         private Physitian physitian;
 
-        public Specialization Specialization { get => specialization; }
+        public ProcedureType ProcedureType { get => procedureType; }
         public Physitian Physitian { get => physitian; }
 
-        public SpecialistReferral(DateTime date, string notes, Specialization specialization, Physitian physitian) : base(Guid.NewGuid().ToString(), date, notes)
+        public SpecialistReferral(DateTime date, string notes, ProcedureType procedureType, Physitian physitian) : base(Guid.NewGuid().ToString(), date, notes)
         {
-            this.specialization = specialization;
+            this.procedureType = procedureType;
             this.physitian = physitian;
         }
 
         [JsonConstructor]
-        public SpecialistReferral(String serialNumber, DateTime date, string notes, Specialization specialization, Physitian physitian) : base(serialNumber, date, notes)
+        public SpecialistReferral(String serialNumber, DateTime date, string notes, ProcedureType procedureType, Physitian physitian) : base(serialNumber, date, notes)
         {
-            this.specialization = specialization;
+            this.procedureType = procedureType;
             this.physitian = physitian;
         }
 
@@ -37,7 +38,7 @@ namespace Model.MedicalExam
             {
                 return false;
             }
-            return base.Equals(obj) && this.Physitian.Equals(other.Physitian) && this.Specialization.Equals(other.Specialization);
+            return this.SerialNumber.Equals(other.SerialNumber);
         }
 
         public override int GetHashCode()
@@ -48,7 +49,7 @@ namespace Model.MedicalExam
         public override string ToString()
         {
             return base.ToString() + "\nphysitian: " + this.Physitian.FullName
-                + "\nspecialization: " + this.specialization;
+                + "\nspecialization: " + this.procedureType;
         }
     }
 }

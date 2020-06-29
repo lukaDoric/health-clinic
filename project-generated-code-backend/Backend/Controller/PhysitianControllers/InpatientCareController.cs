@@ -6,6 +6,7 @@
 using Backend.Dto;
 using Backend.Service.PatientCareService;
 using Model.Accounts;
+using Model.Hospital;
 using System;
 using System.Collections.Generic;
 
@@ -41,6 +42,11 @@ namespace Backend.Controller.PhysitianControllers
         {
             //TODO: Get inpatient cares
             return new List<BedReservationDTO>();
+        }
+
+        public List<Room> GetAvailableRooms()
+        {
+            throw new NotImplementedException();
         }
 
     }

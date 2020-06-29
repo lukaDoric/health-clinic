@@ -25,7 +25,8 @@ namespace Backend.Service.SchedulingService
 
         public void NewAppointment(AppointmentDTO appointmentDTO)
         {
-            throw new NotImplementedException();
+            Appointment appointment = new Appointment(appointmentDTO);
+            appointmentRepository.Save(appointment);
         }
         public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
