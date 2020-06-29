@@ -85,6 +85,8 @@
     <Compile Include="Backend\Model\Blog\Comment.cs" />
     <Compile Include="Backend\Repository\AddressFileSystem.cs" />
     <Compile Include="Backend\Repository\AddressRepository.cs" />
+    <Compile Include="Backend\Repository\BedReservationFileSystem.cs" />
+    <Compile Include="Backend\Repository\BedReservationRepository.cs" />
     <Compile Include="Backend\Repository\CityFileSystem.cs" />
     <Compile Include="Backend\Repository\CityRepository.cs" />
     <Compile Include="Backend\Repository\CountryFileSystem.cs" />
@@ -178,6 +180,8 @@
     <Compile Include="Backend\Dto\RejectedMedicineDTO.cs" />
     <Compile Include="Backend\Dto\RenovationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomBedTypeFileSystem.cs" />
+    <Compile Include="RoomBedTypeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\appointments.txt" />

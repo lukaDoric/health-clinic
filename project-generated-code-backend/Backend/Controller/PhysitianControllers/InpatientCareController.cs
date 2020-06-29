@@ -7,6 +7,7 @@ using Backend.Dto;
 using Backend.Service.PatientCareService;
 using Model.Accounts;
 using Model.Hospital;
+using Model.MedicalExam;
 using System;
 using System.Collections.Generic;
 
@@ -20,33 +21,35 @@ namespace Backend.Controller.PhysitianControllers
         public InpatientCareController(Physitian loggedPhysitian)
         {
             this.loggedPhysitian = loggedPhysitian;
-            this.inpatientCareService = new InpatientCareService();
+            this.inpatientCareService = new InpatientCareService(loggedPhysitian);
         }
 
         public void StartInpatientCare(BedReservationDTO bedReservationDTO)
         {
-            throw new NotImplementedException();
+            inpatientCareService.StartInpatientCare(bedReservationDTO);
         }
 
         public void DischargeParient(Patient patient)
         {
-            throw new NotImplementedException();
+            inpatientCareService.DischargeParient(patient);
         }
 
-        public BedReservationDTO getActiveInpatientCare(Patient patient)
+        public BedReservation getActiveInpatientCare(Patient patient)
         {
-            //TODO: Get active bed reservation
-            return null;
+            return inpatientCareService.GetActiveBedReservation(patient);
         }
-        public List<BedReservationDTO> getPreviousInpatientCares(Patient patient)
+        public List<InpatientCare> getPreviousInpatientCares(Patient patient)
         {
-            //TODO: Get inpatient cares
-            return new List<BedReservationDTO>();
+            return inpatientCareService.GetAllInpatientCares(patient);
         }
 
         public List<Room> GetAvailableRooms()
         {
-            throw new NotImplementedException();
+            return inpatientCareService.GetAvailableRooms();
+        }
+        public List<Bed> GetAvailableBeds(Room room)
+        {
+            return inpatientCareService.GetAvailableBeds(room);
         }
 
     }

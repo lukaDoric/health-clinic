@@ -14,32 +14,28 @@ namespace Model.MedicalExam
     {
         private DateTime dateOfAdmition;
         private DateTime dateOfDischarge;
-        private String reason;
 
         private Physitian physitian;
         private Patient patient;
 
         public DateTime DateOfAdmition { get => dateOfAdmition; }
         public DateTime DateOfDischarge { get => dateOfDischarge; }
-        public string Reason { get => reason; }
         public Physitian Physitian { get => physitian; }
         public Patient Patient { get => patient; }
 
-        public InpatientCare(DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(Guid.NewGuid().ToString())
+        public InpatientCare(DateTime dateOfAdmition, DateTime dateOfDischarge, Physitian physitian, Patient patient) : base(Guid.NewGuid().ToString())
         {
             this.dateOfAdmition = dateOfAdmition;
             this.dateOfDischarge = dateOfDischarge;
-            this.reason = reason;
             this.physitian = physitian;
             this.patient = patient;
         }
 
         [JsonConstructor]
-        public InpatientCare(String serialNumber, DateTime dateOfAdmition, DateTime dateOfDischarge, string reason, Physitian physitian, Patient patient) : base(serialNumber)
+        public InpatientCare(String serialNumber, DateTime dateOfAdmition, DateTime dateOfDischarge, Physitian physitian, Patient patient) : base(serialNumber)
         {
             this.dateOfAdmition = dateOfAdmition;
             this.dateOfDischarge = dateOfDischarge;
-            this.reason = reason;
             this.physitian = physitian;
             this.patient = patient;
         }
@@ -47,12 +43,12 @@ namespace Model.MedicalExam
         public override bool Equals(object obj)
         {
             InpatientCare other = obj as InpatientCare;
-            if(other == null)
+            if (other == null)
             {
                 return false;
             }
             return this.DateOfAdmition.Equals(other.DateOfAdmition) && this.DateOfDischarge.Equals(other.DateOfDischarge)
-                && this.Reason.Equals(other.Reason) && this.Patient.Equals(other.Patient) && this.Physitian.Equals(other.Physitian);
+                && this.Patient.Equals(other.Patient) && this.Physitian.Equals(other.Physitian);
         }
 
         public override int GetHashCode()
@@ -62,8 +58,7 @@ namespace Model.MedicalExam
         public override string ToString()
         {
             return "patient: " + patient.FullName + "\nphysitian: " + physitian.FullName + "\ndate of admition:"
-                + dateOfAdmition.ToString("dd.MM.yyyy.") + "\ndate of discharge:" + dateOfDischarge.ToString("dd.MM.yyyy.")
-                + "\nreason: " + reason;
+                + dateOfAdmition.ToString("dd.MM.yyyy.") + "\ndate of discharge:" + dateOfDischarge.ToString("dd.MM.yyyy.");
         }
     }
 }

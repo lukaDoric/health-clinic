@@ -3,6 +3,7 @@
 // Created: Friday, May 15, 2020 23:46:22
 // Purpose: Definition of Class BedReservation
 
+using Backend.Dto;
 using Backend.Model.Util;
 using Model.Accounts;
 using Model.Util;
@@ -42,7 +43,12 @@ namespace Model.Hospital
             this.patient = patient;
             this.bed = bed;
         }
-
+        public BedReservation(BedReservationDTO bedReservationDTO) : base(Guid.NewGuid().ToString())
+        {
+            this.timeInterval = bedReservationDTO.TimeInterval;
+            this.patient = bedReservationDTO.Patient;
+            this.bed = bedReservationDTO.Bed;
+        }
         public override bool Equals(object obj)
         {
             BedReservation other = obj as BedReservation;
